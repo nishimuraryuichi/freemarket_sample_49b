@@ -27,8 +27,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references||
-|products_id|references||
-|contents|text|null: false|
+|product_id|references||
+|content|text|null: false|
 
 - belongs_to :user
 - has_many :products
