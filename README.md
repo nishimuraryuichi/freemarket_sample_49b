@@ -38,4 +38,4 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|category_par_id|references||
+|category_id|references||
