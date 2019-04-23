@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :comments
   resources :brands
   resources :category_pars
-  resources :category
-  resources :category_child
+  resources :categorys
+  resources :category_childs
 end
