@@ -4,8 +4,10 @@
 |------|----|-------|
 |name|string|null: false,index: true,unique: true|
 |profile|text||
-|money|integer||
-|evaluation|string||
+|money|integer|default: 0|
+|eva_good|string|default: 0|
+|eva_normal|string|default: 0|
+|eva_but|string|default: 0|
 
 - has_many :products
 - has_meny :comments
