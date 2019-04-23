@@ -16,8 +16,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|email|text|null: false|
-|password|integer|null: false|
+|email|string|null: false|
+|password|string|null: false|
 
 - belongs_to :user
 
