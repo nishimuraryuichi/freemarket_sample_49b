@@ -89,3 +89,4 @@
 - belongs_to :brand
 - has_many :products
 
+
