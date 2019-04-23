@@ -10,9 +10,9 @@
 |eva_but|string|default: 0|
 
 - has_many :products
-- has_meny :comments
+- has_many :comments
 
-## user_loginテーブル
+## users_loginテーブル
 
 |Column|Type|Options|
 |------|----|-------|
