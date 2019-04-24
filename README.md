@@ -23,7 +23,7 @@
 |email|string|null: false|
 |password|string|null: false|
 
-- has_one :user_profile, dependent: :nullify
+- has_one :profile, dependent: :nullify
 
 ## commentsテーブル
 
@@ -33,7 +33,7 @@
 |product_id|references||
 |content|text|null: false|
 
-- belongs_to :user_profile
+- belongs_to :profile
 - belongs_to :product
 
 
@@ -48,11 +48,11 @@
 |detail|text|null:false|
 |brand_id|references||
 |profile_id|references||
-|category_parents_id|references||
+|category_parent_id|references||
 |category_id|references||
 |category_child_id|references||
 - belongs_to :brand
-- belongs_to :user_profile
+- belongs_to :profile
 - belongs_to :category_parents
 - belongs_to :category
 - belongs_to :category_child
@@ -64,7 +64,7 @@
 |------|----|-------|
 |name|string|null: false|
 - has_many :products
-- has_many :category_childs
+- has_many :category_children
 
 ## category_parents
 |Column|Type|Options|
@@ -79,7 +79,7 @@
 |name|string|null: false|
 |category_parents_id|references||
 - belongs_to :category_parent
-- has_many :category_childs
+- has_many :category_children
 - has_many :products
 
 ## category_childs
