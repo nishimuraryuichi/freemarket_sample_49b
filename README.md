@@ -42,15 +42,15 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false,default: 0|
-|brand_id|references||
-|profile_id|references||
-|category_par_id|references||
-|category_id|references||
-|category_child_id|references||
 |status|string|null:false|
 |delivery_fee|integer|null:false|
 |delivery_time|integer|null:false|
-|detail|string|null:false|
+|detail|text|null:false|
+|brand_id|references||
+|profile_id|references||
+|category_parents_id|references||
+|category_id|references||
+|category_child_id|references||
 - belongs_to :brand
 - belongs_to :user_profile
 - belongs_to :category_parents
@@ -77,8 +77,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|category_par_id|references||
-- belongs_to :category_parents
+|category_parents_id|references||
+- belongs_to :category_parent
 - has_many :category_childs
 - has_many :products
 
