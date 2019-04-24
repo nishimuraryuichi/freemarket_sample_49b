@@ -7,9 +7,9 @@
 |name|string|null: false,index: true,unique: true|
 |introduction|text||
 |money|integer|default: 0|
-|eva_good|string|default: 0|
-|eva_normal|string|default: 0|
-|eva_but|string|default: 0|
+|eva_good|integer|default: 0|
+|eva_normal|integer|default: 0|
+|eva_but|integer|default: 0|
 |user_id|references||
 
 - has_many :products
