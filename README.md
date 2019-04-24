@@ -1,6 +1,6 @@
 #Table
 
-## user_profilesテーブル
+## profilesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -29,7 +29,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_profile_id|references||
+|profile_id|references||
 |product_id|references||
 |content|text|null: false|
 
@@ -43,7 +43,7 @@
 |name|string|null: false|
 |price|integer|null: false,default: 0|
 |brand_id|references||
-|user_profile_id|references||
+|profile_id|references||
 |category_par_id|references||
 |category_id|references||
 |category_child_id|references||
@@ -53,7 +53,7 @@
 |detail|string|null:false|
 - belongs_to :brand
 - belongs_to :user_profile
-- belongs_to :category_par
+- belongs_to :category_parents
 - belongs_to :category
 - belongs_to :category_child
 - has_many :comments
@@ -66,7 +66,7 @@
 - has_many :products
 - has_many :category_childs
 
-## category_pars
+## category_parents
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -78,7 +78,7 @@
 |------|----|-------|
 |name|string|null: false|
 |category_par_id|references||
-- belongs_to :category_par
+- belongs_to :category_parents
 - has_many :category_childs
 - has_many :products
 
