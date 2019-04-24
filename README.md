@@ -29,7 +29,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references||
+|user_profile_id|references||
 |product_id|references||
 |content|text|null: false|
 
@@ -43,7 +43,7 @@
 |name|string|null: false|
 |price|integer|null: false,default: 0|
 |brand_id|references||
-|user_id|references||
+|user_profile_id|references||
 |category_par_id|references||
 |category_id|references||
 |category_child_id|references||
