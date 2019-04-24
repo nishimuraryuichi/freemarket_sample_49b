@@ -1,4 +1,4 @@
-#Table
+# Table
 
 ## profilesテーブル
 
@@ -29,9 +29,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|content|text|null: false|
 |profile_id|references||
 |product_id|references||
-|content|text|null: false|
 
 - belongs_to :profile
 - belongs_to :product
@@ -82,12 +82,12 @@
 - has_many :category_children
 - has_many :products
 
-## category_childs
+## category_children
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |category_id|references||
+|brand_id|references||
 - belongs_to :category
 - belongs_to :brand
 - has_many :products
-
