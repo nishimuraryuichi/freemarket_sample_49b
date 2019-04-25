@@ -1,2 +1,63 @@
 @import './reset';
 @import './header';
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  &__top {}
+  &__bottom{
+    background-color:black; 
+    padding: 20px 20px 20px 20px;
+    &__links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .footer__lists__head {
+        color: white;
+      }
+      .footer__lists {
+        margin-right: 20px;
+        list-style: none;
+        &__list {
+          color: gray;
+          margin-bottom: 18px;
+          font-size: 14px;
+          min-width: 120px;
+          .footer-link {
+            text-decoration: none;
+            color: gray;
+          }
+          .footer-link:hover{
+            text-decoration: underline;
+          }
+        }
+        &__list--head {
+          color: white;
+          font-size: 18px;
+        }
+        &__list--head-hidden {
+          color: black;
+        }
+      }
+    }
+    .copy-rights{
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      .copy-right {
+        color: white;
+        text-align: center;
+        font-size: 10px;
+      }
+    }
+  }
+}
+.exhibit{
+  background-color: red;
+  border-radius: 6vmin;
+  width: 12vmin;
+  height: 12vmin;
+  position: absolute;
+  right: 6vmin;
+  bottom: 6vmin;
+}
