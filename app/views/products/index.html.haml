@@ -1,0 +1,23 @@
+%header
+    .inner-header
+        .inner-header__top
+            %h1.inner__header__top__title
+                =link_to image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?570108281", size: "134x36", alt: "mercari"
+            %form.inner-header__top__form
+                %input.inner-header__top__form__text{type: "text",name: "keyword", placeholder: "何かお探しですか？"}
+                -# %input.inner-header__top__form__icon{type: "submit", value: "i"}
+        .inner-header__bottom
+            %ul.inner-header__bottom__left
+                %li.inner-header__bottom__left__left
+                    %h2.inner-header__botom__left__left__nav 
+                        =link_to "カテゴリーから探す", '/products',class:'access-btn'
+                %li.inner-header__bottom__left__right
+                    %h2.inner-header__botom__left__right__nav
+                        =link_to "ブランドから探す", '/products',class:'access-btn'
+            %ul.inner-header__bottom__right
+                %li.inner-header__bottom__right__left
+                    =link_to "お知らせ", '/products', class:'access-btn'
+                %li.inner-header__bottom__right__center
+                    =link_to "やることリスト", '/products', class:'access-btn'
+                %li.inner-header__bottom__right__right
+                    =link_to "マイページリスト", '/products', class:'access-btn'
