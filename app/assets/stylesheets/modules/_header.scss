@@ -9,6 +9,7 @@
             display: flex;
             width: 100%;
             margin-left:45px;
+            position:relative;
             &__text{
                 box-sizing: border-box;
                 height: 40px;
@@ -19,7 +20,16 @@
                 color:gray;
                 font-size:16px;
                 background-color:lighten(gray,40%);
+                position:absolute;
              }
+            .fa.fa-search{
+                position:absolute;
+                z-index: 2;
+                right: 10px;
+                top: 10px;
+                color: gray;
+            }
+
         }
     }
     &__bottom{
@@ -30,27 +40,44 @@
             font-size: 14px;
             font-weight: 400;
             list-style-type: none;
-            li{
-                display:inline-block;
-                line-height:40px;
-                margin-left:30px;
+            &__left{
+               @include header-list(0);
                 .access-btn{
                     text-decoration: none;
                     color:black;
+                    .fa.fa-align-justify{
+                        color:red;
+                    }
                     &:hover{
                         color:lightblue;
+                        .fa.fa-align-justify{
+                                color:red;
+                        }
                     }
                 }
-            } 
-
+            }
+            &__right{
+                @include header-list(30px);
+                .access-btn{
+                    text-decoration:none;
+                    color:black;
+                    .fa.fa-tag{
+                        color:red;
+                    }   
+                    &:hover{
+                        color:lightblue;
+                        .fa.fa-tag{
+                                color:red;
+                        }
+                    }
+                }                
+            }
         }
         &__right{
             list-style-type: none;
             li{
-                display:inline-block;
                 font-size: 14px;
-                line-height:40px;
-                margin-left: 30px;
+                @include header-list(30px);
                 .access-btn{
                     text-decoration: none;
                     color:black;
