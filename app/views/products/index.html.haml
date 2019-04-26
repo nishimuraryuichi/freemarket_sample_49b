@@ -11,7 +11,7 @@
       %ul.inner-header__bottom__left
         %li.inner-header__bottom__left__left
           %h2.inner-header__botom__left__left__nav
-            =link_to 'category_parents_path',class:'access-btn' do
+            =link_to category_parents_path,class:'access-btn' do
               =fa_icon("align-justify")
               %span カテゴリーから探す
         %li.inner-header__bottom__left__right
@@ -32,9 +32,33 @@
           =link_to '/products', class:'access-btn' do
             =fa_icon("user-circle")
             %span マイページ
-.top-main
-  .top-main__image
-    = link_to image_tag "//www-mercari-jp.akamaized.net/assets/img/featured/newlife/keyvisual.png?570108281",size: "700x250",alt: "mercari"
+.top-main            
+.slideshow
+  %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
+  %input{type:"radio", name:"slideshow", id:"switch2"}
+  %input{type:"radio", name:"slideshow", id:"switch3"}
+  %input{type:"radio", name:"slideshow", id:"switch4"}
+  .slidecontents
+    %section#slide1
+      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-natsukashi.jpg",alt: "merucari1"
+    %section#slide2
+      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-new-life.jpg",alt: "merucari2"
+    %section#slide3
+      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg",alt: "merucari3"
+    %section#slide4
+      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei.jpg",alt: "merucari4"
+  %p.arrow.prev
+    =fa_icon("chevron-left")
+    %label{for: "switch1"}
+    %label{for: "switch2"}
+    %label{for: "switch3"}
+    %label{for: "switch4"}
+  %p.arrow.next
+    =fa_icon("chevron-right")
+    %label{for: "switch1"}
+    %label{for: "switch2"}
+    %label{for: "switch3"}
+    %label{for: "switch4"}
   .top-main__pickup
     ピックアップカテゴリー
   .category
@@ -108,9 +132,9 @@
             =link_to '公式ブログ', '/products/1', class: 'footer-link'
           %li.footer__lists__list
             =link_to 'メルカリロゴ利用ガイドライン', '/products/1', class: 'footer-link'
-          .tweeter-facebook-logo
-            %image
-            %image
+          .footer__lists__logo
+            =fa_icon("twitter")
+            =fa_icon("facebook-square")
         %ul.footer__lists
           %li.footer__lists__list.footer__lists__list--head ヘルプ＆ガイド
           %li.footer__lists__list
@@ -163,8 +187,7 @@
           =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?570108281", size: "134x36",alt:"mercari", class: 'footer-link'),'/products/1'
         .copy-right
           &copy;2019 Mercari
-        .dummy
-=link_to 'new_product_path' do
+=link_to new_product_path do
   .exhibit
     .exhibit__text 出品
     =fa_icon("camera")

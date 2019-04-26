@@ -27,6 +27,17 @@
           .footer-link:hover{
             text-decoration: underline;
           }
+        &__logo{
+          display: flex;
+          i.fa.fa-twitter{
+            color:white;
+            font-size:40px;
+          }
+          i.fa.fa-facebook-square{
+            color:white;
+            font-size:40px;
+          }
+        }
         }
         &__list--head {
           color: $white;
@@ -40,36 +51,47 @@
     .copy-rights{
       width:85vw;
       margin: 1.5em auto;
-      // display: flex;
-      // justify-content: space-around;
-      // align-items: flex-end;
+      display: flex;
+      align-items: center;
       .copy-right {
         color: $white;
         text-align: center;
         font-size: 10px;
+        margin-left:30%;
       }
     }
   }
 }
 .exhibit{
   background-color: red;
-  border-radius: 16vmin;
-  width: 32vmin;
-  height: 32vmin;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
   position: fixed;
-  right: 6vmin;
-  bottom: 6vmin;
+  right: 32px;
+  bottom: 32px;
+  @media(min-width:700px){
+    width: 160px;
+    height: 160px;
+  }
   text-decoration: none;
   text-align: center;
   &__text{
-    font-size:150%;
+    font-size:11px;
     color:white;
-    line-height:100%;
-    padding-top:1.2em;
+    padding-top:12px;
+    @media(min-width:700px){
+      font-size: 22px;
+      padding-top: 25px;
+    }
   }
   .fa.fa-camera{
     color:white;
-    font-size:350%;
-    padding-top:0.1em;
+    font-size:30px;
+    padding-top:4px;
+    @media(min-width:700px){
+      font-size:60px;
+      padding-top:8px;
+    }
   }
 }
