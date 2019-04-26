@@ -1,155 +1,155 @@
-%header
-  .inner-header
-    .inner-header__top
-      %h1.inner__header__top__title
-        =link_to image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?570108281", size: "134x36", alt: "mercari"
-      %form.inner-header__top__form
-        %input.inner-header__top__form__text{type: "text",name: "keyword", placeholder: "何かお探しですか？"}
-    .inner-header__bottom
-      %ul.inner-header__bottom__left
-        %li.inner-header__bottom__left__left
-          %h2.inner-header__botom__left__left__nav
-            =link_to "カテゴリーから探す", '/products',class:'access-btn'
-        %li.inner-header__bottom__left__right
-          %h2.inner-header__botom__left__right__nav
-            =link_to "ブランドから探す", '/products',class:'access-btn'
-      %ul.inner-header__bottom__right
-        %li.inner-header__bottom__right__left
-          =link_to "お知らせ", '/products', class:'access-btn'
-        %li.inner-header__bottom__right__center
-          =link_to "やることリスト", '/products', class:'access-btn'
-        %li.inner-header__bottom__right__right
-          =link_to "マイページリスト", '/products', class:'access-btn'
-.top-main
-  .top-main__image
-    = link_to image_tag "//www-mercari-jp.akamaized.net/assets/img/featured/newlife/keyvisual.png?570108281",size: "700x250",alt: "mercari"
-  .top-main__pickup
-    ピックアップカテゴリー
-  .category
-    .items-box
-      = link_to root_path do
-        レディース新着アイテム
-    .items-box-content
-      .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
+/ %header
+/   .inner-header
+/     .inner-header__top
+/       %h1.inner__header__top__title
+/         =link_to image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?570108281", size: "134x36", alt: "mercari"
+/       %form.inner-header__top__form
+/         %input.inner-header__top__form__text{type: "text",name: "keyword", placeholder: "何かお探しですか？"}
+/     .inner-header__bottom
+/       %ul.inner-header__bottom__left
+/         %li.inner-header__bottom__left__left
+/           %h2.inner-header__botom__left__left__nav
+/             =link_to "カテゴリーから探す", '/products',class:'access-btn'
+/         %li.inner-header__bottom__left__right
+/           %h2.inner-header__botom__left__right__nav
+/             =link_to "ブランドから探す", '/products',class:'access-btn'
+/       %ul.inner-header__bottom__right
+/         %li.inner-header__bottom__right__left
+/           =link_to "お知らせ", '/products', class:'access-btn'
+/         %li.inner-header__bottom__right__center
+/           =link_to "やることリスト", '/products', class:'access-btn'
+/         %li.inner-header__bottom__right__right
+/           =link_to "マイページリスト", '/products', class:'access-btn'
+/ .top-main
+/   .top-main__image
+/     = link_to image_tag "//www-mercari-jp.akamaized.net/assets/img/featured/newlife/keyvisual.png?570108281",size: "700x250",alt: "mercari"
+/   .top-main__pickup
+/     ピックアップカテゴリー
+/   .category
+/     .items-box
+/       = link_to root_path do
+/         レディース新着アイテム
+/     .items-box-content
+/       .item-box
+/         .item-box__photo
+/           = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+/         .item-box__detail
+/           .item-box__name
+/             フェリシモの綿薄手のニット
+/           .item-box__price
+/             ¥1000
+/           .item-box__tax
+/             (税込)
 
-      .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
-
-
-      .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
+/       .item-box
+/         .item-box__photo
+/           = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+/         .item-box__detail
+/           .item-box__name
+/             フェリシモの綿薄手のニット
+/           .item-box__price
+/             ¥1000
+/           .item-box__tax
+/             (税込)
 
 
-      .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
-    .all-items
-      = link_to root_path do
-        すべての商品を見る
+/       .item-box
+/         .item-box__photo
+/           = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+/         .item-box__detail
+/           .item-box__name
+/             フェリシモの綿薄手のニット
+/           .item-box__price
+/             ¥1000
+/           .item-box__tax
+/             (税込)
 
-%footer
-  .footer
-    .footer__top
-    .footer__bottom
-      .footer__bottom__links
-        %ul.footer__lists
-          %li.footer__lists__list.footer__lists__list--head メルカリについて
-          %li.footer__lists__list
-            =link_to '会社概要 (運営会社)', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '採用情報', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to 'プレスリリース', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '公式ブログ', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to 'メルカリロゴ利用ガイドライン', '/products/1', class: 'footer-link'
-          .tweeter-facebook-logo
-            %image
-            %image
-        %ul.footer__lists
-          %li.footer__lists__list.footer__lists__list--head ヘルプ＆ガイド
-          %li.footer__lists__list
-            =link_to 'メルカリガイド', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to 'らくらくメルカリ便', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to 'ゆうゆうメルカリ便', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '大型メルカリ便', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '車体取引ガイド', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to 'メルカリあんしん・あんぜん宣言！', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '偽ブランド品撲滅への取り組み', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to 'メルカリボックス', '/products/1', class: 'footer-link'
-        %ul.footer__lists
-          %li.footer__lists__list.footer__lists__list--head プライバシーと利用規約
-          %li.footer__lists__list
-            =link_to 'プライバシーと利用規約', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to 'メルカリ利用規約', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '安心スマホサポート制度に関する利用と特約', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to 'コンプライアンスポリシー', '/products/1', class: 'footer-link'
-        %ul.footer__lists
-          %li.footer__lists__list.footer__lists__list--head.footer__lists__list--head-hidden
-            プライバシーと利用規約
-          %li.footer__lists__list
-            =link_to '個人データの安全管理に係る基本方針', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '特定商取引に関する表記', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '資金決済法に基づく表示', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '法令遵守と犯罪抑止のために', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to '返品・返金ポリシー', '/products/1', class: 'footer-link'
-        %ul.footer__lists
-          %li.footer__lists__list.footer__lists__list--head 国
-          %li.footer__lists__list
-            =link_to '日本', '/products/1', class: 'footer-link'
-          %li.footer__lists__list
-            =link_to 'United States', '/products/1', class: 'footer-link'
-      .copy-rights
-        .footer__bottom__logo
-          =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?570108281", size: "134x36",alt:"mercari", class: 'footer-link'),'/products/1'
-        .copy-right
-          &copy;2019 Mercari
-        .dummy
-.exhibit
+
+/       .item-box
+/         .item-box__photo
+/           = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+/         .item-box__detail
+/           .item-box__name
+/             フェリシモの綿薄手のニット
+/           .item-box__price
+/             ¥1000
+/           .item-box__tax
+/             (税込)
+/     .all-items
+/       = link_to root_path do
+/         すべての商品を見る
+
+/ %footer
+/   .footer
+/     .footer__top
+/     .footer__bottom
+/       .footer__bottom__links
+/         %ul.footer__lists
+/           %li.footer__lists__list.footer__lists__list--head メルカリについて
+/           %li.footer__lists__list
+/             =link_to '会社概要 (運営会社)', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '採用情報', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to 'プレスリリース', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '公式ブログ', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to 'メルカリロゴ利用ガイドライン', '/products/1', class: 'footer-link'
+/           .tweeter-facebook-logo
+/             %image
+/             %image
+/         %ul.footer__lists
+/           %li.footer__lists__list.footer__lists__list--head ヘルプ＆ガイド
+/           %li.footer__lists__list
+/             =link_to 'メルカリガイド', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to 'らくらくメルカリ便', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to 'ゆうゆうメルカリ便', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '大型メルカリ便', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '車体取引ガイド', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to 'メルカリあんしん・あんぜん宣言！', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '偽ブランド品撲滅への取り組み', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to 'メルカリボックス', '/products/1', class: 'footer-link'
+/         %ul.footer__lists
+/           %li.footer__lists__list.footer__lists__list--head プライバシーと利用規約
+/           %li.footer__lists__list
+/             =link_to 'プライバシーと利用規約', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to 'メルカリ利用規約', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '安心スマホサポート制度に関する利用と特約', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to 'コンプライアンスポリシー', '/products/1', class: 'footer-link'
+/         %ul.footer__lists
+/           %li.footer__lists__list.footer__lists__list--head.footer__lists__list--head-hidden
+/             プライバシーと利用規約
+/           %li.footer__lists__list
+/             =link_to '個人データの安全管理に係る基本方針', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '特定商取引に関する表記', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '資金決済法に基づく表示', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '法令遵守と犯罪抑止のために', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to '返品・返金ポリシー', '/products/1', class: 'footer-link'
+/         %ul.footer__lists
+/           %li.footer__lists__list.footer__lists__list--head 国
+/           %li.footer__lists__list
+/             =link_to '日本', '/products/1', class: 'footer-link'
+/           %li.footer__lists__list
+/             =link_to 'United States', '/products/1', class: 'footer-link'
+/       .copy-rights
+/         .footer__bottom__logo
+/           =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?570108281", size: "134x36",alt:"mercari", class: 'footer-link'),'/products/1'
+/         .copy-right
+/           &copy;2019 Mercari
+/         .dummy
+/ .exhibit
