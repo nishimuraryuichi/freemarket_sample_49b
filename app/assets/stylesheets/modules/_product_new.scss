@@ -1,0 +1,40 @@
+.background{
+  background-color: $gray;
+}
+.logo_wrap{
+  display: flex;
+  justify-content: center;
+  .new_logo{
+    margin: 20px 0 20px 0;
+    width: 130px;
+      @media (min-width: 700px){//700px以上の時
+      margin: 40px 0 40px 0;
+      width: 200px;}
+  }
+}
+
+.inputs{
+  background-color: $white;
+  margin-bottom: 2px;
+  padding:50px 40px 50px 40px;
+  @media (min-width: 700px)//700px以上の時
+      {width: 690px;
+      margin: auto;
+      margin-bottom: 2px;}
+  &__header{
+    text-align: center;
+    font-size: 20px;
+      @media (min-width: 700px)//700px以上の時
+      {font-size: 24px;}
+    color: $font_black;
+  }
+  &__image{
+    color: $font_black;
+    &__label{
+      color: $font_black;
+    }
+    &__caution{
+      background-color: $caution;
+    }
+  }
+}
