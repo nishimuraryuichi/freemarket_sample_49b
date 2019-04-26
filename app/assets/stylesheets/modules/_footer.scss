@@ -6,7 +6,8 @@
     padding: 20px 20px 20px 20px;
     &__links {
       display: flex;
-      justify-content: center;
+      margin:0 auto;
+      width: 85vw;
       flex-wrap: wrap;
       .footer__lists__head {
         color: $white;
@@ -37,9 +38,11 @@
       }
     }
     .copy-rights{
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-end;
+      width:85vw;
+      margin: 1.5em auto;
+      // display: flex;
+      // justify-content: space-around;
+      // align-items: flex-end;
       .copy-right {
         color: $white;
         text-align: center;
@@ -50,10 +53,23 @@
 }
 .exhibit{
   background-color: red;
-  border-radius: 6vmin;
-  width: 12vmin;
-  height: 12vmin;
+  border-radius: 16vmin;
+  width: 32vmin;
+  height: 32vmin;
   position: fixed;
   right: 6vmin;
   bottom: 6vmin;
+  text-decoration: none;
+  text-align: center;
+  &__text{
+    font-size:150%;
+    color:white;
+    line-height:100%;
+    padding-top:1.2em;
+  }
+  .fa.fa-camera{
+    color:white;
+    font-size:350%;
+    padding-top:0.1em;
+  }
 }

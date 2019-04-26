@@ -5,21 +5,33 @@
         =link_to image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?570108281", size: "134x36", alt: "mercari"
       %form.inner-header__top__form
         %input.inner-header__top__form__text{type: "text",name: "keyword", placeholder: "何かお探しですか？"}
+        =link_to '/products' do
+          =fa_icon("search")
     .inner-header__bottom
       %ul.inner-header__bottom__left
         %li.inner-header__bottom__left__left
           %h2.inner-header__botom__left__left__nav
-            =link_to "カテゴリーから探す", category_parents_path,class:'access-btn'
+            =link_to 'category_parents_path',class:'access-btn' do
+              =fa_icon("align-justify")
+              %span カテゴリーから探す
         %li.inner-header__bottom__left__right
           %h2.inner-header__botom__left__right__nav
-            =link_to "ブランドから探す", '/products',class:'access-btn'
+            =link_to '/products',class:'access-btn' do
+              =fa_icon("tag")
+              %span ブランドから探す
       %ul.inner-header__bottom__right
         %li.inner-header__bottom__right__left
-          =link_to "お知らせ", '/products', class:'access-btn'
+          =link_to '/products', class:'access-btn' do
+            =fa_icon("bell")
+            %span お知らせ
         %li.inner-header__bottom__right__center
-          =link_to "やることリスト", '/products', class:'access-btn'
+          =link_to '/products', class:'access-btn' do
+            =fa_icon("check")
+            %span やることリスト
         %li.inner-header__bottom__right__right
-          =link_to "マイページリスト", '/products', class:'access-btn'
+          =link_to '/products', class:'access-btn' do
+            =fa_icon("user-circle")
+            %span マイページ
 .top-main
   .top-main__image
     = link_to image_tag "//www-mercari-jp.akamaized.net/assets/img/featured/newlife/keyvisual.png?570108281",size: "700x250",alt: "mercari"
@@ -152,4 +164,7 @@
         .copy-right
           &copy;2019 Mercari
         .dummy
-=link_to "", new_product_path, class: 'exhibit'
+=link_to 'new_product_path' do
+  .exhibit
+    .exhibit__text 出品
+    =fa_icon("camera")
