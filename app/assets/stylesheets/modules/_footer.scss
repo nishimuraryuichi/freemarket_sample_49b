@@ -9,7 +9,7 @@
       justify-content: center;
       flex-wrap: wrap;
       .footer__lists__head {
-        color: white;
+        color: $white;
       }
       .footer__lists {
         margin-right: 20px;
@@ -28,7 +28,7 @@
           }
         }
         &__list--head {
-          color: white;
+          color: $white;
           font-size: 18px;
         }
         &__list--head-hidden {
@@ -41,7 +41,7 @@
       justify-content: space-around;
       align-items: flex-end;
       .copy-right {
-        color: white;
+        color: $white;
         text-align: center;
         font-size: 10px;
       }

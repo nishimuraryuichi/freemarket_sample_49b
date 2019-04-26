@@ -1,17 +1,17 @@
 .top-main{
   overflow-y:auto;
-  .top-main__image{
+  background-color: #f5f5f5;
+  &__image{
     text-align: center;
   }
-  .top-main__pickup{
+  &__pickup{
     text-align: center;
     font-size:30px;
     padding:40px 0 20px 0;
     font-weight: bold;
-
   }
   .category{
-    width:940px;
+    width:100%;
     margin:0 auto;
     .items-box{
       margin:26px 11px;
@@ -23,24 +23,28 @@
       text-decoration: none;
       color:#0099e8;
     }
-
     .items-box-content{
         display:flex;
         justify-content:center;
-      .item{
+      .item-box{
+        background-color: $white;
         margin: 0 0 0 20px;
         width: 213px;
-        .item-box-photo{
+        padding-bottom: 5px;
+        &__detail{
+          padding: 10px;
+        }
+        &__photo{
           width: 213px;
         }
-        .item-box-name{
+        &__name{
           padding: 16px;
         }
-        .item-price{
+        &__price{
           font-size: 17px;
           font-weight: 600;
         }
-        .item-tax{
+        &__tax{
           font-size:10px;
         }
       }
