@@ -9,7 +9,7 @@
       %ul.inner-header__bottom__left
         %li.inner-header__bottom__left__left
           %h2.inner-header__botom__left__left__nav
-            =link_to "カテゴリーから探す", '/category_parents',class:'access-btn'
+            =link_to "カテゴリーから探す", category_parents_path,class:'access-btn'
         %li.inner-header__bottom__left__right
           %h2.inner-header__botom__left__right__nav
             =link_to "ブランドから探す", '/products',class:'access-btn'
@@ -152,4 +152,4 @@
         .copy-right
           &copy;2019 Mercari
         .dummy
-.exhibit
+=link_to "", new_product_path, class: 'exhibit'
