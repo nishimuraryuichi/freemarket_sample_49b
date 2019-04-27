@@ -31,8 +31,7 @@
         %li.inner-header__bottom__right__right
           =link_to '/products', class:'access-btn' do
             =fa_icon("user-circle")
-            %span マイページ
-.top-main            
+            %span マイページ          
 .slideshow
   %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
   %input{type:"radio", name:"slideshow", id:"switch2"}
@@ -59,58 +58,70 @@
     %label{for: "switch2"}
     %label{for: "switch3"}
     %label{for: "switch4"}
+.top-main
   .top-main__pickup
     ピックアップカテゴリー
-  .category
+  .item-box-container
     .items-box
-      = link_to root_path do
-        レディース新着アイテム
-    .items-box-content
+      = link_to 'レディース新着アイテム',root_path, class: 'items-box__category'
+    .items-box-content     
       .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
-
+        = link_to root_path, class: "item-box__link" do
+          .item-box__link__photo
+            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
+          .item-box__link__detail
+            .item-box__link__detail__name
+              フェリシモの綿薄手のニット
+            .item-box__link__detail__middle
+              %p.item-box__link__detail__middle__price ¥1000
+              .item-box__link__detail__middle__heart
+                =fa_icon("heart")
+                %span 5
+            .item-box__link__detail__tax
+              (税込)     
       .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
-
-
+        = link_to root_path, class: "item-box__link" do
+          .item-box__link__photo
+            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
+          .item-box__link__detail
+            .item-box__link__detail__name
+              フェリシモの綿薄手のニット
+            .item-box__link__detail__middle
+              %p.item-box__link__detail__middle__price ¥1000
+              .item-box__link__detail__middle__heart
+                =fa_icon("heart")
+                %span 4
+            .item-box__link__detail__tax
+              (税込)     
       .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
-
-
+        = link_to root_path, class: "item-box__link" do
+          .item-box__link__photo
+            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
+          .item-box__link__detail
+            .item-box__link__detail__name
+              フェリシモの綿薄手のニット
+            .item-box__link__detail__middle
+              %p.item-box__link__detail__middle__price ¥1000
+              .item-box__link__detail__middle__heart
+                =fa_icon("heart")
+                %span 10
+            .item-box__link__detail__tax
+              (税込)     
       .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
+        = link_to root_path, class: "item-box__link" do
+          .item-box__link__photo
+            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
+          .item-box__link__detail
+            .item-box__link__detail__name
+              フェリシモの綿薄手のニット
+            .item-box__link__detail__middle
+              %p.item-box__link__detail__middle__price ¥1000
+              .item-box__link__detail__middle__heart
+                =fa_icon("heart")
+                %span 4
+            .item-box__link__detail__tax
+              (税込)     
+    
     .all-items
       = link_to root_path do
         すべての商品を見る
@@ -118,6 +129,20 @@
 %footer
   .footer
     .footer__top
+      .footer__top__banner
+        .footer__top__banner__inner
+          %h2 スマホで簡単フリマアプリ
+          %p 今すぐ簡単無料ダウンロード!
+          .footer__top__banner__inner__icon
+            %figure
+              =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?4194600336",size: '68x68'
+            %ul.footer__top__banner__inner__icon__access
+              %li
+                =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?4194600336",size: "133x40"),"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
+              %li
+                =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?4194600336",size: "133x40"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+        .footer__top__banner__inner
+          =image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?4194600336",class: "footer__top__banner__inner__image")
     .footer__bottom
       .footer__bottom__links
         %ul.footer__lists

@@ -1,6 +1,52 @@
 .footer {
   width: 100vw;
-  &__top {}
+  &__top{
+    background:url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?62593201);
+    background-position: center;
+    background-size:cover;
+    &__banner{
+      height:260px;
+      width:750px;
+      margin:0 auto;
+      display :flex;
+      &__inner{
+        display:inline-block;
+        width: 420px;
+        margin:auto;
+        h2{
+          padding-top:20px;
+          font-size:1.3em;
+          font-weight:bold;
+          line-height: 1.8em;
+          color:white;
+        }
+        p{
+          font-size:1.7em;
+          color:white;
+          line-height: 1.2em;
+          margin-bottom:0.6em;
+        }
+        &__icon{
+          display:flex;
+          &__access{
+            list-style-type: none;
+            margin-left:1.8em;
+            margin:auto;
+            li{
+              display:inline-block;
+              a:hover{
+                opacity:0.7;
+              }
+            }
+          }
+        }
+        &__image{
+          width:300px;
+          margin-left:40px;
+        }
+      }
+    }
+  }
   &__bottom{
     background-color:black; 
     padding: 20px 20px 20px 20px;

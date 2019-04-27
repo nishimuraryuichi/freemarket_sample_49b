@@ -9,54 +9,77 @@
     font-size:30px;
     padding:40px 0 20px 0;
     font-weight: bold;
-  }
-  .category{
-    width:100%;
-    margin:0 auto;
+  }   
+  .item-box-container{
+    margin: 0 auto;
+    width:940px;
     .items-box{
       margin:26px 11px;
       text-align: center;
       font-size: 22px;
       font-weight: bold;
-    }
-    .items-box a{
-      text-decoration: none;
-      color:#0099e8;
-    }
-    .items-box-content{
-        display:flex;
-        justify-content:center;
-      .item-box{
-        background-color: $white;
-        margin: 0 0 0 20px;
-        width: 213px;
-        padding-bottom: 5px;
-        &__detail{
-          padding: 10px;
-        }
-        &__photo{
-          width: 213px;
-        }
-        &__name{
-          padding: 16px;
-        }
-        &__price{
-          font-size: 17px;
-          font-weight: 600;
-        }
-        &__tax{
-          font-size:10px;
+      &__category{
+        text-decoration: none;
+        color:#0099e8;
+        &:hover{
+          text-decoration:underline;
         }
       }
     }
-    .all-items{
-      float:right;
-      padding: 20px 0 30px;
+    .items-box-content{
+        display:flex;
+      .item-box{
+          background-color: $white;
+          margin: 0 0 0 20px;
+          width: 100%;
+          padding-bottom: 5px;
+          height:330px;
+        &__link{
+          text-decoration: none;
+          color:black;
+          &__photo{
+            width: 100%;
+            img{
+              height:213px;
+              width:100%;
+            }
+          }
+          &__detail{
+            padding: 10px;
+            &__name{
+              padding: 16px;
+            }
+            &__middle{
+              display:flex;
+              justify-content: space-between;
+              &__price{
+              font-size: 17px;
+              font-weight: 600;
+              }
+              &__heart{
+                .fa.fa-heart{
+                color:palevioletred;
+              }
+            }
+          }
+            &__tax{
+              font-size:10px;
+            }
+          }  
+        }
+      }
     }
-    .all-items a{
-      text-decoration: none;
-      color: #0099e8;
-      font-size:15px;
+  }
+  .all-items{
+    float:right;
+    padding: 20px 0 30px;
+  }
+  .all-items a{
+    text-decoration: none;
+    color: #0099e8;
+    font-size:15px;
+    &:hover{
+      text-decoration: underline;
     }
   }
 }
