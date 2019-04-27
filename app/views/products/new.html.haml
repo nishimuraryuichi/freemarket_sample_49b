@@ -61,7 +61,7 @@
             .inputs-detail-price__caution 必須
           .flex-center-between
             .yen ￥
-            = f.text_field :name, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off"
+            = f.text_field :name, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number'
         .flex-center-between.commission
           .commission__text
             販売手数料
@@ -70,3 +70,39 @@
         .flex-center-between.benefit
           .benefit__text 販売利益
           .benefit__price -
+    .inputs.button-group
+      .button-group__agreement
+        =link_to "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/",class: 'agreement' do
+          禁止されている出品
+        、
+        =link_to "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/",class: 'agreement' do
+          行為
+        を必ずご確認ください。
+        %br
+        またブランド品でシリアルナンバー等がある場合はご記載ください。
+        =link_to "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",class: 'agreement' do
+          偽ブランドの販売
+        は犯罪であり処罰される可能性があります。
+        %br
+        また、出品をもちまして
+        =link_to "https://www.mercari.com/jp/seller_terms/", class: 'agreement' do
+          加盟店規約
+        に同意したことになります。
+      =f.submit '出品する',class:'create-btn'
+      .flex-center
+        =button_to "products#index", class: 'agreement-back-btn' do
+          もどる
+  .product-new-footer
+    .wraps
+      .wrap
+        =link_to "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",class: 'product-new-footer__link' do
+          プライバシーポリシー
+      .wrap
+        =link_to "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",class: 'product-new-footer__link' do
+          メルカリ利用規約
+      .wrap
+        =link_to "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",class: 'product-new-footer__link' do
+          特定商取引に関する表記
+    .footer__bottom__logo
+      =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4194600336", size: "134x36",alt:"mercari", class: 'product-new-footer__link-logo'),'/products/1'
+    .new-copy-right &copy;2019 Mercari
