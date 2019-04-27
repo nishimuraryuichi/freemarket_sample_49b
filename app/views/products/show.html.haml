@@ -1,0 +1,210 @@
+.show-main
+  .item-conteiner
+    .item-name
+      ビトンの財布
+    .item-main-content
+      .item-photo
+        .main-photo
+          = link_to '/products/1' do
+            = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "300x300"
+        .sub-photo
+          .sub-photo__1
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+          .sub-photo__2
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+          .sub-photo__3
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+          .sub-photo__4
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+
+      .item-detail
+        %table
+          %tbody
+            %tr
+              %th
+                出品者
+              %td
+                .td-link
+                  BOON90sリバイバル@コスパ優良店
+                .item-detail-evaluation
+                  .evaluation1
+                    =fa_icon("circle")
+                    %span 896
+                  .evaluation2
+                    =fa_icon("circle")
+                    %span
+                      27
+                  .evaluation3
+                    =fa_icon("circle")
+                    %span
+                      4
+            %tr
+              %th
+                カテゴリー
+              %td
+                レディースバッグショルダーバッグ
+            %tr
+              %th
+                ブランド
+              %td
+                コーチ
+            %tr
+              %th
+                商品の状態
+              %td
+                やや傷あり
+            %tr
+              %th
+                配送料の負担
+              %td
+                送料込み
+            %tr
+              %th
+                配送の方法
+              %td
+                らくらくメルカリ便
+            %tr
+              %th
+                配送元地域
+              %td
+                兵庫県
+            %tr
+              %th
+                発送日の目安
+              %td
+                1日〜2日で発送
+    .item-price-box
+      .item-price
+        ¥1000
+      .item-tax-delivaly
+        .item-tax
+          (税込)
+        .item-delivaly-fee
+          送料込み
+    .sold-submit
+      .sold-submit-text
+        売り切れました
+    .item-description
+      ここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文です
+    .item-button
+      .item-button-left
+        .item-button-like
+          =fa_icon('heart')
+          %span いいね！
+        .like-number
+        .icon-heart
+      .item-button-center
+        .item-button-working
+          =fa_icon('flag')
+          %span 不適切な商品の報告
+          .icon-flag
+      .item-button-right
+        .safe
+          =fa_icon('lock')
+          %span 安心安全への取り組み
+          .icon-lock
+
+  .item-message
+    .message-conteiner
+      .message-content
+        .message-items
+          .clearfix
+            .message-user
+            .message-body
+              .message-body-text
+                出品者がコメントを削除しました
+              .message-icon
+                180日前
+      .message-box
+        .message-hospitarity
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %input.message-form{type:"text",name:"keyword"}
+        .message-submit
+          %p 売り切れのためコメントできません
+
+
+
+
+
+  .item-link
+    .link-left
+      = link_to '/products/1' do
+        =fa_icon("chevron-left")
+        %span ディズニーヴィランズ２個セット
+    .link-right
+      = link_to '/products/1' do
+        %span 楽天パンダノート
+        =fa_icon("chevron-right")
+
+
+
+  .item-socialmedia
+    .socialmedia-box
+      .btn-face
+        =fa_icon("facebook-square 3x")
+      .btn-tweeter
+        =fa_icon("twitter-square 3x")
+      .btn-line
+        =fa_icon("square 3x")
+      .btn-red
+        =fa_icon("pinterest-square 3x")
+
+
+  .items-user
+    .items-user__pickup
+      = link_to 'BOON90sリバイバル@コスパ優良店さんのその他の出品','/products/1',class: 'pickupname'
+    .category
+      .items-box-content
+        .item-box
+          .item-box__photo
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+          .item-box__detail
+            .item-box__name
+              フェリシモの綿薄手のニット
+            .item-box__price
+              ¥1000
+            .item-box__tax
+              (税込)
+
+        .item-box
+          .item-box__photo
+            = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+          .item-box__detail
+            .item-box__name
+              フェリシモの綿薄手のニット
+            .item-box__price
+              ¥1000
+            .item-box__tax
+              (税込)
+
+
+        .item-box
+          .item-box__photo
+            = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+          .item-box__detail
+            .item-box__name
+              フェリシモの綿薄手のニット
+            .item-box__price
+              ¥1000
+            .item-box__tax
+              (税込)
+
+
+        .item-box
+          .item-box__photo
+            = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+          .item-box__detail
+            .item-box__name
+              フェリシモの綿薄手のニット
+            .item-box__price
+              ¥1000
+            .item-box__tax
+              (税込)
+      .all-items
+        = link_to root_path do
+          すべての商品を見る
