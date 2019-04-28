@@ -1,12 +1,59 @@
 .footer {
   width: 100vw;
-  &__top {}
+  &__top{
+    background:url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?62593201);
+    background-position: center;
+    background-size:cover;
+    &__banner{
+      height:260px;
+      width:750px;
+      margin:0 auto;
+      display :flex;
+      &__inner{
+        display:inline-block;
+        width: 420px;
+        margin:auto;
+        h2{
+          padding-top:20px;
+          font-size:1.3em;
+          font-weight:bold;
+          line-height: 1.8em;
+          color:white;
+        }
+        p{
+          font-size:1.7em;
+          color:white;
+          line-height: 1.2em;
+          margin-bottom:0.6em;
+        }
+        &__icon{
+          display:flex;
+          &__access{
+            list-style-type: none;
+            margin-left:1.8em;
+            margin:auto;
+            li{
+              display:inline-block;
+              a:hover{
+                opacity:0.7;
+              }
+            }
+          }
+        }
+        &__image{
+          width:300px;
+          margin-left:40px;
+        }
+      }
+    }
+  }
   &__bottom{
     background-color:black; 
     padding: 20px 20px 20px 20px;
     &__links {
       display: flex;
-      justify-content: center;
+      margin:0 auto;
+      width: 85vw;
       flex-wrap: wrap;
       .footer__lists__head {
         color: $white;
@@ -26,6 +73,17 @@
           .footer-link:hover{
             text-decoration: underline;
           }
+        &__logo{
+          display: flex;
+          i.fa.fa-twitter{
+            color:white;
+            font-size:40px;
+          }
+          i.fa.fa-facebook-square{
+            color:white;
+            font-size:40px;
+          }
+        }
         }
         &__list--head {
           color: $white;
@@ -37,23 +95,49 @@
       }
     }
     .copy-rights{
+      width:85vw;
+      margin: 1.5em auto;
       display: flex;
-      justify-content: space-around;
-      align-items: flex-end;
+      align-items: center;
       .copy-right {
         color: $white;
         text-align: center;
         font-size: 10px;
+        margin-left:30%;
       }
     }
   }
 }
 .exhibit{
   background-color: red;
-  border-radius: 6vmin;
-  width: 12vmin;
-  height: 12vmin;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
   position: fixed;
-  right: 6vmin;
-  bottom: 6vmin;
+  right: 32px;
+  bottom: 32px;
+  @media(min-width:700px){
+    width: 160px;
+    height: 160px;
+  }
+  text-decoration: none;
+  text-align: center;
+  &__text{
+    font-size:11px;
+    color:white;
+    padding-top:12px;
+    @media(min-width:700px){
+      font-size: 22px;
+      padding-top: 25px;
+    }
+  }
+  .fa.fa-camera{
+    color:white;
+    font-size:30px;
+    padding-top:4px;
+    @media(min-width:700px){
+      font-size:60px;
+      padding-top:8px;
+    }
+  }
 }

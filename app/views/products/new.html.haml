@@ -1,0 +1,101 @@
+.background
+  .logo_wrap
+    =link_to root_path do
+      = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?570108281", alt:"mercari",class:'new_logo'
+  =form_with local: true do |f|
+    .inputs
+      %h3.inputs__header 商品の情報を入力
+    .inputs
+      .inputs__image
+        %h4.inputs__image__label 出品画像
+        .inputs__image__caution 必須
+      .upload 最大10枚までアップロードできます
+      .drag-and-drop
+        .drag-and-drop__text ドラッグアンドドロップ
+        .drag-and-drop__text またはクリックしてファイルをダウンロード
+        .drag-and-drop__text-camera
+          =fa_icon("camera")
+    .inputs
+      .inputs__product
+        %h4.inputs__product__label 商品名
+        .inputs__product__caution 必須
+      = f.text_field :name, placeholder:'商品名（必須40文字まで）', class: 'inputs__form',autocomplete: "off"
+      .inputs__product
+        %h4.inputs__product__label 商品の説明
+        .inputs__product__caution 必須
+      = f.text_area :detail, rows: 6, placeholder:'商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', class: 'inputs__text-area'
+    .inputs-detail
+      .inputs-detail__large-label 商品の詳細
+      .inputs-detail__form
+        .flex-end
+          %h4.inputs-detail__label カデゴリー
+          .inputs-detail__caution 必須
+        =f.select :category_parent_id,[["---", "value"], ["レディース", "value"], ["メンズ", "value"], ["ベビー・キッズ", "value"], ["インテリア・住まい・小物", "value"], ["本・音楽・ゲーム", "value"], ["おもちゃ・ホビー・グッズ", "value"], ["コスメ・香水・美容", "value"], ["家電・スマホ・カメラ", "value"], ["スポーツ・レジャー", "value"], ["ハンドメイド", "value"], ["チケット", "value"], ["自動車・オートバイ", "value"], ["その他", "value"]],{},class: 'inputs__form-select'
+        .flex-end
+          %h4.inputs-detail__label 商品の状態
+          .inputs-detail__caution 必須
+        =f.select :status,[["---", "value"], ["新品、未使用", "value"], ["未使用に近い", "value"], ["目立った傷や汚れなし", "value"], ["やや傷や汚れあり", "value"], ["傷や汚れあり", "value"], ["全体的に状態が悪い", "value"]],{},class: 'inputs__form-select'
+    .inputs-detail
+      .inputs-detail__large-label 配送について
+      .inputs-detail__form
+        .flex-end
+          %h4.inputs-detail__label 配送料の負担
+          .inputs-detail__caution 必須
+        =f.select :delivery_fee,[["---", "value"], ["送料込み(出品者負担)", "value"], ["着払い(購入者負担)", "value"]],{},class: 'inputs__form-select'
+        .flex-end
+          %h4.inputs-detail__label 発送元の地域
+          .inputs-detail__caution 必須
+        =f.select :delivery_from,[["---", "value"], ["北海道", "value"], ["青森県", "value"], ["岩手県", "value"], ["宮城県", "value"], ["秋田県", "value"], ["山形県", "value"], ["福島県", "value"], ["茨城県", "value"], ["栃木県", "value"], ["群馬県", "value"], ["埼玉県", "value"], ["千葉県", "value"], ["東京都", "value"], ["神奈川県", "value"], ["新潟県", "value"], ["富山県", "value"], ["石川県", "value"], ["福井県", "value"], ["山梨県", "value"], ["長野県", "value"], ["岐阜県", "value"], ["静岡県", "value"], ["愛知県", "value"], ["三重県", "value"], ["滋賀県", "value"], ["京都府", "value"], ["大阪府", "value"], ["兵庫県", "value"], ["奈良県", "value"], ["和歌山県", "value"], ["鳥取県", "value"], ["島根県", "value"], ["岡山県", "value"], ["広島県", "value"], ["山口県", "value"], ["徳島県", "value"], ["香川県", "value"], ["愛媛県", "value"], ["高知県", "value"], ["福岡県", "value"], ["佐賀県", "value"], ["長崎県", "value"], ["熊本県", "value"], ["大分県", "value"], ["宮城県", "value"], ["鹿児島県", "value"], ["沖縄県", "value"], ["未定", "value"]],{},class: 'inputs__form-select'
+        .flex-end
+          %h4.inputs-detail__label 発送までの日数
+          .inputs-detail__caution 必須
+        =f.select :status,[["---", "value"], ["1〜2日で発送", "value"], ["2〜3日で発送", "value"], ["4〜7日で発送", "value"]],{},class: 'inputs__form-select'
+    .inputs.inputs-detail-price
+      .inputs-detail-price__large-label
+        販売価格
+        %span.price-range (300〜9,999,999)
+      .inputs-detail-price__form
+        .flex-center-between
+          .flex-end
+            %h4.inputs-detail-price__label 価格
+            .inputs-detail-price__caution 必須
+          .flex-center-between
+            .yen ￥
+            = f.text_field :name, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number'
+        .flex-center-between.commission
+          .commission__text
+            販売手数料
+            %span.commission__rate (10%)
+          .commission__price -
+        .flex-center-between.benefit
+          .benefit__text 販売利益
+          .benefit__price -
+    .inputs.button-group
+      .button-group__agreement
+        =link_to "禁止されている出品","https://www.mercari.com/jp/help_center/getting_started/prohibited_items/",class: 'agreement'
+        、
+        =link_to "行為","https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/",class: 'agreement'
+        を必ずご確認ください。
+        %br
+        またブランド品でシリアルナンバー等がある場合はご記載ください。
+        =link_to "偽ブランドの販売", "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",class: 'agreement'
+        は犯罪であり処罰される可能性があります。
+        %br
+        また、出品をもちまして
+        =link_to "加盟店規約","https://www.mercari.com/jp/seller_terms/", class: 'agreement'
+        に同意したことになります。
+      =f.submit '出品する',class:'create-btn'
+      .flex-center
+        =button_to "products#index", class: 'agreement-back-btn' do
+          もどる
+  .product-new-footer
+    .wraps
+      .wrap
+        =link_to "プライバシーポリシー", "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",class: 'product-new-footer__link'
+      .wrap
+        =link_to "メルカリ利用規約", "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",class: 'product-new-footer__link'
+      .wrap
+        =link_to "特定商取引に関する表記", "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/",class: 'product-new-footer__link'
+    .footer__bottom__logo
+      =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?4194600336",alt:"mercari", class: 'product-new-footer__link-logo'),'/products/1'
+    .new-copy-right &copy;2019 Mercari

@@ -5,76 +5,124 @@
         =link_to image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?570108281", size: "134x36", alt: "mercari"
       %form.inner-header__top__form
         %input.inner-header__top__form__text{type: "text",name: "keyword", placeholder: "何かお探しですか？"}
+        =link_to '/products' do
+          =fa_icon("search")
     .inner-header__bottom
       %ul.inner-header__bottom__left
         %li.inner-header__bottom__left__left
           %h2.inner-header__botom__left__left__nav
-            =link_to "カテゴリーから探す", '/category_parents',class:'access-btn'
+            =link_to category_parents_path,class:'access-btn' do
+              =fa_icon("align-justify")
+              %span カテゴリーから探す
         %li.inner-header__bottom__left__right
           %h2.inner-header__botom__left__right__nav
-            =link_to "ブランドから探す", '/products',class:'access-btn'
+            =link_to '/products',class:'access-btn' do
+              =fa_icon("tag")
+              %span ブランドから探す
       %ul.inner-header__bottom__right
         %li.inner-header__bottom__right__left
-          =link_to "お知らせ", '/products', class:'access-btn'
+          =link_to '/products', class:'access-btn' do
+            =fa_icon("bell")
+            %span お知らせ
         %li.inner-header__bottom__right__center
-          =link_to "やることリスト", '/products', class:'access-btn'
+          =link_to '/products', class:'access-btn' do
+            =fa_icon("check")
+            %span やることリスト
         %li.inner-header__bottom__right__right
-          =link_to "マイページリスト", '/products', class:'access-btn'
+          =link_to '/products', class:'access-btn' do
+            =fa_icon("user-circle")
+            %span マイページ
+.slideshow
+  %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
+  %input{type:"radio", name:"slideshow", id:"switch2"}
+  %input{type:"radio", name:"slideshow", id:"switch3"}
+  %input{type:"radio", name:"slideshow", id:"switch4"}
+  .slidecontents
+    %section#slide1
+      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-natsukashi.jpg",alt: "merucari1"
+    %section#slide2
+      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-new-life.jpg",alt: "merucari2"
+    %section#slide3
+      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg",alt: "merucari3"
+    %section#slide4
+      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei.jpg",alt: "merucari4"
+  %p.arrow.prev
+    =fa_icon("chevron-left")
+    %label{for: "switch1"}
+    %label{for: "switch2"}
+    %label{for: "switch3"}
+    %label{for: "switch4"}
+  %p.arrow.next
+    =fa_icon("chevron-right")
+    %label{for: "switch1"}
+    %label{for: "switch2"}
+    %label{for: "switch3"}
+    %label{for: "switch4"}
+
 .top-main
-  .top-main__image
-    = link_to image_tag "//www-mercari-jp.akamaized.net/assets/img/featured/newlife/keyvisual.png?570108281",size: "700x250",alt: "mercari"
   .top-main__pickup
     ピックアップカテゴリー
-  .category
+  .item-box-container
     .items-box
-      = link_to root_path do
-        レディース新着アイテム
+      = link_to 'レディース新着アイテム',root_path, class: 'items-box__category'
     .items-box-content
       .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
-
+        = link_to root_path, class: "item-box__link" do
+          .item-box__link__photo
+            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
+          .item-box__link__detail
+            .item-box__link__detail__name
+              フェリシモの綿薄手のニット
+            .item-box__link__detail__middle
+              %p.item-box__link__detail__middle__price ¥1000
+              .item-box__link__detail__middle__heart
+                =fa_icon("heart")
+                %span 5
+            .item-box__link__detail__tax
+              (税込)
       .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
-
-
+        = link_to root_path, class: "item-box__link" do
+          .item-box__link__photo
+            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
+          .item-box__link__detail
+            .item-box__link__detail__name
+              フェリシモの綿薄手のニット
+            .item-box__link__detail__middle
+              %p.item-box__link__detail__middle__price ¥1000
+              .item-box__link__detail__middle__heart
+                =fa_icon("heart")
+                %span 4
+            .item-box__link__detail__tax
+              (税込)
       .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
-
-
+        = link_to root_path, class: "item-box__link" do
+          .item-box__link__photo
+            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
+          .item-box__link__detail
+            .item-box__link__detail__name
+              フェリシモの綿薄手のニット
+            .item-box__link__detail__middle
+              %p.item-box__link__detail__middle__price ¥1000
+              .item-box__link__detail__middle__heart
+                =fa_icon("heart")
+                %span 10
+            .item-box__link__detail__tax
+              (税込)
       .item-box
-        .item-box__photo
-          = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
+        = link_to root_path, class: "item-box__link" do
+          .item-box__link__photo
+            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
+          .item-box__link__detail
+            .item-box__link__detail__name
+              フェリシモの綿薄手のニット
+            .item-box__link__detail__middle
+              %p.item-box__link__detail__middle__price ¥1000
+              .item-box__link__detail__middle__heart
+                =fa_icon("heart")
+                %span 4
+            .item-box__link__detail__tax
+              (税込)
+
     .all-items
       = link_to root_path do
         すべての商品を見る
@@ -82,6 +130,20 @@
 %footer
   .footer
     .footer__top
+      .footer__top__banner
+        .footer__top__banner__inner
+          %h2 スマホで簡単フリマアプリ
+          %p 今すぐ簡単無料ダウンロード!
+          .footer__top__banner__inner__icon
+            %figure
+              =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/mercari_icon.png?4194600336",size: '68x68'
+            %ul.footer__top__banner__inner__icon__access
+              %li
+                =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?4194600336",size: "133x40"),"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
+              %li
+                =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?4194600336",size: "133x40"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+        .footer__top__banner__inner
+          =image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/jp/download_content_pc.png?4194600336",class: "footer__top__banner__inner__image")
     .footer__bottom
       .footer__bottom__links
         %ul.footer__lists
@@ -96,9 +158,9 @@
             =link_to '公式ブログ', '/products/1', class: 'footer-link'
           %li.footer__lists__list
             =link_to 'メルカリロゴ利用ガイドライン', '/products/1', class: 'footer-link'
-          .tweeter-facebook-logo
-            %image
-            %image
+          .footer__lists__logo
+            =fa_icon("twitter")
+            =fa_icon("facebook-square")
         %ul.footer__lists
           %li.footer__lists__list.footer__lists__list--head ヘルプ＆ガイド
           %li.footer__lists__list
@@ -151,5 +213,7 @@
           =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-white.svg?570108281", size: "134x36",alt:"mercari", class: 'footer-link'),'/products/1'
         .copy-right
           &copy;2019 Mercari
-        .dummy
-.exhibit
+=link_to new_product_path do
+  .exhibit
+    .exhibit__text 出品
+    =fa_icon("camera")

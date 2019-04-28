@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'products#index'
-  resources :products, only: [:index]
+  resources :products, only: [:index,:new,:ctreate,:show]
   # resources :users
   # resources :comments
   # resources :brands
-  # resources :category_pars
-  # resources :categorys
-  # resources :category_childs
+  resources :category_parents
+  # resources :categories
+  # resources :category_children
 end

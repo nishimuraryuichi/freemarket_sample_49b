@@ -1,0 +1,16 @@
+@mixin header-list($left-space){
+  display:inline-block;
+  line-height:40px;
+  margin-left:$left-space;
+}
+@mixin caution{
+  background-color: $caution;
+  color: white;
+  width: 26px;
+  font-size: 12px;
+  padding: 4px 5px 4px 5px;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 10px;
+  border-radius: 2px;
+}
