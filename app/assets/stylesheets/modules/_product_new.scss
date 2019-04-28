@@ -1,40 +1,349 @@
 .background{
   background-color: $gray;
+  width: 100vw;
 }
 .logo_wrap{
   display: flex;
   justify-content: center;
   .new_logo{
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
     width: 130px;
       @media (min-width: 700px){//700px以上の時
       margin: 40px 0 40px 0;
-      width: 200px;}
+      width: 200px;
+    }
   }
 }
-
 .inputs{
   background-color: $white;
   margin-bottom: 2px;
-  padding:50px 40px 50px 40px;
+  padding: 50px 40px 50px 40px;
   @media (min-width: 700px)//700px以上の時
       {width: 690px;
       margin: auto;
       margin-bottom: 2px;}
   &__header{
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
       @media (min-width: 700px)//700px以上の時
-      {font-size: 24px;}
+      {font-size: 20px;}
     color: $font_black;
   }
   &__image{
     color: $font_black;
+    display: flex;
+    align-items: flex-end;
     &__label{
       color: $font_black;
     }
     &__caution{
-      background-color: $caution;
+      @include caution
     }
   }
+  .upload{
+    margin-top: 12px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 100;
+    color: #444444;
+  }
+  .drag-and-drop{
+      height: 120px;
+      width: auto;
+      margin: auto;
+      background-color: $gray;
+      border: 1px dotted #555555;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @media (min-width: 700px)//700px以上の時
+      {width: 95%;}
+    &__text{
+      color: #444444;
+      line-height: 15px;
+      font-size: 12px;
+      text-align: center;
+      display: none;
+      font-weight: 900;
+      @media (min-width: 700px)//700px以上の時
+      {display:block;}
+    }
+    &__text-camera{
+      font-size: 15px;
+      text-align: center;
+      color: #333333;
+      @media (min-width: 700px)//700px以上の時
+      {display:none;}
+    }
+  }
+  &__product{
+    color: $font_black;
+    display: flex;
+    align-items: flex-end;
+    &__label{
+      color: $font_black;
+      font-size: 14px;
+      margin-bottom:12px;
+    }
+    &__caution{
+      @include caution;
+      margin-bottom:12px;
+    }
+  }
+  &__form{
+    width: 95%;
+    padding-left: 14px;
+    font-size: 15px;
+    height: 42px;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border: 1px #BBBBBB solid;
+  }
+  &__text-area{
+    width: 95%;
+    padding: 12px 14px 0px 14px;
+    font-size: 15px;
+    border: 1px #BBBBBB solid;
+  }
+  &__form-select{
+    width: 98%;
+    padding-left: 14px;
+    font-size: 15px;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border: 1px #BBBBBB solid;
+    background-color: white;
+    // -webkit-appearance: none;
+    // -moz-appearance: none;
+    // appearance: none; //矢印が消える
+    cursor: pointer;
+  }
+}
+.inputs-detail{
+  background-color: $white;
+  margin-bottom: 2px;
+  padding: 50px 40px 50px 40px;
+  @media (min-width: 700px)//700px以上の時
+      {
+       width: 690px;
+       margin: auto;
+       margin-bottom: 2px;
+       display: flex;
+       justify-content: space-between;}
+  &__large-label{
+    margin-bottom:36px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #999999;
+    &__price-range{
+      font-size: 12px;
+    }
+  }
+  &__label{
+    color: $font_black;
+    font-size: 14px;
+    margin-bottom:12px;
+  }
+  &__caution{
+    @include caution;
+    margin-bottom:12px;
+  }
+  &__form{
+    width: 100%;
+    @media (min-width: 700px)//700px以上の時
+    {width: 70%;}
+    .flex-end{
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+}
+.inputs-detail-price{
+  background-color: $white;
+  margin-bottom: 2px;
+  padding: 50px 40px 50px 40px;
+  @media (min-width: 700px)//700px以上の時
+      {
+        width: 690px;
+        margin: auto;
+        margin-bottom: 2px;
+        display: flex;
+        justify-content: space-between;}
+  &__large-label{
+    margin-bottom:36px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #999999;
+  }
+  &__label{
+    color: $font_black;
+    font-size: 14px;
+    margin-bottom:40px;
+  }
+  &__caution{
+    @include caution;
+    margin-bottom:40px;
+  }
+  &__form{
+    width: 100%;
+    @media (min-width: 700px)//700px以上の時
+    {width: 70%;}
+    .yen{
+      margin-bottom: 40px;
+      margin-right: 10px;
+      font-size: 14px;
+      font-weight: 100;
+    }
+    &__input{
+    width: 95%;
+    padding-left: 14px;
+    font-size: 15px;
+    height: 42px;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border: 1px #BBBBBB solid;
+    }
+
+    .commission{
+      border-top: 1px #BBBBBB solid;
+      border-bottom: 1px #BBBBBB solid;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      &__text{
+        font-weight: 100;
+        font-size: 14px;
+      }
+      &__rate{
+        font-weight: 100;
+        font-size: 12px;
+      }
+    }
+    .benefit{
+      padding-top: 24px;
+      padding-bottom: 24px;
+      &__text{
+        font-size: 16px;
+        font-weight: bold;
+        color: #333333;
+      }
+      &__price{
+        font-size: 16px;
+        font-weight: bold;
+        color: #333333;
+      }
+    }
+  }
+}
+.button-group{
+  &__agreement{
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: lighter;
+    color: #333333;
+    .agreement{
+      font-size:15px;
+      color: #0099FF;
+      text-decoration: none;
+      font-weight: lighter;
+    }
+    .agreement:hover{
+      text-decoration: underline;
+    }
+  }
+}
+.create-btn{
+  width:100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 40px;
+  background-color:$caution;
+  color: $white;
+  font-size: 14px;
+  opacity: 0.9;
+}
+.create-btn:hover{
+  cursor: pointer;
+}
+.agreement-back-btn{
+  background-color: #AAAAAA;
+  color: $white;
+  opacity: 0.98;
+  height: 50px;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.agreement-back-btn:hover{
+  opacity: 0.7;
+  transition: all .6s;
+  cursor: pointer;
+}
+.product-new-footer{
+  text-align: center;
+  padding-top: 32px;
+  padding-bottom: 20px;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  .wrap{
+    margin: 0 10px 0 10px;
+  }
+  .wraps{
+    @media (min-width: 700px)//700px以上の時
+      {display:flex;
+       justify-content: center;
+      }
+  }
+  &__link{
+  font-size: 12px;
+  line-height: 30px;
+  font-weight: lighter;
+  color: #333333;
+  text-decoration: none;
+  }
+  &__link:hover{
+    text-decoration: underline;
+  }
+  &__link-logo{
+    height: 64px;
+    margin-top: 36px;
+    margin-bottom: 8px;
+  }
+  .new-copy-right{
+    font-size: 12px;
+  }
+}
+.flex-end{
+  display: flex;
+  align-items: flex-end;
+}
+.flex-top-between{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.flex-center-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.price-range{
+  font-size: 12px;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+  -moz-appearance:textfield;
 }
