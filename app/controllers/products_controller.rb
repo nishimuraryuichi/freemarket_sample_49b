@@ -4,25 +4,26 @@ class ProductsController < ApplicationController
   end
 
   def new
+
   end
 
-  # def create
+  def create
 
-  # end
+  end
 
-  # def show
-  #   @product = Produt.find(params[:product_id])
-  # end
+  def show
+    @product = Product.new
+  end
 
-  # def edit
+  def edit
 
-  # end
+  end
 
-  # def update
+  def update
 
-  # end
+  end
 
-  # def destroy
+  def destroy
 
-  # end
+  end
 end
