@@ -79,26 +79,26 @@
               %td
                 1日〜2日で発送
     .item-price-box
-      .item-price
+      .item-price-box__price
         ¥1,000
-      .item-tax-delivaly
-        .item-tax
+      .item-price-box__tax-delivaly
+        .item-price-box__tax
           (税込)
-        .item-delivaly-fee
+        .item-price-box__delivaly-fee
           送料込み
     .sold-submit
-      .sold-submit-text
+      .sold-submit__text
         売り切れました
     .item-description
       ここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文です
     .item-button
-      .item-button-left
-        .item-button-like
+      .item-button__left
+        .item-button__left__like
           =fa_icon('heart')
           %span いいね！
         .like-number
         .icon-heart
-      .item-button-center
+      .item-button__center
         .item-button-working
           =fa_icon('flag')
           %span 不適切な商品の報告
@@ -196,12 +196,12 @@
 
 
   .item-link
-    .link-left
-      = link_to '/products/1' do
+    .item-link__left
+      = link_to '/products/1',class: 'link' do
         =fa_icon("chevron-left")
         %span ディズニーヴィランズ２個セット
-    .link-right
-      = link_to '/products/1' do
+    .item-link__right
+      = link_to '/products/1',class: 'link' do
         %span 楽天パンダノート
         =fa_icon("chevron-right")
 

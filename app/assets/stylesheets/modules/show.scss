@@ -65,16 +65,16 @@
       margin:24px 0 0;
       display: flex;
       justify-content:center;
-      .item-price{
+      &__price{
         font-size:50px;
       }
-      .item-tax-delivaly{
+      &__tax-delivaly{
         display: flex;
         align-items:flex-end;
-        .item-tax{
+        &__tax{
           font-size: 10px;
         }
-        .item-delivaly-fee{
+        &__delivaly-fee{
           font-size: 16px;
         }
       }
@@ -89,7 +89,7 @@
       height: 50px;
       margin:16px 0 0;
       cursor: not-allowed;
-      .sold-submit-text{
+      &__text{
         text-decoration: none;
         color: white;
       }
@@ -101,20 +101,20 @@
     .item-button{
       display: flex;
       justify-content:flex-start;
-      .item-button-left{
+      &__left{
         margin-right:20px;
         border: 1px solid #f5f5f5;
         border-radius: 20px;
         background: #f5f5f5;
         width:118px;
         height: 30px;
-        .item-button-like{
+        &__like{
         font-size: 14px;
         text-align: center;
         line-height: 30px;
         }
       }
-      .item-button-center{
+      &__center{
         border: 1px solid #f5f5f5;
         border-radius: 20px;
         background: #f5f5f5;
@@ -252,10 +252,10 @@
       justify-content:space-between;
       padding-top: 20px;
       color: #0099e8;
-      .link-left{
+      .link{
         text-decoration:none;
+        color: #0099e8;
       }
-      .link-right{}
     }
 
 
