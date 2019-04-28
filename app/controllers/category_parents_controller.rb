@@ -1,0 +1,2 @@
+class CategoryParentsController < ApplicationController
+end
