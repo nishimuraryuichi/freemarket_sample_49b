@@ -31,7 +31,12 @@
         %li.inner-header__bottom__right__right
           =link_to '/products', class:'access-btn' do
             =fa_icon("user-circle")
-            %span マイページ          
+            %span マイページ
+        %li.inner-header__bottom__right__right
+          =link_to 'ログイン', new_user_session_path,class: 'login-btn'
+        %li.inner-header__bottom__right__right
+          =link_to '新規会員', new_user_registration_path,class: 'new-user-btn'
+          =link_to '新規会員登録', new_user_registration_path,class: 'new-user-btn-long'
 .slideshow
   %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
   %input{type:"radio", name:"slideshow", id:"switch2"}
@@ -120,8 +125,7 @@
                 =fa_icon("heart")
                 %span 4
             .item-box__link__detail__tax
-              (税込)     
-    
+              (税込)
     .all-items
       = link_to root_path do
         すべての商品を見る
