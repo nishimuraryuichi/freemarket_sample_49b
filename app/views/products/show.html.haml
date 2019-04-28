@@ -1,0 +1,276 @@
+= render "shared/header"
+.show-main
+  .item-conteiner
+    .item-name
+      正規品！コーチ大きめ
+    .item-main-content
+      .item-main-content__photo
+        .item-main-content__photo__main
+          = link_to '/products/1' do
+            = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "300x300"
+        .item-main-content__photo__sub
+          .item-main-content__photo__sub__1.opacity
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+          .item-main-content__photo__sub__2.opacity
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+          .item-main-content__photo__sub__3.opacity
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+          .item-main-content__photo__sub__4.opacity
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+
+      .item-detail
+        %table
+          %tbody
+            %tr
+              %th
+                出品者
+              %td
+                .td-link
+                  BOON90sリバイバル@コスパ優良店
+                .item-detail-evaluation
+                  .item-detail-evaluation__1
+                    =fa_icon("circle")
+                    %span 896
+                  .item-detail-evaluation__2
+                    =fa_icon("circle")
+                    %span
+                      27
+                  .item-detail-evaluation__3
+                    =fa_icon("circle")
+                    %span
+                      4
+            %tr
+              %th
+                カテゴリー
+              %td
+                レディースバッグショルダーバッグ
+            %tr
+              %th
+                ブランド
+              %td
+                コーチ
+            %tr
+              %th
+                商品の状態
+              %td
+                やや傷あり
+            %tr
+              %th
+                配送料の負担
+              %td
+                送料込み
+            %tr
+              %th
+                配送の方法
+              %td
+                らくらくメルカリ便
+            %tr
+              %th
+                配送元地域
+              %td
+                兵庫県
+            %tr
+              %th
+                発送日の目安
+              %td
+                1日〜2日で発送
+    .item-price-box
+      .item-price-box__price
+        ¥1,000
+      .item-price-box__tax-delivaly
+        .item-price-box__tax
+          (税込)
+        .item-price-box__delivaly-fee
+          送料込み
+    .sold-submit
+      .sold-submit__text
+        売り切れました
+    .item-description
+      ここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文です
+    .item-button
+      .item-button__left
+        .item-button__left__like
+          =fa_icon('heart')
+          %span いいね！
+        .like-number
+        .icon-heart
+      .item-button__center
+        .item-button__center__working
+          =fa_icon('flag')
+          %span 不適切な商品の報告
+          .icon-flag
+      .item-button__right
+        .safe
+          =fa_icon('lock')
+          %span 安心安全への取り組み
+          .icon-lock
+
+  .item-message
+    .item-message__conteiner
+      .item-message__conteiner__content
+        .transaction-field
+          .user-message
+            .user-message__face
+              = fa_icon("circle 3x")
+            .user-message__body
+              .user-message__body__text
+                %p 出品者がコメントを削除しました
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 180日前
+        .transaction-field
+          .user-message
+            .user-message__face
+              = fa_icon("circle 3x")
+            .user-message__body
+              .user-message__body__text
+                %p 出品者がコメントを削除しました
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 180日前
+        .transaction-field
+          .user-message
+            .user-message__face
+              = fa_icon("circle 3x")
+            .user-message__body
+              .user-message__body__text
+                %p 出品者がコメントを削除しました
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 180日前
+        .transaction-field
+          .user-message
+            .user-message__face
+              = fa_icon("circle 3x")
+            .user-message__body
+              .user-message__body__text
+                %p はじめまして。ずっと、気になっているのですが・・・こちらのバッグの『多少の汚れ』とは、パッと見る限り、目立たない程度なのですか？皮の白いところは画像でわかるのですが、全体の感じがわからなかったので、質問してみました。
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 160日前
+                  .message-flag
+                    =fa_icon('flag')
+        .transaction-field
+          .user-message
+            .user-message__face
+              = fa_icon("circle 3x")
+            .user-message__body
+              .user-message__body__text
+                %p おまたせしました。先ほど確認しましたところ、画像にある底部に若干の汚れが見られる程度で、後はそれといって汚れはございませんでした。よろしくお願いします。
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 159日前
+                  .message-flag
+                    =fa_icon('flag')
+        .transaction-field
+          .user-message
+            .user-message__face
+              = fa_icon("circle 3x")
+            .user-message__body
+              .user-message__body__text
+                %p ありがとうございます。購入したいなと思います。
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 159日前
+                  .message-flag
+                    =fa_icon("flag")
+      .message-box
+        .message-hospitarity
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %input.message-form{type:"text",name:"keyword"}
+        .message-submit
+          %p 売り切れのためコメントできません
+
+
+
+
+
+  .item-link
+    .item-link__left
+      = link_to '/products/1',class: 'link' do
+        =fa_icon("chevron-left")
+        %span ディズニーヴィランズ２個セット
+    .item-link__right
+      = link_to '/products/1',class: 'link' do
+        %span 楽天パンダノート
+        =fa_icon("chevron-right")
+
+
+
+  .item-socialmedia
+    .item-socialmedia__box
+      .item-socialmedia__box__btn-face
+        =fa_icon("facebook-square 3x")
+      .item-socialmedia__box__btn-tweeter
+        =fa_icon("twitter-square 3x")
+      .item-socialmedia__box__btn-line
+        =fa_icon("square 3x")
+      .item-socialmedia__box__btn-red
+        =fa_icon("pinterest-square 3x")
+
+
+  .items-user
+    .items-user__pickup
+      = link_to 'BOON90sリバイバル@コスパ優良店さんのその他の出品','/products/1',class: 'pickupname'
+    .category
+      .items-box-content
+        .item-box
+          .item-box__photo
+            = link_to '/products/1' do
+              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+          .item-box__detail
+            .item-box__name
+              フェリシモの綿薄手のニット
+            .item-box__price
+              ¥1000
+            .item-box__tax
+              (税込)
+
+        .item-box
+          .item-box__photo
+            = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+          .item-box__detail
+            .item-box__name
+              フェリシモの綿薄手のニット
+            .item-box__price
+              ¥1000
+            .item-box__tax
+              (税込)
+
+
+        .item-box
+          .item-box__photo
+            = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+          .item-box__detail
+            .item-box__name
+              フェリシモの綿薄手のニット
+            .item-box__price
+              ¥1000
+            .item-box__tax
+              (税込)
+
+
+        .item-box
+          .item-box__photo
+            = link_to image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
+          .item-box__detail
+            .item-box__name
+              フェリシモの綿薄手のニット
+            .item-box__price
+              ¥1000
+            .item-box__tax
+              (税込)
+      .all-items
+        = link_to root_path do
+          すべての商品を見る
+= render "shared/footer"
