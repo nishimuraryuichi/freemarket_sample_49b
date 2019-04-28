@@ -1,8 +1,8 @@
 .show-main{
   background: #fafafa;
   height: 100%;
+  padding-top: 40px;
   .item-conteiner{
-    margin-top: 0px;
     background-color: white;
     width:620px;
     padding: 24px 40px 40px;
@@ -21,6 +21,12 @@
         }
         .sub-photo{
           display: flex;
+          .opacity{
+            opacity:.6;
+          }
+          .opacity:hover{
+              opacity:1;
+          }
         }
       }
       .item-detail{
@@ -138,6 +144,67 @@
         width: 700px;
         background-color: white;
         margin: 0 auto;
+        .message-content{
+          .message-items{
+            padding-top: 10px;
+            width: 700px;
+            margin: 15px auto;
+            text-align: right;
+            font-size: 14px;
+            background: white;
+            .clearfix{
+              margin: 10px 0;
+              overflow: hidden;
+              display: flex;
+              .message-user{
+                margin-left: 60px;
+                width: 30px;
+              }
+              .message-body{
+                width: 100%;
+                text-align: right;
+                margin-top: 20px;
+                .message-body-text{
+                  display: inline-block;
+                  position: relative;
+                  margin: 0 25px 0 0;
+                  padding: 20px 0 20px 10px;
+                  width: 560px;
+                  border-radius: 12px;
+                  background: #edf1ee;
+                  p{
+                    text-align: left;
+                    margin: 0;
+                    padding: 3px;
+                  }
+                }
+                .message-body-text:after{
+                  content: "";
+                  display: inline-block;
+                  position: absolute;
+                  top: -5px;
+                  left: -19px;
+                  border: 8px solid transparent;
+                  border-right: 18px solid #edf1ee;
+                  -webkit-transform: rotate(35deg);
+                  transform: rotate(35deg);
+                }
+                .message-icon{
+                  text-align: left;
+                  margin-top: 5px;
+                  display: flex;
+                  justify-content:space-between;
+                  .message-flag{
+                    margin-right: 6px;
+                  }
+                  span{
+                    color:#aaa;
+                  }
+                }
+              }
+            }
+          }
+        }
 
 
 
@@ -217,7 +284,7 @@
       width:700px;
       margin:20px auto;
       &__pickup{
-        font-size:25px;
+        font-size:20px;
         padding:40px 0 20px 0;
         font-weight: bold;
         .pickupname{

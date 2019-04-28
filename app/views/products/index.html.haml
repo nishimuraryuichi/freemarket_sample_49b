@@ -31,7 +31,7 @@
         %li.inner-header__bottom__right__right
           =link_to '/products', class:'access-btn' do
             =fa_icon("user-circle")
-            %span マイページ          
+            %span マイページ
 .slideshow
   %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
   %input{type:"radio", name:"slideshow", id:"switch2"}
@@ -58,27 +58,15 @@
     %label{for: "switch2"}
     %label{for: "switch3"}
     %label{for: "switch4"}
+
 .top-main
   .top-main__pickup
     ピックアップカテゴリー
   .item-box-container
     .items-box
       = link_to 'レディース新着アイテム',root_path, class: 'items-box__category'
-    .items-box-content     
+    .items-box-content
       .item-box
-<<<<<<< HEAD
-        .item-box__photo
-          = link_to '/products/1' do
-            = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "213x220"
-        .item-box__detail
-          .item-box__name
-            フェリシモの綿薄手のニット
-          .item-box__price
-            ¥1000
-          .item-box__tax
-            (税込)
-
-=======
         = link_to root_path, class: "item-box__link" do
           .item-box__link__photo
             =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
@@ -91,8 +79,7 @@
                 =fa_icon("heart")
                 %span 5
             .item-box__link__detail__tax
-              (税込)     
->>>>>>> development_branch_0426_3
+              (税込)
       .item-box
         = link_to root_path, class: "item-box__link" do
           .item-box__link__photo
@@ -106,7 +93,7 @@
                 =fa_icon("heart")
                 %span 4
             .item-box__link__detail__tax
-              (税込)     
+              (税込)
       .item-box
         = link_to root_path, class: "item-box__link" do
           .item-box__link__photo
@@ -120,7 +107,7 @@
                 =fa_icon("heart")
                 %span 10
             .item-box__link__detail__tax
-              (税込)     
+              (税込)
       .item-box
         = link_to root_path, class: "item-box__link" do
           .item-box__link__photo
@@ -134,8 +121,8 @@
                 =fa_icon("heart")
                 %span 4
             .item-box__link__detail__tax
-              (税込)     
-    
+              (税込)
+
     .all-items
       = link_to root_path do
         すべての商品を見る

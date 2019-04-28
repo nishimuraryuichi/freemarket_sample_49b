@@ -1,23 +1,24 @@
+= render "shared/header"
 .show-main
   .item-conteiner
     .item-name
-      ビトンの財布
+      正規品！コーチ大きめみに
     .item-main-content
       .item-photo
         .main-photo
           = link_to '/products/1' do
             = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "300x300"
         .sub-photo
-          .sub-photo__1
+          .sub-photo__1.opacity
             = link_to '/products/1' do
               = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-          .sub-photo__2
+          .sub-photo__2.opacity
             = link_to '/products/1' do
               = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-          .sub-photo__3
+          .sub-photo__3.opacity
             = link_to '/products/1' do
               = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-          .sub-photo__4
+          .sub-photo__4.opacity
             = link_to '/products/1' do
               = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
 
@@ -79,7 +80,7 @@
                 1日〜2日で発送
     .item-price-box
       .item-price
-        ¥1000
+        ¥1,000
       .item-tax-delivaly
         .item-tax
           (税込)
@@ -114,11 +115,75 @@
         .message-items
           .clearfix
             .message-user
+              = fa_icon("circle 3x")
             .message-body
               .message-body-text
-                出品者がコメントを削除しました
-              .message-icon
-                180日前
+                %p 出品者がコメントを削除しました
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 180日前
+        .message-items
+          .clearfix
+            .message-user
+              = fa_icon("circle 3x")
+            .message-body
+              .message-body-text
+                %p 出品者がコメントを削除しました
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 180日前
+        .message-items
+          .clearfix
+            .message-user
+              = fa_icon("circle 3x")
+            .message-body
+              .message-body-text
+                %p 出品者がコメントを削除しました
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 180日前
+        .message-items
+          .clearfix
+            .message-user
+              = fa_icon("circle 3x")
+            .message-body
+              .message-body-text
+                %p はじめまして。ずっと、気になっているのですが・・・こちらのバッグの『多少の汚れ』とは、パッと見る限り、目立たない程度なのですか？皮の白いところは画像でわかるのですが、全体の感じがわからなかったので、質問してみました。
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 160日前
+                  .message-flag
+                    =fa_icon('flag')
+        .message-items
+          .clearfix
+            .message-user
+              = fa_icon("circle 3x")
+            .message-body
+              .message-body-text
+                %p おまたせしました。先ほど確認しましたところ、画像にある底部に若干の汚れが見られる程度で、後はそれといって汚れはございませんでした。よろしくお願いします。
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 159日前
+                  .message-flag
+                    =fa_icon('flag')
+        .message-items
+          .clearfix
+            .message-user
+              = fa_icon("circle 3x")
+            .message-body
+              .message-body-text
+                %p ありがとうございます。購入したいなと思います。
+                .message-icon
+                  .wrrap
+                    = fa_icon("circle")
+                    %span 159日前
+                  .message-flag
+                    =fa_icon("flag")
       .message-box
         .message-hospitarity
           %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
@@ -208,3 +273,4 @@
       .all-items
         = link_to root_path do
           すべての商品を見る
+= render "shared/footer"

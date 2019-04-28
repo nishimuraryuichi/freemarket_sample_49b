@@ -4,10 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-<<<<<<< HEAD
 
-=======
->>>>>>> development_branch_0426_3
   end
 
   def create
