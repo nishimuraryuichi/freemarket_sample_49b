@@ -140,7 +140,7 @@
     .item-message{
       padding-top: 20px;
       background: #fafafa;
-      .message-conteiner{
+      &__conteiner{
         width: 700px;
         background-color: white;
         margin: 0 auto;
@@ -206,8 +206,6 @@
           }
         }
 
-
-
         .message-box{
           padding-bottom: 10px;
           text-align : center ;
@@ -244,7 +242,6 @@
       }
     }
 
-
     .item-link{
       width:700px;
       margin:0 auto;
@@ -258,13 +255,12 @@
       }
     }
 
-
     .item-socialmedia{
       width:700px;
       margin: 20px auto;
       background-color: white;
       height: 140px;
-      .socialmedia-box{
+      &__box{
         display: flex;
         justify-content:center;
         line-height: 160px;
@@ -295,16 +291,6 @@
       .category{
         width:100%;
         margin:0 auto;
-        .items-box{
-          margin:26px 11px;
-          text-align: center;
-          font-size: 22px;
-          font-weight: bold;
-        }
-        .items-box a{
-          text-decoration: none;
-          color:#0099e8;
-        }
         .items-box-content{
             display:flex;
             justify-content:center;
@@ -331,6 +317,7 @@
             }
           }
         }
+
         .all-items{
           float:right;
           padding: 20px 0 30px;
