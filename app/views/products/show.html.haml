@@ -2,23 +2,23 @@
 .show-main
   .item-conteiner
     .item-name
-      正規品！コーチ大きめみに
+      正規品！コーチ大きめ
     .item-main-content
-      .item-photo
-        .main-photo
+      .item-main-content__photo
+        .item-main-content__photo__main
           = link_to '/products/1' do
             = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "300x300"
-        .sub-photo
-          .sub-photo__1.opacity
+        .item-main-content__photo__sub
+          .item-main-content__photo__sub__1.opacity
             = link_to '/products/1' do
               = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-          .sub-photo__2.opacity
+          .item-main-content__photo__sub__2.opacity
             = link_to '/products/1' do
               = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-          .sub-photo__3.opacity
+          .item-main-content__photo__sub__3.opacity
             = link_to '/products/1' do
               = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-          .sub-photo__4.opacity
+          .item-main-content__photo__sub__4.opacity
             = link_to '/products/1' do
               = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
 
@@ -32,14 +32,14 @@
                 .td-link
                   BOON90sリバイバル@コスパ優良店
                 .item-detail-evaluation
-                  .evaluation1
+                  .item-detail-evaluation__1
                     =fa_icon("circle")
                     %span 896
-                  .evaluation2
+                  .item-detail-evaluation__2
                     =fa_icon("circle")
                     %span
                       27
-                  .evaluation3
+                  .item-detail-evaluation__3
                     =fa_icon("circle")
                     %span
                       4
@@ -99,11 +99,11 @@
         .like-number
         .icon-heart
       .item-button__center
-        .item-button-working
+        .item-button__center__working
           =fa_icon('flag')
           %span 不適切な商品の報告
           .icon-flag
-      .item-button-right
+      .item-button__right
         .safe
           =fa_icon('lock')
           %span 安心安全への取り組み
@@ -111,46 +111,46 @@
 
   .item-message
     .item-message__conteiner
-      .message-content
-        .message-items
-          .clearfix
-            .message-user
+      .item-message__conteiner__content
+        .transaction-field
+          .user-message
+            .user-message__face
               = fa_icon("circle 3x")
-            .message-body
-              .message-body-text
+            .user-message__body
+              .user-message__body__text
                 %p 出品者がコメントを削除しました
                 .message-icon
                   .wrrap
                     = fa_icon("circle")
                     %span 180日前
-        .message-items
-          .clearfix
-            .message-user
+        .transaction-field
+          .user-message
+            .user-message__face
               = fa_icon("circle 3x")
-            .message-body
-              .message-body-text
+            .user-message__body
+              .user-message__body__text
                 %p 出品者がコメントを削除しました
                 .message-icon
                   .wrrap
                     = fa_icon("circle")
                     %span 180日前
-        .message-items
-          .clearfix
-            .message-user
+        .transaction-field
+          .user-message
+            .user-message__face
               = fa_icon("circle 3x")
-            .message-body
-              .message-body-text
+            .user-message__body
+              .user-message__body__text
                 %p 出品者がコメントを削除しました
                 .message-icon
                   .wrrap
                     = fa_icon("circle")
                     %span 180日前
-        .message-items
-          .clearfix
-            .message-user
+        .transaction-field
+          .user-message
+            .user-message__face
               = fa_icon("circle 3x")
-            .message-body
-              .message-body-text
+            .user-message__body
+              .user-message__body__text
                 %p はじめまして。ずっと、気になっているのですが・・・こちらのバッグの『多少の汚れ』とは、パッと見る限り、目立たない程度なのですか？皮の白いところは画像でわかるのですが、全体の感じがわからなかったので、質問してみました。
                 .message-icon
                   .wrrap
@@ -158,12 +158,12 @@
                     %span 160日前
                   .message-flag
                     =fa_icon('flag')
-        .message-items
-          .clearfix
-            .message-user
+        .transaction-field
+          .user-message
+            .user-message__face
               = fa_icon("circle 3x")
-            .message-body
-              .message-body-text
+            .user-message__body
+              .user-message__body__text
                 %p おまたせしました。先ほど確認しましたところ、画像にある底部に若干の汚れが見られる程度で、後はそれといって汚れはございませんでした。よろしくお願いします。
                 .message-icon
                   .wrrap
@@ -171,12 +171,12 @@
                     %span 159日前
                   .message-flag
                     =fa_icon('flag')
-        .message-items
-          .clearfix
-            .message-user
+        .transaction-field
+          .user-message
+            .user-message__face
               = fa_icon("circle 3x")
-            .message-body
-              .message-body-text
+            .user-message__body
+              .user-message__body__text
                 %p ありがとうございます。購入したいなと思います。
                 .message-icon
                   .wrrap
@@ -209,13 +209,13 @@
 
   .item-socialmedia
     .item-socialmedia__box
-      .btn-face
+      .item-socialmedia__box__btn-face
         =fa_icon("facebook-square 3x")
-      .btn-tweeter
+      .item-socialmedia__box__btn-tweeter
         =fa_icon("twitter-square 3x")
-      .btn-line
+      .item-socialmedia__box__btn-line
         =fa_icon("square 3x")
-      .btn-red
+      .item-socialmedia__box__btn-red
         =fa_icon("pinterest-square 3x")
 
 
