@@ -35,8 +35,8 @@
         %li.inner-header__bottom__right__right
           =link_to 'ログイン', new_user_session_path,class: 'login-btn'
         %li.inner-header__bottom__right__right
-          =link_to '新規会員', new_user_registration_path,class: 'new-user-btn'
-          =link_to '新規会員登録', new_user_registration_path,class: 'new-user-btn-long'
+          =link_to '新規会員', new_user_path,class: 'new-user-btn'
+          =link_to '新規会員登録', new_user_path,class: 'new-user-btn-long'
 .slideshow
   %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
   %input{type:"radio", name:"slideshow", id:"switch2"}
