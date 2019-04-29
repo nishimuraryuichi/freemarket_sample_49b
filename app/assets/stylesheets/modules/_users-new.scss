@@ -28,18 +28,15 @@
     opacity: 0.9;
     width: 50%;
     color: $white;
-    font-size: 14px;
+    font-size: 24px;
     height: 48px;
     text-align: center;
     margin-bottom: 18px;
     @include flex-sparo-cen;
     &__logo{
-      padding:3px 3px 0px 10px;
-      background-color: white;
-      border-radius: 2px;
       .fa-facebook{
         color: #003366;
-        font-size: 24px;
+        font-size: 40px;
       }
     }
     &__text{
