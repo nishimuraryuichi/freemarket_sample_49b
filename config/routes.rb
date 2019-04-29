@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :category_parents
   # resources :categories
   # resources :category_children
-  resources :users
+  resources :users,  only:[:new]
 end
