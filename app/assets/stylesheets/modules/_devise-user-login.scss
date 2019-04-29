@@ -1,0 +1,68 @@
+.new_user_header-signin{
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.register-new-btn{
+  width: 50%;
+  height: 48px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 40px;
+  margin-left: 25%;
+  color: white;
+  background-color: #0099FF;
+  text-decoration: none;
+  display: block;
+}
+.login-mail-adress-form{
+  width: calc(52% - 32px);
+  height: 40px;
+  padding-left: 16px;
+  font-size: 16px;
+  margin-top: 50px;
+  margin-left: 25%;
+  border: 1px solid #AAAAAA;
+  border-radius: 5px;
+}
+.login-password-form{
+  width: calc(52% - 32px);
+  height: 40px;
+  padding-left: 16px;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 25%;
+  border: 1px solid #AAAAAA;
+  border-radius: 5px;
+}
+.not-robot-confirmation{
+  width: calc(46% - 32px);
+  height: 60px;
+  margin-left: 25%;
+  margin-top: 20px;
+  @include flex-sparo-cen;
+  border: 1px solid #AAAAAA;
+  border-radius: 5px;
+  background-color: #EEEEEE;
+}
+.login-btn-session{
+  width: 52%;
+  height: 50px;
+  font-size: 14px;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  margin-left: 25%;
+  color: white;
+  background-color: $caution;
+  cursor: pointer;
+}
+.forget-password{
+  margin-left: 25%;
+  text-decoration: none;
+  color:  #0099FF;
+  &:hover{
+    text-decoration: underline;
+    opacity: 0.7;
+    }
+}

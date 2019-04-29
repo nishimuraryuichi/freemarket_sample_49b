@@ -1,0 +1,67 @@
+.new_user_header{
+}
+.register-btn{
+  &__mail{
+    margin: auto;
+    background-color: #EEEEEE;
+    width: 50%;
+    margin-bottom: 18px;
+    height: 48px;
+    text-align: center;
+    @include flex-sparo-cen;
+    &__logo{
+        .fa-envelope{
+          background-color: #BBBBBB;
+          color: #EEEEEE;
+          padding: 0 2px 1px 2px;
+          border-radius: 2px;
+        }
+    }
+    &__text{
+      font-size: 14px;
+    }
+  }
+  &__facebook{
+    margin: auto;
+    background-color:#003366;
+    opacity: 0.9;
+    width: 50%;
+    color: $white;
+    font-size: 24px;
+    height: 48px;
+    text-align: center;
+    margin-bottom: 18px;
+    @include flex-sparo-cen;
+    &__logo{
+      .fa-facebook{
+        color: #003366;
+        font-size: 40px;
+      }
+    }
+    &__text{
+      font-size: 14px;
+    }
+  }
+  &__google{
+    margin: auto;
+    background-color: white;
+    border: 1px black solid;
+    width: 50%;
+    font-size: 14px;
+    height: 48px;
+    text-align: center;
+    @include flex-sparo-cen;
+    &__logo{
+      padding:3px 3px 0px 10px;
+      background-color: white;
+      border-radius: 2px;
+      .fa-google{
+        color: black;
+        font-size: 24px;
+      }
+    }
+    &__text{
+      font-size: 14px;
+    }
+  }
+}
