@@ -1,0 +1,19 @@
+.background
+  =render 'shared/products-new-header'
+  .inputs
+    %h3.confirm-buy-header 購入を確定しますか？
+  .inputs
+    .new_user_header-signin アカウントをお持ちでない方はこちら
+    =link_to '新規会員登録', new_user_path,class: 'register-new-btn'
+  .inputs.register-btn
+    .register-btn__facebook
+      .register-btn__facebook__logo
+        =fa_icon("facebook-square")
+      .register-btn__facebook__text Facebookでログイン
+      .register-btn__empty
+    .register-btn__google
+      .register-btn__google__logo
+        =fa_icon("google")
+      .register-btn__google__text Googleでログイン
+      .register-btn__empty
+  =render 'shared/products-new-footer'
