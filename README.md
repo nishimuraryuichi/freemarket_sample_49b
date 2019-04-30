@@ -4,7 +4,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,index: true,unique: true|
+|name|string|null: false,index: true|
 |introduction|text||
 |money|integer|default: 0|
 |eva_good|integer|default: 0|
