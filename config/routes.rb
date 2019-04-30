@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'products#index'
   resources :products, only: [:index,:new,:ctreate,:show]
-  resources :profiles, only: [:show,:new]
+  resources :profiles, only: [:new,:show]
   # resources :users
   # resources :comments
   # resources :brands
