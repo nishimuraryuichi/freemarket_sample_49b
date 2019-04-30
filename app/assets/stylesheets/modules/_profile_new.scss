@@ -4,115 +4,105 @@
   height: 100%;
   width:100%;
   background-color:#fafafa;
-.main-profile{
-  background-color: white;
-  margin:0 auto;
-  width:700px;
-  &__head{
-    font-weight: bold;
-    font-size: 24px;
-    text-align: center;
-    padding:15px 0;
-    border-bottom:solid #f5f5f5;
-  }
-  &__form{
-    padding:64px;
-    &__text{
-      position: relative;
-      &__right{
-        text-align: right;
-        color:#0099e8;
-        text-decoration: none;
-        margin: 8px 0 0;
-      }
+  .main-profile{
+    background-color: white;
+    margin:0 auto;
+    width:700px;
+    &__head{
+      font-weight: bold;
+      font-size: 24px;
+      text-align: center;
+      padding:15px 0;
+      border-bottom:solid #f5f5f5;
     }
-    &__group{
-      margin:40px 0 0;
-      .wrap{
-        display: flex;
-        position:relative;
-        .icon-1{
-          position: absolute;
-          top:47px;
-          left:110px;
-        }
-        .icon-2{
-          position: absolute;
-          top:47px;
-          left:275px;
-        }
-        .icon-3{
-          position: absolute;
-          top:47px;
-          left:435px;
-        }
-        .icon-4{
-          position: absolute;
-          top:47px;
-          left:555px;
+    &__form{
+      padding:64px;
+      &__text{
+        position: relative;
+        &__right{
+          text-align: right;
+          color:#0099e8;
+          text-decoration: none;
+          margin: 8px 0 0;
         }
       }
-      .default{
-        width:100%;
-        margin:8px 0 0;
-        height: 48px;
-        border-radius:4px;
-        border: 1px solid #ccc;
-        padding-left: 10px;
-        font-size: 16px;
+      &__group{
+        margin:40px 0 0;
+        .wrap{
+          display: flex;
+          position:relative;
+          .icon-1{
+            position: absolute;
+            top:47px;
+            left:110px;
+          }
+          .icon-2{
+            position: absolute;
+            top:47px;
+            left:275px;
+          }
+          .icon-3{
+            position: absolute;
+            top:47px;
+            left:435px;
+          }
+          .icon-4{
+            position: absolute;
+            top:47px;
+            left:555px;
+          }
+        }
+        .default{
+          width:100%;
+          margin:8px 0 0;
+          height: 48px;
+          border-radius:4px;
+          border: 1px solid #ccc;
+          padding-left: 10px;
+          font-size: 16px;
+        }
+        .birth{
+          width:140px;
+          height:48px;
+          padding-left:10px;
+        }
+        &__info{
+          margin-top: 15px;
+          font-size: 13px;
+          color:#888;
+        }
+        &__optional{
+          @include optional
+        }
+        select{
+          width:586px;
+          height: 48px;
+          border-radius:4px;
+          border: 1px solid #ccc;
+          font-size: 16px;
+          background-color: white;
+          -webkit-appearance: none;
+          padding-left: 10px;
+        }
       }
-      .birth{
-        width:140px;
-        height:48px;
-        padding-left:10px;
+      &__btn{
+        margin:40px auto;
+        height:50px;
+        background-color: red;
+        text-align: center;
+        line-height: 50px;
+        width:586px;
+        .btn-link{
+        text-decoration: none;
+        color:white;
+        }
       }
       &__info{
-        margin-top: 15px;
-        font-size: 13px;
-        color:#888;
+        margin:40px 0 0;
+        text-align: right;
+        color:#0099e8;
+        position: relative;
       }
-      &__optional{
-        @include optional
-      }
-      select{
-        width:586px;
-        height: 48px;
-        border-radius:4px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-        background-color: white;
-        -webkit-appearance: none;
-        padding-left: 10px;
-      }
-    }
-    &__btn{
-      margin:40px auto;
-      height:50px;
-      background-color: red;
-      text-align: center;
-      line-height: 50px;
-      width:586px;
-      .btn-link{
-      text-decoration: none;
-      color:white;
-      }
-    }
-    &__info{
-      margin:40px 0 0;
-      text-align: right;
-      color:#0099e8;
-      position: relative;
     }
   }
-}
-
-
-
-
-
-
-
-
-
-
 }
