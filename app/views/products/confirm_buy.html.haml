@@ -1,19 +1,45 @@
 .background
   =render 'shared/products-new-header'
-  .inputs
+  .inputs.confirm-header
     %h3.confirm-buy-header 購入を確定しますか？
   .inputs
-    .new_user_header-signin アカウントをお持ちでない方はこちら
-    =link_to '新規会員登録', new_user_path,class: 'register-new-btn'
-  .inputs.register-btn
-    .register-btn__facebook
-      .register-btn__facebook__logo
-        =fa_icon("facebook-square")
-      .register-btn__facebook__text Facebookでログイン
-      .register-btn__empty
-    .register-btn__google
-      .register-btn__google__logo
-        =fa_icon("google")
-      .register-btn__google__text Googleでログイン
-      .register-btn__empty
+    .confirm-image-wrap
+      =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",alt: "merucari1",class: 'confirm-image'
+    .confirm-product-name フェリシモの綿薄手のニット
+    .confirm-product-price
+      .confirm-product-price__price ¥1,000
+      .confirm-product-price__taxin 送料込み
+    =link_to new_user_path, class: 'confirm-buy-point' do
+      .confirm-buy-point-btn ポイントはありません
+    .payment-confirm
+      .payment__text 支払い金額
+      .payment__price ¥2,700
+    .confirm-caution この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+    =link_to new_user_path, class: 'confirm-buy-btn-btn' do
+      .confirm-buy-btn__link 購入する
+    .confirm-app-install アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+    %ul.confirm-app-link
+      %li
+        =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?4194600336",size: "133x40"),"https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8"
+      %li
+        =link_to image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?4194600336",size: "133x40"),"https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"
+  .inputs
+    .adresses
+      .adresses__confirm-delivery-for 配送先
+      .adresses__confirm-postcode 〒123-4567
+      .adresses__confirm-adress 大阪府大阪市中央区平野町2-3-7
+      .adresses__name 山田太郎
+      .confirm-link-wrap
+        =link_to new_user_path, class:'adresses__change-link' do
+          .adresses__change-link__text 変更する
+          %span.icon=fa_icon("chevron-right")
+  .inputs
+    .payment-method
+      .payment-method__header 支払方法
+      .payment-method__method /
+      .payment-method__change-link
+        =link_to new_user_path, class:'adresses__change-link' do
+          .adresses__change-link__text 変更する
+          %span.icon=fa_icon("chevron-right")
+
   =render 'shared/products-new-footer'
