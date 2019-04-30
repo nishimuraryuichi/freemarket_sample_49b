@@ -45,6 +45,7 @@
 |status|string|null:false|
 |delivery_fee|integer|null:false|
 |delivery_time|integer|null:false|
+|prefecture_id|integer|foreign_key:true|
 |detail|text|null:false|
 |brand_id|references||
 |profile_id|references||
@@ -57,6 +58,8 @@
 - belongs_to :category
 - belongs_to :category_child
 - has_many :comments
+- extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
 
 
 ## brands
