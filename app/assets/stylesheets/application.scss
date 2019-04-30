@@ -1,5 +1,6 @@
 @import './reset';
 @import 'font-awesome';
+@import './mixin/flex';
 @import './variables/color';
 @import './mixin/liststyle';
 @import './modules/header';
@@ -10,3 +11,5 @@
 @import './modules/footer';
 @import './modules/product_new';
 @import './modules/profile_new';
+@import './modules/users-new';
+@import './modules/devise-user-login';
