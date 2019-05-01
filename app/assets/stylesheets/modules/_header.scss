@@ -1,91 +1,94 @@
 body{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
-.inner-header{
-    height: 100px;
-    width: 1020px;
-    margin: 0 auto;
-    padding: 8px 0 0; 
-    &__top{
-        display: flex;
-        &__form{
+header{
+    background-color: $white;
+    .inner-header{
+        height: 100px;
+        width: 1020px;
+        margin: 0 auto;
+        padding: 8px 0 0; 
+        &__top{
             display: flex;
-            width: 100%;
-            margin-left:45px;
-            position:relative;
-            &__text{
-                box-sizing: border-box;
-                height: 40px;
+            &__form{
+                display: flex;
                 width: 100%;
-                border-radius:4px;
-                border: solid 1px gray;
-                padding: 0 42px 0 10px;
-                color:gray;
-                font-size:16px;
-                background-color:lighten(gray,40%);
-                position:absolute;
-             }
-            .fa.fa-search{
-                position:absolute;
-                z-index: 2;
-                right: 10px;
-                top: 10px;
-                color: gray;
-            }
+                margin-left:45px;
+                position:relative;
+                &__text{
+                    box-sizing: border-box;
+                    height: 40px;
+                    width: 100%;
+                    border-radius:4px;
+                    border: solid 1px gray;
+                    padding: 0 42px 0 10px;
+                    color:gray;
+                    font-size:16px;
+                    background-color:lighten(gray,40%);
+                    position:absolute;
+                }
+                .fa.fa-search{
+                    position:absolute;
+                    z-index: 2;
+                    right: 10px;
+                    top: 10px;
+                    color: gray;
+                }
 
+            }
         }
-    }
-    &__bottom{
-        display: flex;
-        justify-content :space-between;
-        margin-top: 8px;
-        &__left{
-            font-size: 14px;
-            font-weight: 400;
-            list-style-type: none;
+        &__bottom{
+            display: flex;
+            justify-content :space-between;
+            margin-top: 8px;
             &__left{
-               @include header-list(0);
-                .access-btn{
-                    text-decoration: none;
-                    color:black;
-                    .fa.fa-align-justify{
-                        color:red;
-                    }
-                    &:hover{
-                        color:lightblue;
+                font-size: 14px;
+                font-weight: 400;
+                list-style-type: none;
+                &__left{
+                @include header-list(0);
+                    .access-btn{
+                        text-decoration: none;
+                        color:black;
                         .fa.fa-align-justify{
-                                color:red;
+                            color:red;
+                        }
+                        &:hover{
+                            color:lightblue;
+                            .fa.fa-align-justify{
+                                    color:red;
+                            }
                         }
                     }
                 }
+                &__right{
+                    @include header-list(30px);
+                    .access-btn{
+                        text-decoration:none;
+                        color:black;
+                        .fa.fa-tag{
+                            color:red;
+                        }   
+                        &:hover{
+                            color:lightblue;
+                            .fa.fa-tag{
+                                    color:red;
+                            }
+                        }
+                    }                
+                }
             }
             &__right{
-                @include header-list(30px);
-                .access-btn{
-                    text-decoration:none;
-                    color:black;
-                    .fa.fa-tag{
-                        color:red;
-                    }   
-                    &:hover{
-                        color:lightblue;
-                        .fa.fa-tag{
-                                color:red;
+                list-style-type: none;
+                li{
+                    font-size: 14px;
+                    @include header-list(30px);
+                    .access-btn{
+                        text-decoration: none;
+                        color:black;
+                        &:hover{
+                            color:lightblue;
                         }
-                    }
-                }                
-            }
-        }
-        &__right{
-            list-style-type: none;
-            li{
-                font-size: 14px;
-                @include header-list(30px);
-                .access-btn{
-                    text-decoration: none;
-                    color:black;
-                    &:hover{
-                        color:lightblue;
                     }
                 }
             }

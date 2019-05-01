@@ -1,0 +1,92 @@
+.full-container
+  =render partial: "shared/header"
+  %main
+    .mypage
+      =render partial: "shared/sidebar"
+      .mypage__container
+        .mypage__container__icon
+          =link_to "profiles/1",class:"mypage__container__icon__link" do
+            =image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png",size: '60x60'
+            %p name
+            .mypage__container__icon__link__balometer
+              .mypage__container__icon__link__balometer__left
+                %span 評価
+                %span.number 8
+              .mypage__container__icon__link__balometer__right
+                %span 出品数 
+                %span.number 16
+        .mypage__tabs
+          %input#info{type: "radio", name: "tab",checked: true}
+          %label.mypage__tabs__tab.info{for:"info"} お知らせ
+          %input#todo{type: "radio", name: "tab"}
+          %label.mypage__tabs__tab.todo{for:"todo"} やることリスト
+          %ul.tab-content.mypage__tabs__info
+            %li.mypage__tabs__info__list
+              =link_to "profiles/1",class: "mypage__tabs__info__list__link" do
+                =image_tag "https://static.mercdn.net/images/mercari_profile.png",size: "48x48"
+                .mypage__tabs__info__list__link__message
+                  %p.mypage__tabs__info__list__link__message__title 事務局からの個別メッセージ「ログイン通知」
+                  %p.mypage__tabs__info__list__link__message__when
+                    =fa_icon("history")
+                    %span 2日前
+                =fa_icon("chevron-right")
+            %li.mypage__tabs__info__list
+              =link_to "profiles/1",class: "mypage__tabs__info__list__link" do
+                =image_tag "https://static.mercdn.net/images/mercari_profile.png",size: "48x48"
+                .mypage__tabs__info__list__link__message
+                  %p.mypage__tabs__info__list__link__message__title 事務局からの個別メッセージ「ログイン通知」
+                  %p.mypage__tabs__info__list__link__message__when
+                    =fa_icon("history")
+                    %span 2日前
+                =fa_icon("chevron-right")
+            %li.mypage__tabs__info__list
+              =link_to "profiles/1",class: "mypage__tabs__info__list__link" do
+                =image_tag "https://static.mercdn.net/images/mercari_profile.png",size: "48x48"
+                .mypage__tabs__info__list__link__message
+                  %p.mypage__tabs__info__list__link__message__title 事務局からの個別メッセージ「まだまだ時間がかかりそうです」
+                  %p.mypage__tabs__info__list__link__message__when
+                    =fa_icon("history")
+                    %span 3日前
+                =fa_icon("chevron-right")
+            %li.mypage__tabs__info__list
+              =link_to "profiles/1",class: "mypage__tabs__info__list__link" do
+                =image_tag "https://static.mercdn.net/images/mercari_profile.png",size: "48x48"
+                .mypage__tabs__info__list__link__message
+                  %p.mypage__tabs__info__list__link__message__title 事務局からの個別メッセージ「masterに直接はちょっと待って」
+                  %p.mypage__tabs__info__list__link__message__when
+                    =fa_icon("history")
+                    %span 4日前
+                =fa_icon("chevron-right")
+            %li.mypage__tabs__info__list
+              =link_to "profiles/1",class: "mypage__tabs__info__list__link" do
+                =image_tag "https://static.mercdn.net/images/mercari_profile.png",size: "48x48"
+                .mypage__tabs__info__list__link__message
+                  %p.mypage__tabs__info__list__link__message__title 事務局からの個別メッセージ「とりあえずマージしよう！」
+                  %p.mypage__tabs__info__list__link__message__when
+                    =fa_icon("history")
+                    %span 5日前
+                =fa_icon("chevron-right")
+            %li.mypage__tabs__info__index
+              =link_to "一覧を見る",class: "mypage__tabs__info__index__button"                   
+          %ul.tab-content.mypage__tabs__todo
+            %li.mypage__tabs__todo__list 現在、やることリストはありません。
+        .mypage__container__bottom 購入した商品
+        .mypage__tabs__bottom
+          %input#during{type: "radio", name: "bottom",checked: true}
+          %label.mypage__tabs__bottom__tab.during{for:"during"} 取引中
+          %input#past{type: "radio", name: "bottom"}
+          %label.mypage__tabs__bottom__tab.past{for:"past"} 過去の取引
+          %ul.tab-content.mypage__tabs__bottom__during
+            %li.mypage__tabs__bottom__during__list  取引中の商品がありません
+          %ul.tab-content.mypage__tabs__bottom__past
+            %li.mypage__tabs__bottom__past__list
+              =link_to "profiles/1",class: "mypage__tabs__bottom__past__list__link" do
+                =image_tag "https://static.mercdn.net/images/mercari_profile.png",size: "48x48"
+                .mypage__tabs__bottom__past__list__link__message
+                  %p.mypage__tabs__bottom__past__list__link__message__title 「メルカリ」を購入しました。取引が完了しました。
+                  %p.mypage__tabs__bottom__past__list__link__message__when 取引完了
+                =fa_icon("chevron-right")
+            %li.mypage__tabs__bottom__past__index
+              =link_to "一覧を見る",class: "mypage__tabs__bottom__past__index__button"
+=render partial: "shared/full_footer"
+=render partial: "shared/exhibit"

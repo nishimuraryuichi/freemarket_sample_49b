@@ -9,3 +9,5 @@
 @import './modules/slideshow';
 @import './modules/footer';
 @import './modules/product_new';
+@import './modules/sidebar'; //このファイルの下にマイページ系はimportしましょう
+@import './modules/mypage';
