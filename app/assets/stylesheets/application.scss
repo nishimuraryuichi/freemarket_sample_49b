@@ -10,6 +10,8 @@
 @import './modules/slideshow';
 @import './modules/footer';
 @import './modules/product_new';
+@import './modules/sidebar'; //このファイルの下にマイページ系はimportしましょう
+@import './modules/mypage';
 @import './modules/profile_new';
 @import './modules/users-new';
 @import './modules/devise-user-login';

@@ -68,17 +68,22 @@ body{
                 margin-left:10px;
             }
             &__left{
-               @include header-list(0);
-                .access-btn{
-                    text-decoration: none;
-                    color:black;
-                    .fa.fa-align-justify{
-                        color:red;
-                    }
-                    &:hover{
-                        color:lightblue;
+                font-size: 14px;
+                font-weight: 400;
+                list-style-type: none;
+                &__left{
+                @include header-list(0);
+                    .access-btn{
+                        text-decoration: none;
+                        color:black;
                         .fa.fa-align-justify{
-                                color:red;
+                            color:red;
+                        }
+                        &:hover{
+                            color:lightblue;
+                            .fa.fa-align-justify{
+                                    color:red;
+                            }
                         }
                     }
                 }
