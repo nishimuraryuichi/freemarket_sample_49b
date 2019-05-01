@@ -3,14 +3,16 @@ body{
 }
 .inner-header{
     height: 100px;
-    width: 1020px;
+    width: 100vw;
     margin: 0 auto;
     padding: 8px 0 0; 
     &__top{
+        @media(min-width: 700px){
         display: flex;
+        }
         &__form{
             display: flex;
-            width: 100%;
+            width: 90%;
             margin-left:45px;
             position:relative;
             &__text{
@@ -43,6 +45,10 @@ body{
             font-size: 14px;
             font-weight: 400;
             list-style-type: none;
+            display:none;
+            @media(min-width: 700px){
+                display: block;
+            }
             &__left{
                @include header-list(0);
                 .access-btn{
@@ -77,6 +83,10 @@ body{
             }
         }
         &__right{
+            display:none;
+            @media(min-width: 700px){
+                display: block;
+            }
             list-style-type: none;
             li{
                 font-size: 14px;
