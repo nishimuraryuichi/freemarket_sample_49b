@@ -1,0 +1,50 @@
+.full-container{
+  background-color: $gray;
+  padding-bottom:40px;
+  main{
+    margin-top:40px;
+    .mypage{
+      display:flex;
+      margin:0 auto;
+      width:1020px;
+      &__container{
+        width:700px;
+      }
+      &__sidebar{
+        width:280px;
+        margin-right:40px;
+        &__content__list{
+          width:280px;
+          height:48px;
+          background-color:white;
+          border-top:solid 1px $gray;
+          list-style-type:none;
+          a{
+            text-decoration: none;
+            display:flex;
+            justify-content:space-between;
+            padding:16px;
+            &:hover{
+              padding-right:10px;
+              background-color:#eee;
+              transition:all 0.2s ease;
+              .fa.fa-chevron-right{
+                color:#333;
+                transition:color 0.2s ease;
+              }
+            }
+            span{
+              color:#333;
+            } 
+            .fa.fa-chevron-right{
+              color:lightgray;
+            }
+          }
+        }
+        h3{
+          margin:40px 0 8px 0;
+        }          
+      }  
+    } 
+  }
+}
