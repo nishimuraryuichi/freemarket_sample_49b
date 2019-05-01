@@ -3,12 +3,26 @@ body{
 }
 .inner-header{
     height: 100px;
-    width: 100vw;
     margin: 0 auto;
-    padding: 8px 0 0; 
+    padding: 8px 10px 10px;
     &__top{
         @media(min-width: 700px){
         display: flex;
+        }
+        &__wrap{
+        @include flex-spbet-end;
+            .inner__header__top__minilogo{
+                @include flex-spbet;
+                margin-right: 40px;
+                width: 80px;
+                margin-bottom: 10px;
+                @media(min-width:700px){
+                    display: none;
+                }
+                .fa{
+                    color: black;
+                }
+            }
         }
         &__form{
             display: flex;
@@ -25,7 +39,7 @@ body{
                 color:gray;
                 font-size:16px;
                 background-color:lighten(gray,40%);
-                position:absolute;
+                // position:absolute;
              }
             .fa.fa-search{
                 position:absolute;
@@ -34,7 +48,6 @@ body{
                 top: 10px;
                 color: gray;
             }
-
         }
     }
     &__bottom{
@@ -45,9 +58,14 @@ body{
             font-size: 14px;
             font-weight: 400;
             list-style-type: none;
-            display:none;
+            @include flex-spbet;
+            margin: auto;
+            position: relative;
+            width: 80%;
             @media(min-width: 700px){
                 display: block;
+                width:auto;
+                margin-left:10px;
             }
             &__left{
                @include header-list(0);
