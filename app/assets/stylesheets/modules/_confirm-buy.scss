@@ -1,0 +1,152 @@
+.confirm-header{
+  height: 10px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+    @media(min-width: 700px){
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+  .confirm-buy-header{
+    text-align: center;
+    font-size: 18px;
+    color: $font_black;
+    @media(min-width: 700px){
+      font-size: 24px;
+    }
+  }
+}
+.confirm-image-wrap{
+    @include flex-cen;
+  .confirm-image{
+    height: 200px;
+    width: 200px;
+  }
+}
+.confirm-product-name{
+  margin-top: 20px;
+  text-align: center;
+  color: $font_black;
+  font-size: 18px;
+  font-weight: bold;
+}
+.confirm-product-price{
+  @include flex-cen-end;
+  margin-top: 40px;
+  color: $font_black;
+  &__price{
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: 24px;
+  }
+  &__taxin{
+    font-size: 22px;
+  }
+}
+.confirm-buy-point{
+  @include flex-cen-cen;
+  text-decoration: none;
+  .confirm-buy-point-btn{
+    color: black;
+    background-color: #CCCCCC;
+    text-align: center;
+    line-height: 48px;
+    text-decoration: none;
+    height: 48px;
+    width: 320px;
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: 24px;
+  }
+}
+.payment-confirm{
+  @include flex-spbet;
+  width: 320px;
+  margin:auto;
+  margin-top: 16px;
+  font-size: 28px;
+  font-weight: bold;
+  color: $font_black;
+}
+.confirm-caution{
+  color: $caution;
+  font-size: 14px;
+  width: 320px;
+  margin: auto;
+  text-align: center;
+  margin-top: 16px;
+  line-height:  24px;
+}
+.confirm-buy-btn-btn{
+  @include flex-cen-cen;
+  text-decoration: none;
+  .confirm-buy-btn__link{
+    color: black;
+    background-color: #CCCCCC;
+    text-align: center;
+    line-height: 48px;
+    text-decoration: none;
+    height: 48px;
+    width: 320px;
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: 24px;
+  }
+}
+.confirm-app-install{
+  color: $font_black;
+  font-size: 14px;
+  width: 320px;
+  margin: auto;
+  text-align: center;
+  margin-top: 16px;
+  line-height:  24px;
+}
+.confirm-app-link{
+  width: 320px;
+  margin: auto;
+  @include flex-cen;
+  margin-top: 12px;
+}
+.adresses{
+  width: 320px;
+  margin: auto;
+  color: $font_black;
+  &__confirm-delivery-for{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  &__confirm-postcode{
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  &__confirm-adress{
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  &__name{
+    font-size: 14px;
+  }
+.confirm-link-wrap{
+  float: right;
+}
+  &__change-link{
+    display: flex;
+    text-decoration: none;
+    color:$link;
+    &__text{
+    }
+  }
+}
+.payment-method{
+  width: 320px;
+  margin: auto;
+  color: $font_black;
+  &__header{
+  font-weight: bold;
+  margin-bottom: 30px;
+  }
+  &__change-link{
+    float: right;
+  }
+}

@@ -26,4 +26,8 @@ class ProductsController < ApplicationController
   def destroy
 
   end
+
+  def confirm_buy
+  end
+
 end
