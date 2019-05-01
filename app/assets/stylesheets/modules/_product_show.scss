@@ -131,12 +131,10 @@
         .safe{
           color: #0099e8;
           line-height: 30px;
-
         }
       }
     }
   }
-
     .item-message{
       padding-top: 20px;
       background: #fafafa;
@@ -205,7 +203,6 @@
             }
           }
         }
-
         .message-box{
           padding-bottom: 10px;
           text-align : center ;
@@ -241,7 +238,6 @@
         }
       }
     }
-
     .item-link{
       width:700px;
       margin:0 auto;
@@ -254,7 +250,6 @@
         color: #0099e8;
       }
     }
-
     .item-socialmedia{
       width:700px;
       margin: 20px auto;
@@ -271,10 +266,8 @@
         &__btn-line{
           padding:0 5px 0 0;
         }
-        &__btn-red{}
       }
     }
-
     .items-user{
       overflow-y:auto;
       width:700px;
@@ -317,7 +310,6 @@
             }
           }
         }
-
         .all-items{
           float:right;
           padding: 20px 0 30px;
@@ -329,7 +321,4 @@
         }
       }
     }
-
-
-
 }
