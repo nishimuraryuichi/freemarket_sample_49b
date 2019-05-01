@@ -1,0 +1,95 @@
+@mixin flex{
+  display: flex;
+}
+@mixin flex--cen{
+  display: flex;
+  align-items: center;
+}
+@mixin flex--sta{
+  display: flex;
+  align-items: flex-start;
+}
+@mixin flex--end{
+  display: flex;
+  align-items: flex-end;
+}
+@mixin flex-cen{
+  display: flex;
+  justify-content: center;
+}
+@mixin flex-cen-cen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-cen-sta{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@mixin flex-cen-end{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+@mixin flex-spbet{
+  display: flex;
+  justify-content: space-between;
+}
+@mixin flex-spbet-cen{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-spbet-sta{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@mixin flex-spbet-end{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+@mixin flex-sparo{
+  display: flex;
+  justify-content: space-around;
+}
+@mixin flex-sparo-cen{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin flex-sparo-sta{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+@mixin flex-sparo-end{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+@mixin flex-sparo{
+  display: flex;
+  justify-content: space-around;
+}
+@mixin flex-end{
+  display: flex;
+  justify-content: flex-end;
+}
+@mixin flex-end-cen{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+@mixin flex-end-sta{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+@mixin flex-end-end{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}

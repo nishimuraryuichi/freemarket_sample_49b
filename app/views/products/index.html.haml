@@ -32,6 +32,11 @@
           =link_to '/products', class:'access-btn' do
             =fa_icon("user-circle")
             %span マイページ
+        %li.inner-header__bottom__right__right
+          =link_to 'ログイン', new_user_session_path,class: 'login-btn'
+        %li.inner-header__bottom__right__right
+          =link_to '新規会員', new_user_path,class: 'new-user-btn'
+          =link_to '新規会員登録', new_user_path,class: 'new-user-btn-long'
 .slideshow
   %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
   %input{type:"radio", name:"slideshow", id:"switch2"}
@@ -67,7 +72,7 @@
       = link_to 'レディース新着アイテム',root_path, class: 'items-box__category'
     .items-box-content
       .item-box
-        = link_to root_path, class: "item-box__link" do
+        = link_to 'products/1', class: "item-box__link" do
           .item-box__link__photo
             =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
           .item-box__link__detail
@@ -81,7 +86,7 @@
             .item-box__link__detail__tax
               (税込)
       .item-box
-        = link_to root_path, class: "item-box__link" do
+        = link_to '/products/1/confirm_buy', class: "item-box__link" do
           .item-box__link__photo
             =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
           .item-box__link__detail
@@ -122,7 +127,6 @@
                 %span 4
             .item-box__link__detail__tax
               (税込)
-
     .all-items
       = link_to root_path do
         すべての商品を見る

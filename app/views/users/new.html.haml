@@ -1,0 +1,21 @@
+.background
+  =render 'shared/products-new-header'
+  .inputs
+    %h3.inputs__header.new_user_header 新規会員登録
+  .inputs.register-btn
+    .register-btn__mail
+      .register-btn__mail__logo
+        =fa_icon("envelope")
+      .register-btn__mail__text メールアドレスで登録
+      .register-btn__empty
+    .register-btn__facebook
+      .register-btn__facebook__logo
+        =fa_icon("facebook-square")
+      .register-btn__facebook__text Facebookで登録
+      .register-btn__empty
+    .register-btn__google
+      .register-btn__google__logo
+        =fa_icon("google")
+      .register-btn__google__text Googleで登録
+      .register-btn__empty
+  =render 'shared/products-new-footer'
