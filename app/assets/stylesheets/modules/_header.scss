@@ -1,46 +1,72 @@
 body{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
-header{
-    background-color: $white;
-    .inner-header{
-        height: 100px;
-        width: 1020px;
-        margin: 0 auto;
-        padding: 8px 0 0; 
-        &__top{
-            display: flex;
-            &__form{
-                display: flex;
-                width: 100%;
-                margin-left:45px;
-                position:relative;
-                &__text{
-                    box-sizing: border-box;
-                    height: 40px;
-                    width: 100%;
-                    border-radius:4px;
-                    border: solid 1px gray;
-                    padding: 0 42px 0 10px;
-                    color:gray;
-                    font-size:16px;
-                    background-color:lighten(gray,40%);
-                    position:absolute;
+.inner-header{
+    height: 100px;
+    margin: 0 auto;
+    padding: 8px 10px 10px;
+    &__top{
+        @media(min-width: 700px){
+        display: flex;
+        }
+        &__wrap{
+        @include flex-spbet-end;
+            .inner__header__top__minilogo{
+                @include flex-spbet;
+                margin-right: 40px;
+                width: 80px;
+                margin-bottom: 10px;
+                @media(min-width:700px){
+                    display: none;
                 }
-                .fa.fa-search{
-                    position:absolute;
-                    z-index: 2;
-                    right: 10px;
-                    top: 10px;
-                    color: gray;
+                .fa{
+                    color: black;
                 }
-
             }
         }
-        &__bottom{
+        &__form{
             display: flex;
-            justify-content :space-between;
-            margin-top: 8px;
+            width: 90%;
+            margin-left:45px;
+            position:relative;
+            &__text{
+                box-sizing: border-box;
+                height: 40px;
+                width: 100%;
+                border-radius:4px;
+                border: solid 1px gray;
+                padding: 0 42px 0 10px;
+                color:gray;
+                font-size:16px;
+                background-color:lighten(gray,40%);
+                // position:absolute;
+             }
+            .fa.fa-search{
+                position:absolute;
+                z-index: 2;
+                right: 10px;
+                top: 10px;
+                color: gray;
+            }
+        }
+    }
+    &__bottom{
+        display: flex;
+        justify-content :space-between;
+        margin-top: 8px;
+        &__left{
+            font-size: 14px;
+            font-weight: 400;
+            list-style-type: none;
+            @include flex-spbet;
+            margin: auto;
+            position: relative;
+            width: 80%;
+            @media(min-width: 700px){
+                display: block;
+                width:auto;
+                margin-left:10px;
+            }
             &__left{
                 font-size: 14px;
                 font-weight: 400;
@@ -78,17 +104,21 @@ header{
                     }
                 }
             }
-            &__right{
-                list-style-type: none;
-                li{
-                    font-size: 14px;
-                    @include header-list(30px);
-                    .access-btn{
-                        text-decoration: none;
-                        color:black;
-                        &:hover{
-                            color:lightblue;
-                        }
+        }
+        &__right{
+            display:none;
+            @media(min-width: 700px){
+                display: block;
+            }
+            list-style-type: none;
+            li{
+                font-size: 14px;
+                @include header-list(30px);
+                .access-btn{
+                    text-decoration: none;
+                    color:black;
+                    &:hover{
+                        color:lightblue;
                     }
                 }
                 .login-btn{
