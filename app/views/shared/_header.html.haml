@@ -20,15 +20,22 @@
               =fa_icon("tag")
               %span ブランドから探す
       %ul.inner-header__bottom__right
+        -# この下は -if current_user
         %li.inner-header__bottom__right__left
           =link_to '/products', class:'access-btn' do
             =fa_icon("bell")
-            %span お知らせ
+            %span.logo-text お知らせ
         %li.inner-header__bottom__right__center
           =link_to '/products', class:'access-btn' do
             =fa_icon("check")
-            %span やることリスト
+            %span.logo-text やることリスト
         %li.inner-header__bottom__right__right
           =link_to '/products', class:'access-btn' do
             =fa_icon("user-circle")
-            %span マイページ
+            %span.logo-text マイページ
+-# このしたは、-if user_signed_in?
+        -# %li.inner-header__bottom__right__right
+        -#   =link_to 'ログイン', new_user_session_path,class: 'login-btn'
+        -# %li.inner-header__bottom__right__right
+        -#   =link_to '新規会員', new_user_path,class: 'new-user-btn'
+        -#   =link_to '新規会員登録', new_user_path,class: 'new-user-btn-long'

@@ -3,14 +3,16 @@ body{
 }
 .inner-header{
     height: 100px;
-    width: 1020px;
+    width: 100vw;
     margin: 0 auto;
     padding: 8px 0 0; 
     &__top{
+        @media(min-width: 700px){
         display: flex;
+        }
         &__form{
             display: flex;
-            width: 100%;
+            width: 90%;
             margin-left:45px;
             position:relative;
             &__text{
@@ -43,6 +45,10 @@ body{
             font-size: 14px;
             font-weight: 400;
             list-style-type: none;
+            display:none;
+            @media(min-width: 700px){
+                display: block;
+            }
             &__left{
                @include header-list(0);
                 .access-btn{
@@ -65,18 +71,22 @@ body{
                     text-decoration:none;
                     color:black;
                     .fa.fa-tag{
-                        color:red;
-                    }   
+                        color:$red;
+                    }
                     &:hover{
                         color:lightblue;
                         .fa.fa-tag{
-                                color:red;
+                                color:$red;
                         }
                     }
-                }                
+                }
             }
         }
         &__right{
+            display:none;
+            @media(min-width: 700px){
+                display: block;
+            }
             list-style-type: none;
             li{
                 font-size: 14px;
@@ -86,6 +96,57 @@ body{
                     color:black;
                     &:hover{
                         color:lightblue;
+                    }
+                }
+                .login-btn{
+                    background-color: $caution;
+                    text-decoration: none;
+                    color: $white;
+                    font-size: 14px;
+                    padding: 8px 10px 8px 10px;
+                    border-radius: 5px;
+                    &:hover{
+                        @media(max-width:700px){
+                        text-decoration: underline;
+                        opacity: 0.8;
+                        }
+                    }
+                }
+                .new-user-btn{
+                    background-color: $white;
+                    text-decoration: none;
+                    color: #0099FF;
+                    font-size: 14px;
+                    padding: 8px 10px 8px 10px;
+                    border: solid 1px #0099FF;
+                    border-radius: 5px;
+                    @media(min-width:700px){
+                        display: none;
+                        }
+                    &:hover{
+                        text-decoration: underline;
+                        opacity: 0.7;
+                        color: $white;
+                        background-color: #0099FF;
+                        }
+                    &-long{
+                        background-color: $white;
+                        text-decoration: none;
+                        color: #0099FF;
+                        font-size: 14px;
+                        padding: 8px 10px 8px 10px;
+                        border: solid 1px #0099FF;
+                        border-radius: 5px;
+                        display: none;
+                        line-height: 16px;
+                        @media(min-width:700px){
+                            display: block;
+                        }
+                        &:hover{
+                            color: $white;
+                            background-color: #0077FF;
+                            transition: all .4s;
+                            }
                     }
                 }
             }
