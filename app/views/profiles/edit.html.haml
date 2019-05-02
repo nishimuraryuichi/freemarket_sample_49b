@@ -1,16 +1,16 @@
-.full-container    
+.full-container
   = render partial: "shared/header"
   %main
     .mypage
       = render partial: "shared/sidebar"
       .mypage__container
         .edit__title プロフィール
-        .edit__name
-          = form_with local: true do |f|
-            .edit__name__box
-              = image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png',size: '60x60'
-              = f.text_field :name, placeholder: "name",class: "edit__name__box__field"
-            .edit__name__text
-              = f.text_area :text, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",class: "edit__name__box__area"
-              = f.submit value:'変更する'
-                          
+        .wrap-profile-edit
+          .edit__name
+            = form_with local: true do |f|
+              .edit__name__box
+                = image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png',size: '60x60'
+                = f.text_field :name, placeholder: "name",class: "edit__name__box__field"
+              .edit__name__text
+                = f.text_area :text, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪",class: "edit__name__box__area"
+                = f.submit value:'変更する'

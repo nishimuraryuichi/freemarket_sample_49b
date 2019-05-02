@@ -1,13 +1,13 @@
 class ProfilesController < ApplicationController
-  def show    
+  def show
   end
 
   def new
   end
 
-  def edit   
+  def edit
   end
-  
+
   def pay
   end
 
