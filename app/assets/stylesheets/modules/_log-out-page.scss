@@ -1,0 +1,17 @@
+.logout__container{
+  background-color: $white;
+  height: 180px;
+  width: 700px;
+  @include flex-cen-cen;
+  &__btn{
+    background-color: $caution;
+    opacity: .8;
+    color: white;
+    font-weight: 200;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+  }
+}
