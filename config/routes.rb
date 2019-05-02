@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     member do
       get 'pay'
     end
+    collection do
+      get 'log_out_page'
+    end
   end
   resources :products, only:[:index,:new,:ctreate,:show] do
     member do
