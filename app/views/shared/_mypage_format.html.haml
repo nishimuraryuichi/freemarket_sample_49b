@@ -1,7 +1,8 @@
-= render partial: "shared/header"
-  .full-container
-    %main
-      .mypage
-        .mypage__container
-          -# ここに追加する内容を記載してください
-        = render partial: "shared/sidebar"
+.full-container    
+  = render partial: "shared/header"
+  %main
+    .mypage
+      = render partial: "shared/sidebar"
+      .mypage__container
+        -# ここに追加する内容を記載してください
+      
