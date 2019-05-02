@@ -1,58 +1,60 @@
-.inner-header
-  .inner-header__top
-    .inner-header__top__wrap
-      %h1.inner__header__top__title
-        =link_to image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?570108281", size: "134x36", alt: "mercari"
-      %ul.inner__header__top__minilogo
-        -# この下は -if current_user
-        %li.inner-header__bottom__right__left
-          =link_to '/products', class:'access-btn' do
-            =fa_icon("bell")
-        %li.inner-header__bottom__right__center
-          =link_to '/products', class:'access-btn' do
-            =fa_icon("check")
-        %li.inner-header__bottom__right__right
-          =link_to '/products', class:'access-btn' do
-            =fa_icon("user-circle")
-      -# このしたは、-if user_signed_in?
-      -# %li.inner-header__bottom__right__right
-      -#   =link_to 'ログイン', new_user_session_path,class: 'login-btn'
-      -# %li.inner-header__bottom__right__right
-      -#   =link_to '新規会員', new_user_path,class: 'new-user-btn'
-      -#   =link_to '新規会員登録', new_user_path,class: 'new-user-btn-long'
-    %form.inner-header__top__form
-      %input.inner-header__top__form__text{type: "text",name: "keyword", placeholder: "何かお探しですか？"}
-      =link_to '/products' do
-        =fa_icon("search")
-  .inner-header__bottom
-    %ul.inner-header__bottom__left
-      %li.inner-header__bottom__left__left
-        %h2.inner-header__botom__left__left__nav
-          =link_to category_parents_path,class:'access-btn' do
-            =fa_icon("align-justify")
-            %span カテゴリーから探す
-      %li.inner-header__bottom__left__right
-        %h2.inner-header__botom__left__right__nav
-          =link_to '/products',class:'access-btn' do
-            =fa_icon("tag")
-            %span ブランドから探す
-    %ul.inner-header__bottom__right
-      -# この下は -if current_user
-      %li.inner-header__bottom__right__left
-        =link_to '/products', class:'access-btn' do
-          =fa_icon("bell")
-          %span.logo-text お知らせ
-      %li.inner-header__bottom__right__center
-        =link_to '/products', class:'access-btn' do
-          =fa_icon("check")
-          %span.logo-text やることリスト
-      %li.inner-header__bottom__right__right
-        =link_to '/products', class:'access-btn' do
-          =fa_icon("user-circle")
-          %span.logo-text マイページ
--# このしたは、-if user_signed_in?
+.white-wrap
+  .inner-header
+    .inner-header__top
+      .inner-header__top__wrap
+        %h1.inner__header__top__wrap__title
+          =link_to root_path do
+            =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?570108281", size: "134x36", alt: "mercari"
+        %ul.inner__header__top__minilogo
+          -# この下は -if current_user
+          %li.inner-header__bottom__right__left
+            =link_to '/products', class:'access-btn' do
+              =fa_icon("bell")
+          %li.inner-header__bottom__right__center
+            =link_to '/products', class:'access-btn' do
+              =fa_icon("check")
+          %li.inner-header__bottom__right__right
+            =link_to '/products', class:'access-btn' do
+              =fa_icon("user-circle")
+        -# このしたは、-if user_signed_in?
         -# %li.inner-header__bottom__right__right
         -#   =link_to 'ログイン', new_user_session_path,class: 'login-btn'
         -# %li.inner-header__bottom__right__right
         -#   =link_to '新規会員', new_user_path,class: 'new-user-btn'
         -#   =link_to '新規会員登録', new_user_path,class: 'new-user-btn-long'
+      %form.inner-header__top__form
+        %input.inner-header__top__form__text{type: "text",name: "keyword", placeholder: "何かお探しですか？"}
+        =link_to '/products' do
+          =fa_icon("search")
+    .inner-header__bottom
+      %ul.inner-header__bottom__left
+        %li.inner-header__bottom__left__left
+          %h2.inner-header__botom__left__left__nav
+            =link_to category_parents_path,class:'access-btn' do
+              =fa_icon("align-justify")
+              %span カテゴリーから探す
+        %li.inner-header__bottom__left__right
+          %h2.inner-header__botom__left__right__nav
+            =link_to '/products',class:'access-btn' do
+              =fa_icon("tag")
+              %span ブランドから探す
+      %ul.inner-header__bottom__right
+        -# この下は -if current_user
+        %li.inner-header__bottom__right__left
+          =link_to '/products', class:'access-btn' do
+            =fa_icon("bell")
+            %span.logo-text お知らせ
+        %li.inner-header__bottom__right__center
+          =link_to '/products', class:'access-btn' do
+            =fa_icon("check")
+            %span.logo-text やることリスト
+        %li.inner-header__bottom__right__right
+          =link_to '/profiles/1', class:'access-btn' do
+            =fa_icon("user-circle")
+            %span.logo-text マイページ
+  -# このしたは、-if user_signed_in?
+          -# %li.inner-header__bottom__right__right
+          -#   =link_to 'ログイン', new_user_session_path,class: 'login-btn'
+          -# %li.inner-header__bottom__right__right
+          -#   =link_to '新規会員', new_user_path,class: 'new-user-btn'
+          -#   =link_to '新規会員登録', new_user_path,class: 'new-user-btn-long'
