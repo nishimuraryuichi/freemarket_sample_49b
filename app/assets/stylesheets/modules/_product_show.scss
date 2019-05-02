@@ -2,21 +2,31 @@
   background: #fafafa;
   height: 100%;
   padding-top: 40px;
+  width:100%;
   .item-conteiner{
     background-color: white;
-    width:620px;
+    width:calc(100% - 550px);
     padding: 24px 40px 40px;
     margin: 0 auto;
+    min-width: 300px;
     .item-name{
       font-size: 24px;
       line-height: 1.4;
       text-align: center;
+      width:300px;
+      margin:auto;
+      @media (max-width:500px){
+        padding:0 310px 0 0;
+      }
     }
     .item-main-content{
       display: flex;
-      margin:16px 0 0;
+      margin:16px auto;
       &__photo{
         width: 300px;
+        @media (max-width:1130px){
+          margin:16px auto;
+        }
         &__main{
         }
         &__sub{
@@ -34,6 +44,9 @@
         width: 300px;
         height: 375px;
         border: 1px solid #f5f5f5;
+        @media (max-width:1130px){
+          display:none;
+        }
         table{
           width:300px;
           height: 377px;
@@ -57,7 +70,7 @@
                 }
               }
             }
-        }
+          }
         }
       }
     }
@@ -94,6 +107,40 @@
         color: white;
       }
     }
+    .item-detail-2{
+      padding:20px 310px 0 0;
+      width: 300px;
+      height: 375px;
+      border: 1px solid #f5f5f5;
+      @media (min-width:1130px){
+        display:none;
+      }
+      table{
+        width:300px;
+        height: 377px;
+        tr{
+          border:1px solid #f5f5f5;
+          border-collapse: collapse;
+          th{
+            vertical-align:middle;
+            width:130px;
+            border:1px solid #f5f5f5;
+            background: #fafafa;
+            font-weight:lighter;
+          }
+          td{
+            vertical-align:middle;
+            background: #fff;
+            .item-detail-evaluation{
+              display: flex;
+              &__2{
+                margin:0 5px 0 5px;
+              }
+            }
+          }
+      }
+      }
+    }
     .item-description{
       word-wrap: break-word;
       padding:32px 0 32px 0;
@@ -106,7 +153,7 @@
         border: 1px solid #f5f5f5;
         border-radius: 20px;
         background: #f5f5f5;
-        width:118px;
+        min-width:118px;
         height: 30px;
         &__like{
         font-size: 14px;
@@ -118,7 +165,7 @@
         border: 1px solid #f5f5f5;
         border-radius: 20px;
         background: #f5f5f5;
-        width:179px;
+        min-width:179px;
         height: 30px;
         &__working{
         font-size: 14px;
@@ -139,9 +186,9 @@
       padding-top: 20px;
       background: #fafafa;
       &__conteiner{
-        width: 700px;
         background-color: white;
-        margin: 0 auto;
+        width:calc(100% - 470px);
+        margin:0 auto;
         &__content{
           .transaction-field{
             padding-top: 10px;
