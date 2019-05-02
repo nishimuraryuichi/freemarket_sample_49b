@@ -1,0 +1,65 @@
+.edit__title{
+  box-sizing: border-box;
+  padding:15px 24px 8px 24px;
+  font-size: 24px;
+  font-weight: 600;
+  color: $font_black;
+  text-align: center;
+  height:50px;
+  background-color: $white;
+}
+.edit__name{
+  box-sizing: border-box;
+  background: url("https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?62593201");
+  background-size: cover;
+  height: 156px;
+  &__box{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    padding:72px 0 24px 0;
+    img{
+      border-radius:50%;
+    }
+    input{
+      box-sizing:border-box;
+      height:48px;
+      width:220px;
+      margin-left:8px;
+      border:solid 1px $gray;
+      padding:10px 16px 8px 16px;
+      border-radius:4px;
+      font-weight:600;
+      font-size:16px;
+    }
+  }
+  &__text{
+    box-sizing: border-box;
+    height: 362px;
+    padding: 40px 16px;
+    background-color: $white;
+    textarea{
+      box-sizing: border-box;
+      height:216px;
+      padding:10px;
+      overflow: scroll;
+      border:solid 1px $gray;
+      width:100%;
+      font-size:16px;
+      line-height: 1.5;
+    }
+    input[type="submit"]{
+      box-sizing: border-box;
+      color:$white;
+      border:solid 1px #ea352d;
+      background-color: #ea352d;
+      display:block;
+      margin-top:16px;
+      height:50px;
+      width:100%;
+    }
+  }
+}
+.wrap-profile-edit{
+  margin-bottom:360px;
+}

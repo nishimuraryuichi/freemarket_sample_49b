@@ -6,12 +6,12 @@
     background-size:cover;
     &__banner{
       height:260px;
-      width:750px;
+      width:auto;
       margin:0 auto;
       display :flex;
       &__inner{
         display:inline-block;
-        width: 420px;
+        width: auto;
         margin:auto;
         h2{
           padding-top:20px;

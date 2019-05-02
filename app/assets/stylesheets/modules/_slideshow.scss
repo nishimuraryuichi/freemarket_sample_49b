@@ -1,6 +1,11 @@
 .slideshow {
-	position: relative;
+	margin-top: 30px;
 	overflow: hidden;
+	top: 20px;
+	min-width: 600px;
+	@media(min-width: 700px){
+		margin-top: 0px;
+	}
 }
 input[name="slideshow"] {
 	display: none;

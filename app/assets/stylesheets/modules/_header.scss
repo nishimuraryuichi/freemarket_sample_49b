@@ -1,135 +1,149 @@
 body{
     font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
-.inner-header{
-    height: 100px;
-    width: 100vw;
-    margin: 0 auto;
-    padding: 8px 0 0; 
-    &__top{
-        @media(min-width: 700px){
-        display: flex;
-        }
-        &__form{
-            display: flex;
-            width: 90%;
-            margin-left:45px;
-            position:relative;
-            &__text{
-                box-sizing: border-box;
-                height: 40px;
-                width: 100%;
-                border-radius:4px;
-                border: solid 1px gray;
-                padding: 0 42px 0 10px;
-                color:gray;
-                font-size:16px;
-                background-color:lighten(gray,40%);
-                position:absolute;
-             }
-            .fa.fa-search{
-                position:absolute;
-                z-index: 2;
-                right: 10px;
-                top: 10px;
-                color: gray;
+.white-wrap{
+    background-color: white;
+    .inner-header{
+        height: 100px;
+        width: 98%;
+        padding: 8px 8px 20px;
+        margin: auto;
+        background-color: white;
+        @media(min-width: 900px){
+            width: 900px;
             }
-
+        @media(min-width:1200px){
+            width: 1200px;
         }
-    }
-    &__bottom{
-        display: flex;
-        justify-content :space-between;
-        margin-top: 8px;
-        &__left{
-            font-size: 14px;
-            font-weight: 400;
-            list-style-type: none;
-            display:none;
+        &__top{
             @media(min-width: 700px){
-                display: block;
+            display: flex;
             }
-            &__left{
-               @include header-list(0);
-                .access-btn{
-                    text-decoration: none;
-                    color:black;
-                    .fa.fa-align-justify{
-                        color:red;
+            &__wrap{
+            @include flex-spbet-end;
+                &__title{
+                    margin-left: 45px;
+                }
+                .inner__header__top__minilogo{
+                    @include flex-spbet;
+                    margin-right: 40px;
+                    width: 80px;
+                    margin-bottom: 10px;
+                    @media(min-width:700px){
+                        display: none;
                     }
-                    &:hover{
-                        color:lightblue;
-                        .fa.fa-align-justify{
+                    .fa{
+                    color: black;
+                    }
+                }
+            }
+            &__form{
+                display: flex;
+                width: 90%;
+                margin-left:45px;
+                position:relative;
+                &__text{
+                    box-sizing: border-box;
+                    height: 40px;
+                    width: 100%;
+                    border-radius:4px;
+                    border: solid 1px gray;
+                    padding: 0 42px 0 10px;
+                    color:gray;
+                    font-size:16px;
+                    background-color:lighten(gray,40%);
+                    // position:absolute;
+                }
+                .fa.fa-search{
+                    position:absolute;
+                    z-index: 2;
+                    right: 10px;
+                    top: 10px;
+                    color: gray;
+                }
+            }
+        }
+        &__bottom{
+            display: flex;
+            justify-content :space-between;
+            margin-top: 8px;
+            &__left{
+                font-size: 14px;
+                font-weight: 400;
+                list-style-type: none;
+                @include flex-spbet;
+                margin: auto;
+                position: relative;
+                width: 80%;
+                @media(min-width: 700px){
+                    display: block;
+                    width:auto;
+                    margin-left:10px;
+                }
+                &__left{
+                    @include header-list(0);
+                    .access-btn{
+                        text-decoration: none;
+                        color:black;
+                        .fa{
+                            color:red;
+                        }
+                        &:hover{
+                            color:lightblue;
+                            .fa{
                                 color:red;
+                            }
+                        }
+                    }
+                }
+                &__right{
+                    @include header-list(30px);
+                    .access-btn{
+                        text-decoration:none;
+                        color:black;
+                        .fa.fa-tag{
+                            color:$red;
+                        }
+                        &:hover{
+                            color:lightblue;
+                            .fa.fa-tag{
+                            color:$red;
+                            }
                         }
                     }
                 }
             }
             &__right{
-                @include header-list(30px);
-                .access-btn{
-                    text-decoration:none;
-                    color:black;
-                    .fa.fa-tag{
-                        color:$red;
-                    }
-                    &:hover{
-                        color:lightblue;
-                        .fa.fa-tag{
-                                color:$red;
-                        }
-                    }
+                display:none;
+                @media(min-width: 700px){
+                    display: block;
                 }
-            }
-        }
-        &__right{
-            display:none;
-            @media(min-width: 700px){
-                display: block;
-            }
-            list-style-type: none;
-            li{
-                font-size: 14px;
-                @include header-list(30px);
-                .access-btn{
-                    text-decoration: none;
-                    color:black;
-                    &:hover{
-                        color:lightblue;
-                    }
-                }
-                .login-btn{
-                    background-color: $caution;
-                    text-decoration: none;
-                    color: $white;
+                list-style-type: none;
+                li{
                     font-size: 14px;
-                    padding: 8px 10px 8px 10px;
-                    border-radius: 5px;
-                    &:hover{
-                        @media(max-width:700px){
-                        text-decoration: underline;
-                        opacity: 0.8;
+                    @include header-list(30px);
+                    .access-btn{
+                        text-decoration: none;
+                        color:black;
+                        &:hover{
+                            color:lightblue;
                         }
                     }
-                }
-                .new-user-btn{
-                    background-color: $white;
-                    text-decoration: none;
-                    color: #0099FF;
-                    font-size: 14px;
-                    padding: 8px 10px 8px 10px;
-                    border: solid 1px #0099FF;
-                    border-radius: 5px;
-                    @media(min-width:700px){
-                        display: none;
-                        }
-                    &:hover{
-                        text-decoration: underline;
-                        opacity: 0.7;
+                    .login-btn{
+                        background-color: $caution;
+                        text-decoration: none;
                         color: $white;
-                        background-color: #0099FF;
+                        font-size: 14px;
+                        padding: 8px 10px 8px 10px;
+                        border-radius: 5px;
+                        &:hover{
+                            @media(max-width:700px){
+                            text-decoration: underline;
+                            opacity: 0.8;
+                            }
                         }
-                    &-long{
+                    }
+                    .new-user-btn{
                         background-color: $white;
                         text-decoration: none;
                         color: #0099FF;
@@ -137,19 +151,40 @@ body{
                         padding: 8px 10px 8px 10px;
                         border: solid 1px #0099FF;
                         border-radius: 5px;
-                        display: none;
-                        line-height: 16px;
                         @media(min-width:700px){
-                            display: block;
-                        }
-                        &:hover{
-                            color: $white;
-                            background-color: #0077FF;
-                            transition: all .4s;
+                            display: none;
                             }
+                        &:hover{
+                            text-decoration: underline;
+                            opacity: 0.7;
+                            color: $white;
+                            background-color: #0099FF;
+                            }
+                        &-long{
+                            background-color: $white;
+                            text-decoration: none;
+                            color: #0099FF;
+                            font-size: 14px;
+                            padding: 8px 10px 8px 10px;
+                            border: solid 1px #0099FF;
+                            border-radius: 5px;
+                            display: none;
+                            line-height: 16px;
+                            @media(min-width:700px){
+                                display: block;
+                            }
+                            &:hover{
+                                color: $white;
+                                background-color: #0077FF;
+                                transition: all .4s;
+                                }
+                        }
                     }
                 }
             }
         }
+    }
+    .inner__header__top__wrap__title{
+    margin-left: 45px;
     }
 }
