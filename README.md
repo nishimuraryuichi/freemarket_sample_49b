@@ -10,6 +10,7 @@
 |eva_good|integer|default: 0|
 |eva_normal|integer|default: 0|
 |eva_but|integer|default: 0|
+||||
 |user_id|references||
 
 - has_many :products
