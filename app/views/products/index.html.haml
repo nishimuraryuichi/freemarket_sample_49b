@@ -1,30 +1,31 @@
 =render './shared/header'
-.slideshow
-  %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
-  %input{type:"radio", name:"slideshow", id:"switch2"}
-  %input{type:"radio", name:"slideshow", id:"switch3"}
-  %input{type:"radio", name:"slideshow", id:"switch4"}
-  .slidecontents
-    %section#slide1
-      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-natsukashi.jpg",alt: "merucari1"
-    %section#slide2
-      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-new-life.jpg",alt: "merucari2"
-    %section#slide3
-      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg",alt: "merucari3"
-    %section#slide4
-      =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei.jpg",alt: "merucari4"
-  %p.arrow.prev
-    =fa_icon("chevron-left")
-    %label{for: "switch1"}
-    %label{for: "switch2"}
-    %label{for: "switch3"}
-    %label{for: "switch4"}
-  %p.arrow.next
-    =fa_icon("chevron-right")
-    %label{for: "switch1"}
-    %label{for: "switch2"}
-    %label{for: "switch3"}
-    %label{for: "switch4"}
+.slideshow-wrap
+  .slideshow
+    %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
+    %input{type:"radio", name:"slideshow", id:"switch2"}
+    %input{type:"radio", name:"slideshow", id:"switch3"}
+    %input{type:"radio", name:"slideshow", id:"switch4"}
+    .slidecontents
+      %section#slide1
+        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-natsukashi.jpg",alt: "merucari1"
+      %section#slide2
+        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-new-life.jpg",alt: "merucari2"
+      %section#slide3
+        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg",alt: "merucari3"
+      %section#slide4
+        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei.jpg",alt: "merucari4"
+    %p.arrow.prev
+      =fa_icon("chevron-left")
+      %label{for: "switch1"}
+      %label{for: "switch2"}
+      %label{for: "switch3"}
+      %label{for: "switch4"}
+    %p.arrow.next
+      =fa_icon("chevron-right")
+      %label{for: "switch1"}
+      %label{for: "switch2"}
+      %label{for: "switch3"}
+      %label{for: "switch4"}
 
 .top-main
   .top-main__pickup

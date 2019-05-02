@@ -1,0 +1,203 @@
+.mypage__container__icon{
+  background:url("https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?62593201");
+  background-size:cover;
+  height:200px;
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+  &__link{
+    text-decoration: none;
+    display:block;
+    text-align: center;
+    color:$font_black;
+    img{
+      border-radius: 50%;
+    }
+    p{
+      text-align: center;
+      margin-top: 8px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &__balometer{
+      display:flex;
+      margin-top:8px;
+      &__left{
+        text-align: center;
+        span{
+          font-size: 14px;
+        }
+        span.number{
+          font-weight: bold;
+        }
+      }
+      &__right{
+        text-align: center;
+        margin-left:16px;
+        span{
+          font-size: 14px;
+        }
+        span.number{
+          font-weight: bold;
+        }
+      }
+    }
+    &:hover{
+      opacity:0.8;
+      p{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.mypage__tabs{
+  width:100%;
+  overflow:hidden;
+  input[name="tab"]{
+    display:none;
+  }
+  &__tab{
+    @include tab-style;
+  }
+  &__info{
+    clear:left;
+    &__list__link{
+      text-decoration: none;
+      display:block;
+      box-sizing: border-box;
+      border-bottom:$gray 1px solid;
+      padding:16px;
+      height:81px;
+      clear:both;
+      position:relative;
+      background-color: $white;
+      img{
+        float:left;
+      }
+      &__message{
+        margin-left:20px;
+        font-size:14px;
+        float:left;
+        &__title{
+          color:$font_black;
+          padding:1px 0 5px 0;
+        }
+        &__when{
+          color:darken($gray,20%);
+          span{
+            margin-left:5px;
+          }
+        }
+      }      
+      .fa.fa-chevron-right{
+        position:absolute;
+        top:40%;
+        right:10px;
+        color:$font_black;
+      }
+      &:hover{
+        background-color:lighten(lightgray,15%);
+      }
+    }
+    &__index{
+      @include go-index-style;
+    }  
+  }  
+  &__todo{
+    &__list{
+      @include nothing;
+    }
+  }
+} 
+.tab-content{
+  display:none;
+}
+#info:checked ~.info,
+#todo:checked ~.todo{
+  @include checked-tab;
+}
+#info:checked ~.mypage__tabs__info,
+#todo:checked ~.mypage__tabs__todo{
+  display:block;
+  clear:left;
+}
+
+.mypage__container__bottom{
+  margin-top:40px;
+  box-sizing: border-box;
+  height:72px;
+  padding: 0 16px;
+  font-weight: 600;
+  background-color: #fafafa;
+  padding-top:27px;
+}
+.mypage__tabs__bottom{
+  input[name="bottom"]{
+    display:none;
+    overflow: hidden;
+  }
+  &__tab{
+    @include tab-style
+  }
+  &__during{
+    clear:left;
+    &__list{
+      @include nothing;
+    }
+  }
+  &__past{
+      &__list__link{
+        text-decoration: none;
+        display:block;
+        box-sizing: border-box;
+        border-bottom:$gray 1px solid;
+        padding:16px;
+        height:104px;
+        clear:both;
+        position:relative;
+        background-color: $white;
+        img{
+          float:left;
+        }
+        &__message{
+          margin-left:20px;
+          font-size:14px;
+          float:left;
+          &__title{
+            color:$font_black;
+            padding:1px 0 5px 0;
+          }
+          &__when{
+            color:$white;
+            background-color: gray;
+            border-radius:3px;
+            display:inline-block;
+            font-weight: 400;
+            padding:2px;
+          }
+        }      
+        .fa.fa-chevron-right{
+          position:absolute;
+          top:40%;
+          right:10px;
+          color:$font_black;
+        }
+        &:hover{
+          background-color:lighten(lightgray,15%);
+        }
+      }
+    &__index{
+      @include go-index-style;
+    }    
+  }
+}
+
+#during:checked ~.during,
+#past:checked ~.past{
+  @include checked-tab;  
+}
+#during:checked ~.mypage__tabs__bottom__during,
+#past:checked ~.mypage__tabs__bottom__past{
+  clear:left;
+  display:block;
+}

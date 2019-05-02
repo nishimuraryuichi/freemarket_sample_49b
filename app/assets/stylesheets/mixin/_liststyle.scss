@@ -15,6 +15,60 @@
   border-radius: 2px;
 }
 
+@mixin nothing{
+  background:url("https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?62593201");
+  background-position:center 40px;
+  background-repeat: no-repeat;
+  padding:160px 0 60px 0;
+  font-weight: 600;
+  color:#ccc;
+  background-size:78px 85px;
+  text-align: center;
+  background-color:$white;
+}
+
+@mixin tab-style{
+  box-sizing: border-box;
+  height: 72px;
+  width: 50%;
+  color:$font_black;
+  text-align: center;
+  font-weight: 600;
+  display:block;
+  float:left;
+  background-color:#eee;
+  line-height:70px;
+    &:hover{
+    color:lighten($font_black,40%);
+  }   
+}
+
+@mixin checked-tab{
+  border-top:solid 2px red;
+  background-color: $white;
+}
+
+@mixin go-index-style{
+  box-sizing: border-box;
+  height:88px;
+  width:100%;
+  padding:16px;
+  background-color: $white;
+  a{
+    text-decoration:none;
+    display:block;
+    height:100%;
+    text-align:center;
+    color:$font_black;
+    background-color:lighten(lightgray,10%);
+    font-size:14px;
+    box-sizing: border-box;
+    padding-top:22px;
+    &:hover{
+      background-color: lighten(lightgray,15%);
+    }     
+  }
+}
 @mixin optional{
   padding-left: 5px;
   background: #ccc;
