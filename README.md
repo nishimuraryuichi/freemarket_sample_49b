@@ -10,6 +10,7 @@
 |eva_good|integer|default: 0|
 |eva_normal|integer|default: 0|
 |eva_but|integer|default: 0|
+||||
 |user_id|references||
 
 - has_many :products
@@ -49,9 +50,9 @@
 |detail|text|null:false|
 |brand_id|references||
 |profile_id|references||
-|category_parent_id|references||
+|parent_category_id|references||
 |category_id|references||
-|category_child_id|references||
+|child_category_id|references||
 - belongs_to :brand
 - belongs_to :profile
 - belongs_to :category_parents
