@@ -1,69 +1,75 @@
-= render "shared/header"
-.profile-new
-  .main-profile
-    .main-profile__head 本人情報の登録
-    .main-profile__form
-      = form_with local: true do |f|
-        .main-profile__form__text
-          .main-profile__form__text__left お客さまの本人情報をご登録ください。登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-          .main-profile__form__text__right
-            %span 本人確認書類のアップロードについて
-            = fa_icon('chevron-right')
-        .main-profile__form__group
-          .wrap
-            .main-profile__form__group__title お名前
-            .main-profile__form__group__require.inputs__product__caution 必須
-          %input.default{type: 'text',placeholder: '例）北川'}
-          %input.default{type: 'text',placeholder: '例）景子'}
-        .main-profile__form__group
-          .wrap
-            .main-profile__form__group__title お名前カナ
-            .main-profile__form__group__require.inputs__product__caution 必須
-          %input.default{type: 'text',placeholder: '例）キタガワ'}
-          %input.default{type: 'text',placeholder: '例）ケイコ'}
-        .main-profile__form__group
-          .wrap
-            .icon-1
-              = fa_icon('chevron-down')
-            .icon-2
-              = fa_icon('chevron-down')
-            .icon-3
-              = fa_icon('chevron-down')
-            .main-profile__form__group__title 生年月日
-            .main-profile__form__group__require.inputs__product__caution 必須
-          = raw sprintf(f.date_select( :birth_date,{start_year: 1930,prompt: '--', default: ('--'),end_year: (Time.now.year),use_month_numbers: true ,date_separator: '%s'},{class: "birth"}),'年 ','月 ') + '日'
-          .main-profile__form__group__info 出品されたことがある、本人情報未登録のお客さまもご対象となります。
-        .main-profile__form__group
-          .wrap
-            .main-profile__form__group__title 郵便番号
-            .main-profile__form__group__optional 任意
-          %input.default{type: 'text',placeholder: '例）1234567'}
-        .main-profile__form__group
-          .wrap
-            .icon-4
-              = fa_icon('chevron-down')
-            .main-profile__form__group__title 都道府県
-            .main-profile__form__group__optional 任意
-          .main-profile__form__group__select-house
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-        .main-profile__form__group
-          .wrap
-            .main-profile__form__group__title 市町村
-            .main-profile__form__group__optional 任意
-          %input.default{type: 'text',placeholder: '例）大阪市中央区'}
-        .main-profile__form__group
-          .wrap
-            .main-profile__form__group__title 番地
-            .main-profile__form__group__optional 任意
-          %input.default{type: 'text',placeholder: '例）心斎橋1-1-1'}
-        .main-profile__form__group
-          .wrap
-            .main-profile__form__group__title 建物名
-            .main-profile__form__group__optional 任意
-          %input.default{type: 'text',placeholder: '例）ビル'}
-        .main-profile__form__btn
-          = link_to '登録する','/profiles/new',class: 'btn-link'
-        .main-profile__form__info
-          %span 本人情報の登録について
-          = fa_icon('chevron-right')
-
+.full-container
+  = render partial: "shared/header"
+  %main
+    .mypage
+      = render partial: "shared/sidebar"
+      .mypage__container
+        .profile-new
+          .main-profile
+            .main-profile__head 本人情報の登録
+            .main-profile__form
+              = form_with local: true do |f|
+                .main-profile__form__text
+                  .main-profile__form__text__left お客さまの本人情報をご登録ください。登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+                  .main-profile__form__text__right
+                    %span 本人確認書類のアップロードについて
+                    = fa_icon('chevron-right')
+                .main-profile__form__group
+                  .wrap
+                    .main-profile__form__group__title お名前
+                    .main-profile__form__group__require.inputs__product__caution 必須
+                  %input.default{type: 'text',placeholder: '例）北川'}
+                  %input.default{type: 'text',placeholder: '例）景子'}
+                .main-profile__form__group
+                  .wrap
+                    .main-profile__form__group__title お名前カナ
+                    .main-profile__form__group__require.inputs__product__caution 必須
+                  %input.default{type: 'text',placeholder: '例）キタガワ'}
+                  %input.default{type: 'text',placeholder: '例）ケイコ'}
+                .main-profile__form__group
+                  .wrap
+                    .icon-1
+                      = fa_icon('chevron-down')
+                    .icon-2
+                      = fa_icon('chevron-down')
+                    .icon-3
+                      = fa_icon('chevron-down')
+                    .main-profile__form__group__title 生年月日
+                    .main-profile__form__group__require.inputs__product__caution 必須
+                  = raw sprintf(f.date_select( :birth_date,{start_year: 1930,prompt: '--', default: ('--'),end_year: (Time.now.year),use_month_numbers: true ,date_separator: '%s'},{class: "birth"}),'年 ','月 ') + '日'
+                  .main-profile__form__group__info 出品されたことがある、本人情報未登録のお客さまもご対象となります。
+                .main-profile__form__group
+                  .wrap
+                    .main-profile__form__group__title 郵便番号
+                    .main-profile__form__group__optional 任意
+                  %input.default{type: 'text',placeholder: '例）1234567'}
+                .main-profile__form__group
+                  .wrap
+                    .icon-4
+                      = fa_icon('chevron-down')
+                    .main-profile__form__group__title 都道府県
+                    .main-profile__form__group__optional 任意
+                  .main-profile__form__group__select-house
+                    = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+                .main-profile__form__group
+                  .wrap
+                    .main-profile__form__group__title 市町村
+                    .main-profile__form__group__optional 任意
+                  %input.default{type: 'text',placeholder: '例）大阪市中央区'}
+                .main-profile__form__group
+                  .wrap
+                    .main-profile__form__group__title 番地
+                    .main-profile__form__group__optional 任意
+                  %input.default{type: 'text',placeholder: '例）心斎橋1-1-1'}
+                .main-profile__form__group
+                  .wrap
+                    .main-profile__form__group__title 建物名
+                    .main-profile__form__group__optional 任意
+                  %input.default{type: 'text',placeholder: '例）ビル'}
+                .main-profile__form__btn
+                  = link_to '登録する','/profiles/new',class: 'btn-link'
+                .main-profile__form__info
+                  %span 本人情報の登録について
+                  = fa_icon('chevron-right')
+= render partial:"shared/full_footer"
+= render partial:"shared/exhibit"
