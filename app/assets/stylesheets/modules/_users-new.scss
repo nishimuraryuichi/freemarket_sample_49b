@@ -8,6 +8,7 @@
     margin-bottom: 18px;
     height: 48px;
     text-align: center;
+    text-decoration: none;
     @include flex-sparo-cen;
     &__logo{
         .fa-envelope{
@@ -19,6 +20,7 @@
     }
     &__text{
       font-size: 14px;
+      color: black;
     }
   }
   &__facebook{
