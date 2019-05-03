@@ -50,9 +50,9 @@
 |detail|text|null:false|
 |brand_id|references||
 |profile_id|references||
-|category_parent_id|references||
+|parent_category_id|references||
 |category_id|references||
-|category_child_id|references||
+|child_category_id|references||
 - belongs_to :brand
 - belongs_to :profile
 - belongs_to :category_parents

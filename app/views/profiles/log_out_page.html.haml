@@ -1,8 +1,13 @@
 .full-container
-  = render partial: "shared/header"
+  = render "shared/header"
   %main
     .mypage
       = render partial: "shared/sidebar"
       .maypage__container
         .logout__container
+<<<<<<< HEAD
           =link_to 'ログアウト', destroy_user_session_path, method: :delete ,class:'logout__container__btn'
+=======
+          .logout__container__btn ログアウト
+= render 'shared/full_footer'
+>>>>>>> development
