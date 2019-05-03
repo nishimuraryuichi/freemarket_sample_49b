@@ -75,6 +75,9 @@
       @media (min-width: 700px)//700px以上の時
       {display:none;}
     }
+    #image_upload{
+      display:none;
+    }
   }
   &__product{
     color: $font_black;
