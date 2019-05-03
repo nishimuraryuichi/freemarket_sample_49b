@@ -1,8 +1,9 @@
 .full-container
-  = render partial: "shared/header"
+  = render "shared/header"
   %main
     .mypage
       = render partial: "shared/sidebar"
       .maypage__container
         .logout__container
           .logout__container__btn ログアウト
+= render 'shared/full_footer'
