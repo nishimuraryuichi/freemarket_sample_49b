@@ -4,15 +4,23 @@ class ProductsController < ApplicationController
   end
 
   def new
-
-  end
-
-  def create
-
+    @product = Product.new
   end
 
   def show
-    @product = Product.new
+    @product = Product.find(params[:id])
+  end
+
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+        redirect_to new_product_path
+    else
+       @product = Product.new
+      #  flash.now[:alert] = "入力項目を埋めきれていません。もう一度入れ直してください"
+       render :new
+    end
+
   end
 
   def edit
@@ -30,4 +38,8 @@ class ProductsController < ApplicationController
   def confirm_buy
   end
 
+  private
+  def product_params
+    params.require(:product).permit(:name,:price,:image,:detail,:parent_category_id,:status_id,:delivery_fee_id,:prefecture_id,:preparation_id)
+  end
 end

@@ -1,6 +1,6 @@
 .background
   = render './shared/products-new-header'
-  =form_with local: true do |f|
+  =form_with model: @product do |f|
     .inputs
       %h3.inputs__header 商品の情報を入力
     .inputs
@@ -8,11 +8,13 @@
         %h4.inputs__image__label 出品画像
         .inputs__image__caution 必須
       .upload 最大10枚までアップロードできます
-      .drag-and-drop
-        .drag-and-drop__text ドラッグアンドドロップ
-        .drag-and-drop__text またはクリックしてファイルをダウンロード
-        .drag-and-drop__text-camera
-          =fa_icon("camera")
+      = f.label :image, for:"image_upload" do
+        .drag-and-drop
+          .drag-and-drop__text ドラッグアンドドロップ
+          .drag-and-drop__text またはクリックしてファイルをダウンロード
+          .drag-and-drop__text-camera
+            =fa_icon("camera")
+          = f.file_field :image, id: "image_upload"
     .inputs
       .inputs__product
         %h4.inputs__product__label 商品名
@@ -28,18 +30,18 @@
         .flex-end
           %h4.inputs-detail__label カデゴリー
           .inputs-detail__caution 必須
-        =f.select :category_parent_id,[["---", "value"], ["レディース", "value"], ["メンズ", "value"], ["ベビー・キッズ", "value"], ["インテリア・住まい・小物", "value"], ["本・音楽・ゲーム", "value"], ["おもちゃ・ホビー・グッズ", "value"], ["コスメ・香水・美容", "value"], ["家電・スマホ・カメラ", "value"], ["スポーツ・レジャー", "value"], ["ハンドメイド", "value"], ["チケット", "value"], ["自動車・オートバイ", "value"], ["その他", "value"]],{},class: 'inputs__form-select'
+        = f.collection_select :parent_category_id, ParentCategory.all, :id, :name,{},{class:'inputs__form-select'}
         .flex-end
           %h4.inputs-detail__label 商品の状態
           .inputs-detail__caution 必須
-        =f.select :status,[["---", "value"], ["新品、未使用", "value"], ["未使用に近い", "value"], ["目立った傷や汚れなし", "value"], ["やや傷や汚れあり", "value"], ["傷や汚れあり", "value"], ["全体的に状態が悪い", "value"]],{},class: 'inputs__form-select'
+        = f.collection_select :status_id, Status.all, :id, :name,{},{class:'inputs__form-select'}
     .inputs-detail
       .inputs-detail__large-label 配送について
       .inputs-detail__form
         .flex-end
           %h4.inputs-detail__label 配送料の負担
           .inputs-detail__caution 必須
-        =f.select :delivery_fee,[["---", "value"], ["送料込み(出品者負担)", "value"], ["着払い(購入者負担)", "value"]],{},class: 'inputs__form-select'
+        = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,{},{class:'inputs__form-select'}
         .flex-end
           %h4.inputs-detail__label 発送元の地域
           .inputs-detail__caution 必須
@@ -47,7 +49,7 @@
         .flex-end
           %h4.inputs-detail__label 発送までの日数
           .inputs-detail__caution 必須
-        =f.select :status,[["---", "value"], ["1〜2日で発送", "value"], ["2〜3日で発送", "value"], ["4〜7日で発送", "value"]],{},class: 'inputs__form-select'
+        = f.collection_select :preparation_id, Preparation.all, :id, :name,{},{class:'inputs__form-select'}
     .inputs.inputs-detail-price
       .inputs-detail-price__large-label
         販売価格
@@ -59,7 +61,7 @@
             .inputs-detail-price__caution 必須
           .flex-center-between
             .yen ￥
-            = f.text_field :name, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number'
+            = f.text_field :price, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number'
         .flex-center-between.commission
           .commission__text
             販売手数料
