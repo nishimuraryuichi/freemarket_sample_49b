@@ -61,7 +61,7 @@
             .inputs-detail-price__caution 必須
           .flex-center-between
             .yen ￥
-            = f.text_field :price, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number'
+            = f.text_field :price, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number',id: "selling-price"
         .flex-center-between.commission
           .commission__text
             販売手数料
