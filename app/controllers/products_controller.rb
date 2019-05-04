@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-
+    @product = Product.find(params[:id])
   end
 
   def update
@@ -36,6 +36,10 @@ class ProductsController < ApplicationController
   end
 
   def confirm_buy
+  end
+
+  def edit_index
+   @products = Product.all
   end
 
   private
