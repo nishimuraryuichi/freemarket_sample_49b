@@ -5,5 +5,5 @@
       = render partial: "shared/sidebar"
       .maypage__container
         .logout__container
-          .logout__container__btn ログアウト
+          =link_to 'ログアウト', destroy_user_session_path, method: :delete ,class:'logout__container__btn'
 = render 'shared/full_footer'

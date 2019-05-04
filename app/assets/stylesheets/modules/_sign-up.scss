@@ -1,0 +1,26 @@
+.sign-up-header-wrap{
+  padding-top:20px;
+  padding-bottom: 20px;
+}
+.sign-up-header{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: $font-black;
+}
+.sign-up__inputs__form{
+  width:66%;
+  margin-top: 8px;
+}
+.sign-up-field{
+  margin-left:25%
+}
+
+.sign-up-label{
+  @include flex--end;
+  &__caution{
+    margin-bottom:0;
+  }
+}
+
+// .inputs
