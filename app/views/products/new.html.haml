@@ -1,6 +1,6 @@
 .background
   = render './shared/products-new-header'
-  =form_with local: true do |f|
+  =form_with model: @product do |f|
     .inputs
       %h3.inputs__header 商品の情報を入力
     .inputs
@@ -8,8 +8,8 @@
         %h4.inputs__image__label 出品画像
         .inputs__image__caution 必須
       .upload 最大10枚までアップロードできます
-      .drag-and-drop
-        = f.label :image, for:"image_upload" do
+      = f.label :image, for:"image_upload" do
+        .drag-and-drop
           .drag-and-drop__text ドラッグアンドドロップ
           .drag-and-drop__text またはクリックしてファイルをダウンロード
           .drag-and-drop__text-camera
@@ -61,7 +61,7 @@
             .inputs-detail-price__caution 必須
           .flex-center-between
             .yen ￥
-            = f.text_field :name, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number'
+            = f.text_field :price, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number'
         .flex-center-between.commission
           .commission__text
             販売手数料
