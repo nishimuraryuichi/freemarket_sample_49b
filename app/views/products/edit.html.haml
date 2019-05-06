@@ -1,6 +1,6 @@
 .background
   = render './shared/products-new-header'
-  =form_with model: @product do |f|
+  =form_with model: @product, remote:true do |f|
     .inputs
       %h3.inputs__header 商品の情報を編集
     .inputs
@@ -61,7 +61,7 @@
             .inputs-detail-price__caution 必須
           .flex-center-between
             .yen ￥
-            = f.text_field :price, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number'
+            = f.text_field :price, placeholder:'例）300', class: 'inputs-detail-price__form__input',autocomplete: "off", type: 'number',id: "selling-price"
         .flex-center-between.commission
           .commission__text
             販売手数料
@@ -84,7 +84,7 @@
         また、出品をもちまして
         =link_to "加盟店規約","https://www.mercari.com/jp/seller_terms/", class: 'agreement'
         に同意したことになります。
-      =f.submit '出品する',class:'create-btn'
+      =f.submit '編集する',class:'create-btn'
       .flex-center
         =button_to "products#index", class: 'agreement-back-btn' do
           もどる

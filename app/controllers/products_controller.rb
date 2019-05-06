@@ -28,7 +28,8 @@ class ProductsController < ApplicationController
   end
 
   def update
-
+    @product = Product.find(params[:id])
+    redirect_to action: :edit_index  if @product.update(product_params)
   end
 
   def destroy
