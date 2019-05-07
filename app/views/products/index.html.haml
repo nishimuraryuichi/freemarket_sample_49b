@@ -34,62 +34,22 @@
     .items-box
       = link_to 'レディース新着アイテム',root_path, class: 'items-box__category'
     .items-box-content
-      .item-box
-        = link_to 'products/1', class: "item-box__link" do
-          .item-box__link__photo
-            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
-          .item-box__link__detail
-            .item-box__link__detail__name
-              フェリシモの綿薄手のニット
-            .item-box__link__detail__middle
-              %p.item-box__link__detail__middle__price ¥1000
-              .item-box__link__detail__middle__heart
-                =fa_icon("heart")
-                %span 5
-            .item-box__link__detail__tax
-              (税込)
-      .item-box
-        = link_to '/products/1/confirm_buy', class: "item-box__link" do
-          .item-box__link__photo
-            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
-          .item-box__link__detail
-            .item-box__link__detail__name
-              フェリシモの綿薄手のニット
-            .item-box__link__detail__middle
-              %p.item-box__link__detail__middle__price ¥1000
-              .item-box__link__detail__middle__heart
-                =fa_icon("heart")
-                %span 4
-            .item-box__link__detail__tax
-              (税込)
-      .item-box
-        = link_to root_path, class: "item-box__link" do
-          .item-box__link__photo
-            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
-          .item-box__link__detail
-            .item-box__link__detail__name
-              フェリシモの綿薄手のニット
-            .item-box__link__detail__middle
-              %p.item-box__link__detail__middle__price ¥1000
-              .item-box__link__detail__middle__heart
-                =fa_icon("heart")
-                %span 10
-            .item-box__link__detail__tax
-              (税込)
-      .item-box
-        = link_to root_path, class: "item-box__link" do
-          .item-box__link__photo
-            =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg"
-          .item-box__link__detail
-            .item-box__link__detail__name
-              フェリシモの綿薄手のニット
-            .item-box__link__detail__middle
-              %p.item-box__link__detail__middle__price ¥1000
-              .item-box__link__detail__middle__heart
-                =fa_icon("heart")
-                %span 4
-            .item-box__link__detail__tax
-              (税込)
+      - @products.each do |product|
+        .item-box
+          = link_to "products/#{product.id}", class: "item-box__link" do
+            .item-box__link__photo
+              =image_tag product.image.url,size:"230x300"
+            .item-box__link__detail
+              .item-box__link__detail__name
+                = product.name
+              .item-box__link__detail__middle
+                %p.item-box__link__detail__middle__price
+                  = product.price
+                .item-box__link__detail__middle__heart
+                  =fa_icon("heart")
+                  %span 5
+              .item-box__link__detail__tax
+                (税込)
     .all-items
       = link_to root_path do
         すべての商品を見る
