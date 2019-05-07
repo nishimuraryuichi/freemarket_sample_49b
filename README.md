@@ -43,7 +43,7 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false,default: 0|
-|status|string|null:false|
+|statu2s|string|null:false|
 |delivery_fee|integer|null:false|
 |delivery_time|integer|null:false|
 |prefecture_id|integer|foreign_key:true|
