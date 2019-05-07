@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :edit, :update]
   def index
     @products = Product.all
   end
@@ -8,7 +9,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def create
@@ -24,12 +24,14 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
-    redirect_to action: :edit_index  if @product.update(product_params)
+    if @product.update(product_params)
+      redirect_to action: :edit_index
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -46,5 +48,9 @@ class ProductsController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:name,:price,:detail,:parent_category_id,:status_id,:delivery_fee_id,:prefecture_id,:preparation_id,images: [])
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 end
