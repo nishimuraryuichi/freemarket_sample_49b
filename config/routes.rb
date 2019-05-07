@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'log_out_page'
     end
   end
-  resources :products, only:[:index,:new,:ctreate,:show] do
+  resources :products, only:[:index,:new,:create,:show] do
     member do
       get 'confirm_buy'
     end

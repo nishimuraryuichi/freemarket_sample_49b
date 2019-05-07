@@ -2,26 +2,16 @@
 .show-main
   .main-body
     .item-conteiner
-      .item-name
-        正規品！コーチ大きめ
+      .item-name= @product.name
       .item-main-content
         .item-main-content__photo
           .item-main-content__photo__main
             = link_to '/products/1' do
-              = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "300x300"
+              = image_tag @product.images[0],size: "300x300"
           .item-main-content__photo__sub
             .item-main-content__photo__sub__1.opacity
-              = link_to '/products/1' do
-                = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-            .item-main-content__photo__sub__2.opacity
-              = link_to '/products/1' do
-                = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-            .item-main-content__photo__sub__3.opacity
-              = link_to '/products/1' do
-                = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-            .item-main-content__photo__sub__4.opacity
-              = link_to '/products/1' do
-                = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+              -(0...@product.images.count).each do |image|
+                = image_tag (@product.images[image]),size: "75x75"
 
         .item-detail
           %table
@@ -47,8 +37,7 @@
               %tr
                 %th
                   カテゴリー
-                %td
-                  レディースバッグショルダーバッグ
+                %td= @product.parent_category.name
               %tr
                 %th
                   ブランド
@@ -58,12 +47,12 @@
                 %th
                   商品の状態
                 %td
-                  やや傷あり
+                  = @product.status.name
               %tr
                 %th
                   配送料の負担
                 %td
-                  送料込み
+                  = @product.delivery_fee.name
               %tr
                 %th
                   配送の方法
@@ -73,7 +62,7 @@
                 %th
                   配送元地域
                 %td
-                  兵庫県
+                  = @product.prefecture.name
               %tr
                 %th
                   発送日の目安
@@ -86,7 +75,7 @@
           .item-price-box__tax
             (税込)
           .item-price-box__delivaly-fee
-            送料込み
+            =  @product.delivery_fee.name
       .sold-submit
         .sold-submit__text
           売り切れました
@@ -115,7 +104,7 @@
               %th
                 カテゴリー
               %td
-                レディースバッグショルダーバッグ
+                = @product.parent_category.name
             %tr
               %th
                 ブランド
@@ -125,12 +114,12 @@
               %th
                 商品の状態
               %td
-                やや傷あり
+                = @product.status.name
             %tr
               %th
                 配送料の負担
               %td
-                送料込み
+                =  @product.delivery_fee.name
             %tr
               %th
                 配送の方法
@@ -140,14 +129,14 @@
               %th
                 配送元地域
               %td
-                兵庫県
+                = @product.prefecture.name
             %tr
               %th
                 発送日の目安
               %td
-                1日〜2日で発送
+                = @product.preparation.name
       .item-description
-        ここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文ですここは説明文です
+        = @product.detail
       .item-button
         .item-button__left
           .item-button__left__like
