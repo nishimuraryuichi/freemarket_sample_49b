@@ -41,15 +41,3 @@ describe User do
 
   end
 end
-
-
-# describe User do
-#   describe '#create' do
-#     it "is invalid with a 5length password" do
-#       user = User.new(email:"sample@sample.com",password: "12345",password_confirmation: "12345")
-#       user.valid?
-#       expect(user.errors[:password]).to include("is too short (minimum is 6 characters)")
-#     end
-#   end
-# end
-

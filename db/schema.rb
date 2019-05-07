@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_05_07_032919) do
     t.integer "delivery_fee_id", null: false
     t.integer "prefecture_id", null: false
     t.integer "preparation_id", null: false
+    t.boolean "purchased", default: false, null: false
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

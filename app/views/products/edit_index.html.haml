@@ -1,0 +1,17 @@
+.full-container
+  = render partial: "shared/header"
+  %main
+    .mypage
+      = render partial: "shared/sidebar"
+      .mypage__container
+        .mypage__tabs
+          %input#info{type: "radio", name: "tab",checked: true}
+          %label.mypage__tabs__tab.info{for:"info"} 出品中
+          %input#todo{type: "radio", name: "tab"}
+          %label.mypage__tabs__tab.todo{for:"todo"} 売却済み
+          %ul.tab-content.mypage__tabs__info
+            =render @products
+            %li.mypage__tabs__info__index
+              = link_to "一覧を見る",class: "mypage__tabs__info__index__button"
+          %ul.tab-content.mypage__tabs__todo
+            %li.mypage__tabs__todo__list 現在、やることリストはありません。
