@@ -36,9 +36,9 @@
     .items-box-content
       - @products.each do |product|
         .item-box
-          = link_to "products/#{product.id}", class: "item-box__link" do
+          = link_to product_path(product),class: "item-box__link" do
             .item-box__link__photo
-              =image_tag product.image.url,size:"230x300"
+              =image_tag product.images[0],size:"230x300"
             .item-box__link__detail
               .item-box__link__detail__name
                 = product.name
