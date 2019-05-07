@@ -7,5 +7,5 @@ class Product < ApplicationRecord
   belongs_to_active_hash :prefecture
 
   
-  mount_uploader :image, ImageUploader
+  has_many_attached :images
 end
