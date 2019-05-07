@@ -7,20 +7,11 @@
         .item-main-content__photo
           .item-main-content__photo__main
             = link_to '/products/1' do
-              = image_tag @product.image.url,size: "300x300"
+              = image_tag @product.images[0],size: "300x300"
           .item-main-content__photo__sub
             .item-main-content__photo__sub__1.opacity
-              = link_to '/products/1' do
-                = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-            .item-main-content__photo__sub__2.opacity
-              = link_to '/products/1' do
-                = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-            .item-main-content__photo__sub__3.opacity
-              = link_to '/products/1' do
-                = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
-            .item-main-content__photo__sub__4.opacity
-              = link_to '/products/1' do
-                = image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",size: "75x75"
+              -(0...@product.images.count).each do |image|
+                = image_tag (@product.images[image]),size: "75x75"
 
         .item-detail
           %table
