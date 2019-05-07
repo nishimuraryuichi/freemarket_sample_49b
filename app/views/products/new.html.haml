@@ -1,6 +1,6 @@
 .background
   = render './shared/products-new-header'
-  =form_with model: @product do |f|
+  =form_with model: @product,multipart: true do |f|
     .inputs
       %h3.inputs__header 商品の情報を入力
     .inputs
@@ -8,13 +8,15 @@
         %h4.inputs__image__label 出品画像
         .inputs__image__caution 必須
       .upload 最大10枚までアップロードできます
-      = f.label :image, for:"image_upload" do
+      = f.label :images, multiple:true, for:"image_upload" do
         .drag-and-drop
           .drag-and-drop__text ドラッグアンドドロップ
           .drag-and-drop__text またはクリックしてファイルをダウンロード
           .drag-and-drop__text-camera
             =fa_icon("camera")
-          = f.file_field :image, id: "image_upload"
+          = f.file_field :images,multiple: true, id: "image_upload"
+      
+    
     .inputs
       .inputs__product
         %h4.inputs__product__label 商品名
