@@ -85,6 +85,8 @@
         =link_to "加盟店規約","https://www.mercari.com/jp/seller_terms/", class: 'agreement'
         に同意したことになります。
       =f.submit '編集する',class:'create-btn'
+      = link_to product_path(@product),method: 'delete',data: {confirm: '本当に削除しますか？'} do
+        .delete-btn 削除
       .flex-center
         =button_to "products#index", class: 'agreement-back-btn' do
           もどる

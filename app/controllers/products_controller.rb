@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update]
+  before_action :set_product, only: [:show, :edit, :update,:destroy]
   def index
     @products = Product.all
   end
@@ -35,7 +35,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-
+    if @product.destroy
+      redirect_to("/")
+    else
+      render :edit
+    end
   end
 
   def confirm_buy
