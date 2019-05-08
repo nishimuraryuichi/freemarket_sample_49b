@@ -1,6 +1,30 @@
 require_relative 'boot'
-
 require 'rails/all'
+require 'payjp'
+Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+
+
+class MyPayjp
+  def self.create_token(number, cvc, exp_month, exp_year)
+    token = Payjp::Token.create({
+      card: {
+        number:    number,
+        cvc:       cvc,
+        exp_month: exp_month,
+        exp_year:  exp_year,
+      }},
+      {
+        'X-Payjp-Direct-Token-Generate': 'true'
+      }
+    )
+    return token.id
+  end
+
+  def self.payjp(amount,token)
+    Payjp::Charge.create(amount:amount,card:token,currency:'jpy',)
+  end
+
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
