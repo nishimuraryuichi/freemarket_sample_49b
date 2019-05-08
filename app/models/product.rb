@@ -6,6 +6,6 @@ class Product < ApplicationRecord
   belongs_to_active_hash :preparation
   belongs_to_active_hash :prefecture
 
-  
+
   has_many_attached :images
 end
