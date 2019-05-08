@@ -11,10 +11,6 @@ class UsersController < ApplicationController
     MyPayjp.register_card(params[:id],params[:payjpToken])
   end
 
-  def buy
-    MyPayjp.payjp(params[:id],params[:payjpToken])
-  end
-
 private
 
 end

@@ -20,10 +20,6 @@ class MyPayjp
     )
   end
 
-  def self.customer_inf(id)
-    Payjp::Customer.retrieve(id)
-  end
-
 end
 
 # Require the gems listed in Gemfile, including any gems
