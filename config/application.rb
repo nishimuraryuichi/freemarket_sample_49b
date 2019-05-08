@@ -5,21 +5,6 @@ Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
 
 
 class MyPayjp
-  def self.create_token(number, cvc, exp_month, exp_year)
-    token = Payjp::Token.create({
-      card: {
-        number:    number,
-        cvc:       cvc,
-        exp_month: exp_month,
-        exp_year:  exp_year,
-      }},
-      {
-        'X-Payjp-Direct-Token-Generate': 'true'
-      }
-    )
-    return token.id
-  end
-
   def self.payjp(amount,id)
     Payjp::Charge.create(
       amount:amount,
@@ -28,11 +13,10 @@ class MyPayjp
       )
   end
 
-  def self.register_card(id,token,name)
+  def self.register_card(id,token)
     Payjp::Customer.create(
     id:id,
     card:token,
-    description: name,
     )
   end
 

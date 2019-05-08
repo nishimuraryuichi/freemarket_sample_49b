@@ -16,7 +16,7 @@
       .payment__price=(@product.price*1.08).round.to_s+"円"
     .confirm-caution この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .confirm-buy-btn-btn
-      =link_to "購入する", new_user_path, class:'confirm-buy-btn__link'
+      =link_to "購入する", product_buy_path(current_user,@product),method: :post, class:'confirm-buy-btn__link'
     .confirm-app-install アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
     %ul.confirm-app-link
       %li
