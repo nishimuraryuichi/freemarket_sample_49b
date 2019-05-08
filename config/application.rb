@@ -20,8 +20,24 @@ class MyPayjp
     return token.id
   end
 
-  def self.payjp(amount,token)
-    Payjp::Charge.create(amount:amount,card:token,currency:'jpy',)
+  def self.payjp(amount,id)
+    Payjp::Charge.create(
+      amount:amount,
+      customer:id,
+      currency:'jpy',
+      )
+  end
+
+  def self.register_card(id,token,name)
+    Payjp::Customer.create(
+    id:id,
+    card:token,
+    description: name,
+    )
+  end
+
+  def self.customer_inf(id)
+    Payjp::Customer.retrieve(id)
   end
 
 end

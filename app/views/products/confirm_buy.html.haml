@@ -5,18 +5,18 @@
   .inputs
     .confirm-image-wrap
       =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",alt: "merucari1",class: 'confirm-image'
-    .confirm-product-name フェリシモの綿薄手のニット
+    .confirm-product-name=@product.name
     .confirm-product-price
-      .confirm-product-price__price ¥1,000
+      .confirm-product-price__price=@product.price.to_s+"円"
       .confirm-product-price__taxin 送料込み
-    =link_to new_user_path, class: 'confirm-buy-point' do
-      .confirm-buy-point-btn ポイントはありません
+    .confirm-buy-btn-btn
+      =link_to "ポイントはありません", new_user_path, class:'confirm-buy-btn__link'
     .payment-confirm
       .payment__text 支払い金額
-      .payment__price ¥2,700
+      .payment__price=(@product.price*1.08).round.to_s+"円"
     .confirm-caution この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-    =link_to new_user_path, class: 'confirm-buy-btn-btn' do
-      .confirm-buy-btn__link 購入する
+    .confirm-buy-btn-btn
+      =link_to "購入する", new_user_path, class:'confirm-buy-btn__link'
     .confirm-app-install アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
     %ul.confirm-app-link
       %li
