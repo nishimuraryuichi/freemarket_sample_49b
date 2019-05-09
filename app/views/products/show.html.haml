@@ -76,9 +76,13 @@
             (税込)
           .item-price-box__delivaly-fee
             =  @product.delivery_fee.name
-      .sold-submit
-        .sold-submit__text
-          売り切れました
+      -if @product.purchased
+        .sold-submit
+          .sold-submit__text 売り切れました
+      -else
+        = link_to confirm_buy_product_path(@product.id),class:"sold-submit__link" do
+          .sold-submit-red
+            .sold-submit-red__text 購入する
       .item-detail-2
         %table
           %tbody

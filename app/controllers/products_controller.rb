@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update,:destroy]
+  before_action :set_product, only: [:show, :edit, :update,:destroy,:confirm_buy]
+  
   def index
     @products = Product.all
   end
@@ -43,6 +44,13 @@ class ProductsController < ApplicationController
   end
 
   def confirm_buy
+  end
+
+  def buy
+    @product = Product.find(params[:product_id])
+    MyPayjp.payjp(@product.price,params[:id])
+    @product.update(purchased:true)
+    redirect_to action: :show, id:@product.id
   end
 
   def edit_index

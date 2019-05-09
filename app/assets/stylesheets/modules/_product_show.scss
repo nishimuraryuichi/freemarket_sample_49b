@@ -109,7 +109,26 @@
           text-decoration: none;
           color: white;
         }
+        &__link{
+          text-decoration: none;
+        }
       }
+      .sold-submit-red{
+        font-size: 20px;
+        font-weight: bold;
+        background-color: $caution;
+        text-align: center;
+        line-height: 50px;
+        color:white;
+        height: 50px;
+        margin:16px 0 0;
+        cursor: pointer;
+        &__text{
+          text-decoration: none;
+          color: white;
+        }
+      }
+
       .item-detail-2{
         margin:20px auto;
         width: 300px;

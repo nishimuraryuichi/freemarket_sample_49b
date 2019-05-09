@@ -1,6 +1,26 @@
 require_relative 'boot'
-
 require 'rails/all'
+require 'payjp'
+Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+
+
+class MyPayjp
+  def self.payjp(amount,id)
+    Payjp::Charge.create(
+      amount:amount,
+      customer:id,
+      currency:'jpy',
+      )
+  end
+
+  def self.register_card(id,token)
+    Payjp::Customer.create(
+    id:id,
+    card:token,
+    )
+  end
+
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
