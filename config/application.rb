@@ -1,7 +1,6 @@
 require_relative 'boot'
 require 'rails/all'
 require 'payjp'
-Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
 
 
 class MyPayjp

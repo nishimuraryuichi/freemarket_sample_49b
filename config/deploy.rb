@@ -21,7 +21,7 @@ set :default_env, {
   BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
   BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
 }
-
+set :linked_files, %w{config/master.key}
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do

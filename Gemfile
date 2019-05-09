@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'pry-rails'
 end
 
 
@@ -84,3 +85,5 @@ gem 'mini_magick'
 gem 'omniauth-facebook'
 gem 'jquery-rails'
 gem 'payjp'
+gem 'aws-sdk-s3',require: false
+
