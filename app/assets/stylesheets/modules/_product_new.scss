@@ -271,6 +271,27 @@
 .create-btn:hover{
   cursor: pointer;
 }
+a{
+  text-decoration: none;
+  .delete-btn{
+    width:calc(100% - 400px);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+    margin:10px auto;
+    background-color:black;
+    color:yellow;
+    font-size: 14px;
+    opacity: 0.9;
+    text-align: center;
+    &__text{
+      text-decoration: none;
+    }
+  }
+  .delete-btn:hover{
+    cursor:pointer;
+  }
+}
 .agreement-back-btn{
   background-color: #AAAAAA;
   color: $white;
@@ -278,7 +299,7 @@
   height: 50px;
   width: 50%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 14px;
 }
 .agreement-back-btn:hover{
