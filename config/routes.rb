@@ -9,9 +9,10 @@ Rails.application.routes.draw do
       get 'log_out_page'
     end
   end
-  resources :products, only:[:index,:new,:ctreate,:show] do
+  resources :products, only:[:index,:new,:create,:show,:edit,:update] do
     member do
       get 'confirm_buy'
+      get 'edit_index'
     end
   end
   # resources :users
@@ -20,7 +21,14 @@ Rails.application.routes.draw do
   resources :category_parents
   # resources :categories
   # resources :category_children
-  resources :users,  only:[:new]
-
+  resources :users,  only:[:new] do
+    member do
+      get 'card_register_page'
+      post 'card_register'
+      resources :products do
+        post 'buy'
+      end
+    end
+  end
 end
 
