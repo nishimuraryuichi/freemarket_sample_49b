@@ -13,7 +13,7 @@
         %span.mypage__sidebar__user__list__text 出品する
         = fa_icon("chevron-right")
     %li.mypage__sidebar__content__list
-      = link_to '/products/1/edit_index' do
+      = link_to "/products/#{current_user.id}/edit_index" do
         %span.mypage__sidebar__user__list__text 出品した商品-出品中
         = fa_icon("chevron-right")
     %li.mypage__sidebar__content__list
@@ -69,7 +69,7 @@
         %span.mypage__sidebar__user__list__text 発送元・お届け先住所変更
         = fa_icon("chevron-right")
     %li.mypage__sidebar__content__list
-      = link_to pay_profile_path('1') do
+      = link_to pay_method_profile_path(current_user.id) do
         %span.mypage__sidebar__user__list__text 支払い方法
         = fa_icon("chevron-right")
     %li.mypage__sidebar__content__list
