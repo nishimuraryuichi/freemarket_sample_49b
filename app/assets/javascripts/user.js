@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   let form = $("#charge-form");
-  Payjp.setPublicKey('pk_test_4c4b1c026aed85d8665b4e7b');
+  Payjp.setPublicKey('pk_test_2452e72f859ccff652883d93');
   $("#charge-form").on("click", "#submit-button", function(e) {
     e.preventDefault();
     form.find("input[type=submit]").prop("disabled", true);
