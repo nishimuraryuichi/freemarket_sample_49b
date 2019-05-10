@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'products#index'
   resources :profiles, only: [:new,:show,:edit] do
     member do
-      get 'pay'
+      get 'pay_method'
     end
     collection do
       get 'log_out_page'
@@ -21,14 +21,11 @@ Rails.application.routes.draw do
   resources :category_parents
   # resources :categories
   # resources :category_children
+
   resources :users,  only:[:new] do
-    member do
-      get 'card_register_page'
-      post 'card_register'
-      resources :products do
-        post 'buy'
-      end
+    resources :cards, only:[:new,:create]
+    resources :products do
+      post 'buy'
     end
   end
 end
-

@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :profile
   validates :encrypted_password, presence: true, length: {minimum:6}
+  has_many :products
 end

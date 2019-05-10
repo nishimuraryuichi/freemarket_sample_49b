@@ -11,7 +11,7 @@
               .pay-content__main__top クレジットカード一覧
               .pay-content__main__bottom
                 .pay-content__main__bottom__btn
-                  = link_to card_register_page_user_path(current_user.id),class: 'pay-content__main__bottom__btn__name' do
+                  =link_to new_user_card_path(current_user.id),class:'pay-content__main__bottom__btn__name' do
                     = fa_icon('credit-card')
                     %span クレジットカードを登録する
                   .pay-content__main__bottom__btn__icon

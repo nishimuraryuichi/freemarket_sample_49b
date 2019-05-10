@@ -12,7 +12,6 @@
             .item-main-content__photo__sub__1.opacity
               -(0...@product.images.count).each do |image|
                 = image_tag (@product.images[image]),size: "75x75"
-
         .item-detail
           %table
             %tbody
