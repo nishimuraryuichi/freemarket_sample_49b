@@ -9,12 +9,16 @@
             .pay-content__head 支払い方法
             .pay-content__main
               .pay-content__main__top クレジットカード一覧
-              .pay-content__main__bottom
-                .pay-content__main__bottom__btn
-                  =link_to new_user_card_path(current_user.id),class:'pay-content__main__bottom__btn__name' do
-                    = fa_icon('credit-card')
-                    %span クレジットカードを登録する
-                  .pay-content__main__bottom__btn__icon
+              -if current_user.card_number_last4
+                .pay-content__main__bottom-number
+                  ="*************"+current_user.card_number_last4.to_s
+              -else
+                .pay-content__main__bottom
+                  =link_to new_user_card_path(current_user.id),class:'pay-content__main__bottom__btn' do
+                    .pay-content__main__bottom__btn__name
+                      = fa_icon('credit-card')
+                      %span クレジットカードを登録する
+                    .pay-content__main__bottom__btn__icon
             .pay-content__bottom
               = link_to root_path,class: 'pay-content__bottom__name' do
                 %span 支払い方法について
