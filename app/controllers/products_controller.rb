@@ -48,13 +48,13 @@ class ProductsController < ApplicationController
 
   def buy
     @product = Product.find(params[:product_id])
-    MyPayjp.payjp(@product.price,params[:id])
+    MyPayjp.payjp(@product.price,params[:user_id])
     @product.update(purchased:true)
     redirect_to action: :show, id:@product.id
   end
 
   def edit_index
-   @products = Product.all
+   @products = User.find(params[:id]).products
   end
 
   private

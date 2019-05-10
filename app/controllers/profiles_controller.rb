@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   def edit
   end
 
-  def pay
+  def pay_method
   end
 
   def log_out_page
