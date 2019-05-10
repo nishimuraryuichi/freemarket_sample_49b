@@ -1,7 +1,7 @@
 require_relative 'boot'
 require 'rails/all'
 require 'payjp'
-# Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']西口キー消さないで
+Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']西口キー消さないで
 
 class MyPayjp
   def self.payjp(amount,id)
