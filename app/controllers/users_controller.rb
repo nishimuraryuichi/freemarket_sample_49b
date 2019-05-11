@@ -1,14 +1,6 @@
 class UsersController < ApplicationController
 
   def new
-
-  end
-
-  def card_register_page
-  end
-
-  def card_register
-    MyPayjp.register_card(params[:id],params[:payjpToken])
   end
 
 private
