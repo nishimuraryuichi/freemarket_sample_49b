@@ -27,7 +27,6 @@
       =fa_icon("chevron-left 3x")
     .swiper-button-next
       =fa_icon("chevron-right 3x")
-%script{src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"}
       
 .top-main
   .top-main__pickup
@@ -46,7 +45,7 @@
                 = product.name
               .item-box__link__detail__middle
                 %p.item-box__link__detail__middle__price
-                  = product.price
+                  = "¥" + number_with_delimiter(product.price)
                 .item-box__link__detail__middle__heart
                   =fa_icon("heart")
                   %span 5
