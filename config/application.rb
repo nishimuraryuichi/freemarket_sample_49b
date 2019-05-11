@@ -1,7 +1,8 @@
 require_relative 'boot'
 require 'rails/all'
 require 'payjp'
-Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']西口キー消さないで
+Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+# 西口キー消さないで
 
 class MyPayjp
   def self.payjp(amount,id)
@@ -28,7 +29,7 @@ class MyPayjp
     end
   end
 
-  
+
   # def self.register_card
   # Payjp::Customer.retrieve('cus_121673955bd7aa144de5a8f6c262')
   # end
