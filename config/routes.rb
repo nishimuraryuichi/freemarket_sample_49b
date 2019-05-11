@@ -23,9 +23,10 @@ Rails.application.routes.draw do
   # resources :category_children
 
   resources :users,  only:[:new] do
-    resources :cards, only:[:new,:create]
     resources :products do
       post 'buy'
     end
   end
+  resources :cards, only:[:new,:create,:destroy]
+
 end

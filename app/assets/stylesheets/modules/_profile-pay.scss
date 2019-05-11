@@ -36,6 +36,18 @@
           }
         }
       }
+      &__delete{
+        background-color: red;
+        width:40px;
+        margin:20px auto;
+        padding:3px 0;
+        &__btn{
+          &__name{
+          text-decoration: none;
+          color:white;
+          }
+        }
+      }
       &__bottom-number{
         margin-top:30px;
         text-align: left;

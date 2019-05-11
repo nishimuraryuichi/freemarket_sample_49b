@@ -4,7 +4,7 @@
     .mypage
       = render partial: "shared/sidebar"
       .mypage__container
-      = form_with url:user_cards_path(current_user.id),id:'charge-form' do |f|
+      = form_with url:cards_path,id:'charge-form' do |f|
         .inputs
           .inputs__product
             %h4.inputs__product__label カード番号

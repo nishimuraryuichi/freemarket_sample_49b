@@ -8,17 +8,22 @@
           .pay-content
             .pay-content__head 支払い方法
             .pay-content__main
-              .pay-content__main__top クレジットカード一覧
               -if current_user.card_number_last4
-                .pay-content__main__bottom-number
-                  ="*************"+current_user.card_number_last4.to_s
+                .pay-content__main__top クレジットカード一覧
+                .pay-content__main__bottom-number="*************"+current_user.card_number_last4.to_s
+                .pay-content__main__delete
+                  =link_to card_path(current_user.id),method: :delete,class:'pay-content__main__bottom__btn' do
+                    .pay-content__main__bottom__btn__name
+                      %span 削除
+                    .pay-content__main__bottom__btn__icon
               -else
+                .pay-content__main__top クレジットカード一覧
                 .pay-content__main__bottom
-                  =link_to new_user_card_path(current_user.id),class:'pay-content__main__bottom__btn' do
+                  =link_to new_card_path,class:'pay-content__main__bottom__btn' do
                     .pay-content__main__bottom__btn__name
                       = fa_icon('credit-card')
                       %span クレジットカードを登録する
-                    .pay-content__main__bottom__btn__icon
+                  .pay-content__main__bottom__btn__icon
             .pay-content__bottom
               = link_to root_path,class: 'pay-content__bottom__name' do
                 %span 支払い方法について
