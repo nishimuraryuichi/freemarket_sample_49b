@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update,:destroy,:confirm_buy]
   
   def index
-    @products = Product.all
+    @products = Product.order(created_at: :DESC).limit(4)
   end
 
   def new
