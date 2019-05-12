@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
 
   def buy
     @product = Product.find(params[:product_id])
-    MyPayjp.payjp(@product.price,params[:user_id])
+    MyPayjp.payjp(@product.price*0.9,params[:user_id])
     @product.update(purchased:true)
     redirect_to action: :show, id:@product.id
   end
