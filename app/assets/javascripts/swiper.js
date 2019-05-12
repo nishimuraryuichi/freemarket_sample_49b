@@ -26,7 +26,7 @@ document.addEventListener('turbolinks:load',function() {
       prevEl:'.swiper-button-prev',
     },
     loop: true,
-    speed: 500,
+    speed: 1500,
     slideToClickedSlide:true,
     centeredSlides:true,
   });
@@ -34,4 +34,4 @@ document.addEventListener('turbolinks:load',function() {
 
 setInterval(function(){
    $('.swiper-button-next').click();
- },2000);
+ },3000);
