@@ -37,10 +37,11 @@
         }
       }
       &__delete{
-        background-color: red;
+        background-color: $caution;
         width:40px;
         margin:20px auto;
         padding:3px 0;
+        border-radius: 3px;
         &__btn{
           &__name{
           text-decoration: none;

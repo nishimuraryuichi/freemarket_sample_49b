@@ -12,7 +12,7 @@
                 .pay-content__main__top クレジットカード一覧
                 .pay-content__main__bottom-number="*************"+current_user.card_number_last4.to_s
                 .pay-content__main__delete
-                  =link_to card_path(current_user.id),method: :delete,class:'pay-content__main__bottom__btn' do
+                  =link_to card_path(current_user.id),method: :delete,class:'pay-content__main__bottom__btn',data: {confirm: '本当に削除しますか？'} do
                     .pay-content__main__bottom__btn__name
                       %span 削除
                     .pay-content__main__bottom__btn__icon

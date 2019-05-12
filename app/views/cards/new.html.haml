@@ -4,22 +4,40 @@
     .mypage
       = render partial: "shared/sidebar"
       .mypage__container
-      = form_with url:cards_path,id:'charge-form' do |f|
-        .inputs
-          .inputs__product
-            %h4.inputs__product__label カード番号
-            .inputs__product__caution 必須
-          = f.number_field :the_card_number, placeholder:'カード番号(16桁)', class: 'form number',autocomplete: "off",maxlength: "16",id:"payment_card_no"
-          .inputs__product
-            %h4.inputs__product__label CVC
-            .inputs__product__caution 必須
-          = f.number_field :cvc, placeholder:'CVC(3桁)', class: 'form cvc',autocomplete: "off",id:"cvc_code"
-          .inputs__product
-            %h4.inputs__product__label 有効期限(月)
-            .inputs__product__caution 必須
-          = f.number_field :month, placeholder:'02など(2桁)', class: 'form exp_month',autocomplete: "off",id:"card_expire_mm"
-          .inputs__product
-            %h4.inputs__product__label 有効期限(年)
-            .inputs__product__caution 必須
-          = f.number_field :year, placeholder:'2020など(4桁)', class: 'form exp_year',autocomplete: "off",id:"card_expire_yy"
-          = f.submit id:'submit-button'
+        = form_with url:cards_path,id:'charge-form' do |f|
+          .credit__header-top
+            %h4 クレジットカード情報入力
+          .credit__header-bottom
+            .credit__header-bottom__inputs
+              %h4.inputs__product__label カード番号
+              .inputs__product__caution 必須
+            = f.number_field :the_card_number, placeholder:'半角数字のみ(16桁)', class: 'form number credit__header-bottom__num-form',autocomplete: "off",maxlength: "16",id:"payment_card_no"
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/visa.svg?376951604",size: "28x28",class:"credit-image"
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?376951604",size: "28x28",class:"credit-image"
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?376951604",size: "28x28",class:"credit-image"
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?376951604",size: "28x28",class:"credit-image"
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?376951604",size: "28x28",class:"credit-image"
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?376951604",size: "28x28",class:"credit-image"
+            = image_tag "https://www-mercari-jp.akamaized.net/assets/img/card/discover.svg?376951604",size: "28x28",class:"credit-image"
+            .inputs__product
+              %h4.inputs__product__label 有効期限
+              .inputs__product__caution 必須
+            .expiration-select
+              .wrap
+                =f.select :month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{},class: 'form exp_month expiration-select__form',id:"card_expire_mm"
+
+              -# = f.number_field :month, placeholder:'02など(2桁)', class: 'form exp_month',autocomplete: "off",id:"card_expire_mm"
+              - i = Time.now.year.to_s[2..3].to_i
+              .wrap
+                =f.select :yaer, [["#{i}","20#{i}".to_i],["#{i+1}","20#{i+1}".to_i],["#{i+2}","20#{i+2}".to_i],["#{i+3}","20#{i+3}".to_i],["#{i+4}","20#{i+4}".to_i],["#{i+5}","20#{i+5}".to_i],["#{i+6}","20#{i+6}".to_i],["#{i+7}","20#{i+7}".to_i],["#{i+8}","20#{i+8}".to_i],["#{i+9}","20#{i+9}".to_i],["#{i+10}","20#{i+10}".to_i]],{},class: 'form exp_year expiration-select__form',id:"card_expire_yy"
+            .inputs__product
+              %h4.inputs__product__label セキュリティーコード
+              .inputs__product__caution 必須
+            = f.number_field :cvc, placeholder:'カード背面4桁もしくは3桁の番号', class: 'form cvc credit__header-bottom__num-form',autocomplete: "off",id:"cvc_code"
+            .safe-card
+              =fa_icon('question')
+              %span.safe-card__link カード裏面の番号とは？
+            .icon-lock
+            = f.submit '追加する', id:'submit-button',class:'card-register-submit'
+= render partial:"shared/full_footer"
+= render partial:"shared/exhibit"

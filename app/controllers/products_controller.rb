@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
       #  flash.now[:alert] = "入力項目を埋めきれていません。もう一度入れ直してください"
        render :new
     end
-
   end
 
   def edit
