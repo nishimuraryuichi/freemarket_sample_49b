@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
       #  flash.now[:alert] = "入力項目を埋めきれていません。もう一度入れ直してください"
        render :new
     end
-
   end
 
   def edit
@@ -48,13 +47,14 @@ class ProductsController < ApplicationController
 
   def buy
     @product = Product.find(params[:product_id])
-    MyPayjp.payjp(@product.price,params[:user_id])
+    MyPayjp.payjp(@product.price*0.9,params[:user_id])
     @product.update(purchased:true)
     redirect_to action: :show, id:@product.id
   end
 
   def edit_index
-   @products = User.find(params[:id]).products
+   @products = current_user.products.where(purchased:false)
+   @soldProducts = current_user.products.where(purchased:true)
   end
 
   private

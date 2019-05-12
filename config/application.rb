@@ -1,7 +1,8 @@
 require_relative 'boot'
 require 'rails/all'
 require 'payjp'
-# Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']西口キー消さないで
+Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+# 西口キー消さないで
 
 class MyPayjp
   def self.payjp(amount,id)
@@ -19,7 +20,6 @@ class MyPayjp
     )
   end
 
-    ##idはstring?
   def self.default_card_num?(id)
     begin
       card_id = Payjp::Customer.retrieve(id).default_card
@@ -28,10 +28,12 @@ class MyPayjp
     end
   end
 
-  
-  # def self.register_card
-  # Payjp::Customer.retrieve('cus_121673955bd7aa144de5a8f6c262')
-  # end
+  def self.card_delete(id)
+    if MyPayjp.default_card_num?(id)
+      customer = Payjp::Customer.retrieve(id)
+      customer.delete
+    end
+  end
 end
 
 # Require the gems listed in Gemfile, including any gems
