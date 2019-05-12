@@ -82,6 +82,9 @@
         = link_to confirm_buy_product_path(@product.id),class:"sold-submit__link" do
           .sold-submit-red
             .sold-submit-red__text 購入する
+      -if @product.user_id == current_user.id
+        = link_to product_path(@product),method: 'delete',data: {confirm: '本当に削除しますか？'} do
+          .delete-btn 削除
       .item-detail-2
         %table
           %tbody

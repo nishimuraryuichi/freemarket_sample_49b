@@ -17,8 +17,13 @@ class User < ApplicationRecord
     end
   end
 
-  # def card_number(user)
-  #   register_card?(user.id).
-  # end
+
+  def card_registered?
+    if card_num = MyPayjp.default_card_num?(self.id.to_s)
+      return true
+    else
+      return false
+    end
+  end
 
 end
