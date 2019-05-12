@@ -34,4 +34,4 @@ document.addEventListener('turbolinks:load',function() {
 
 setInterval(function(){
    $('.swiper-button-next').click();
- },3000);
+ },1000);
