@@ -88,14 +88,17 @@
       }
       &__btn{
         margin:40px auto;
-        height:50px;
         background-color: red;
         text-align: center;
         line-height: 50px;
         width:586px;
         .btn-link{
         text-decoration: none;
+        width:586px;
+        height:70px;
+        background-color: red;
         color:white;
+        font-size: 20px;
         }
       }
       &__info{

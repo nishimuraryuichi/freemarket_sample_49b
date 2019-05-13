@@ -38,7 +38,8 @@
         .flex-end
           %h4.inputs-detail__label カデゴリー
           .inputs-detail__caution 必須
-        = f.collection_select :parent_category_id, ParentCategory.all, :id, :name,{},{class:'inputs__form-select'}
+        .category-select-inputs-detail
+          = f.collection_select :parent_category_id, ParentCategory.all, :id, :name,{},{class:'inputs__form-select parent-category-select-form'}
         -if @product.errors[:status_id].any?
           .error-red= @product.errors[:status_id].join
         .flex-end

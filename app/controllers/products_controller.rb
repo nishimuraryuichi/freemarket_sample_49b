@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @profile = Profile.find(1)
   end
 
   def create
@@ -46,7 +47,7 @@ class ProductsController < ApplicationController
 
   def buy
     @product = Product.find(params[:product_id])
-    MyPayjp.payjp((@product.price)*0.9.round,params[:user_id])
+    MyPayjp.payjp((@product.price*0.9).round,params[:user_id])
     @product.update(purchased:true)
     redirect_to action: :show, id:@product.id
   end
@@ -56,9 +57,13 @@ class ProductsController < ApplicationController
    @soldProducts = current_user.products.where(purchased:true)
   end
 
+  def search
+    @products = Product.where('name LIKE ?',"%#{params[:id]}%")
+  end
+
   private
   def product_params
-    params.require(:product).permit(:name,:price,:detail,:parent_category_id,:status_id,:delivery_fee_id,:prefecture_id,:preparation_id,images: [])
+    params.require(:product).permit(:name,:price,:detail,:parent_category_id,:category_id,:category_child_id,:status_id,:delivery_fee_id,:prefecture_id,:preparation_id,images: [])
   end
 
   def set_product

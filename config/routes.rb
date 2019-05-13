@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'products#index'
-  resources :profiles, only: [:new,:show,:edit] do
+  resources :profiles, only: [:new,:create,:show,:edit] do
     member do
       get 'pay_method'
     end
@@ -13,15 +13,15 @@ Rails.application.routes.draw do
     member do
       get 'confirm_buy'
       get 'edit_index'
+      get 'search'
     end
   end
   # resources :users
   # resources :comments
   # resources :brands
-  resources :category_parents
-  # resources :categories
-  # resources :category_children
-
+  resources :category_parents, only:[:index,:show]
+  resources :categories, only:[:index,:show, :new]
+  resources :category_children, only: [:index, :show, :new]
   resources :users,  only:[:new] do
     resources :products do
       post 'buy'

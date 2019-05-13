@@ -68,6 +68,8 @@
                 background: #fff;
                 .item-detail-evaluation{
                   display: flex;
+                  &__1{
+                  }
                   &__2{
                     margin:0 5px 0 5px;
                   }
@@ -392,4 +394,16 @@
       }
     }
   }
+}
+#eva_good{
+  background-color: red;
+  border-radius: 50%;
+}
+#eva_normal{
+  background-color: green;
+  border-radius: 50%;
+}
+#eva_but{
+  background-color: black;
+  border-radius: 50%;
 }
