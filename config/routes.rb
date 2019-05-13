@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     member do
       get 'confirm_buy'
       get 'edit_index'
+    end
+    collection do
       get 'search'
     end
   end

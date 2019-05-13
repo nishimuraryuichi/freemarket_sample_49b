@@ -1,1 +1,23 @@
-.a ああああ
+.top-main
+  .top-main__pickup
+    ピックアップカテゴリー
+  .item-box-container
+    .items-box
+      = link_to 'レディース新着アイテム',root_path, class: 'items-box__category'
+    .items-box-content
+      - @products.each do |product|
+        .item-box
+          = link_to product_path(product),class: "item-box__link" do
+            .item-box__link__photo
+              =image_tag product.images[0],size:"230x300"
+            .item-box__link__detail
+              .item-box__link__detail__name
+                = product.name
+              .item-box__link__detail__middle
+                %p.item-box__link__detail__middle__price
+                  = "¥" + number_with_delimiter(product.price)
+                .item-box__link__detail__middle__heart
+                  =fa_icon("heart")
+                  %span 5
+              .item-box__link__detail__tax
+                (税込)
