@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @profile = Profile.find(1)
   end
 
   def create
@@ -55,6 +56,10 @@ class ProductsController < ApplicationController
   def edit_index
    @products = current_user.products.where(purchased:false)
    @soldProducts = current_user.products.where(purchased:true)
+  end
+
+  def search
+    @products = Product.where('name LIKE ?',"%#{params[:id]}%")
   end
 
   private

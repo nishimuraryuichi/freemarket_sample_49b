@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'products#index'
-  resources :profiles, only: [:new,:show,:edit] do
+  resources :profiles, only: [:new,:create,:show,:edit] do
     member do
       get 'pay_method'
     end
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     member do
       get 'confirm_buy'
       get 'edit_index'
+      get 'search'
     end
   end
   # resources :users
