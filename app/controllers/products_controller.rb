@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update,:destroy,:confirm_buy]
 
   def index
-    @products = Product.all
+    @products = Product.order(created_at: :DESC).limit(4)
   end
 
   def new
@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = current_user.products.new(product_params)
     if @product.save
         redirect_to new_product_path
     else
@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
       #  flash.now[:alert] = "入力項目を埋めきれていません。もう一度入れ直してください"
        render :new
     end
-
   end
 
   def edit
@@ -48,13 +47,14 @@ class ProductsController < ApplicationController
 
   def buy
     @product = Product.find(params[:product_id])
-    MyPayjp.payjp(@product.price,params[:user_id])
+    MyPayjp.payjp((@product.price)*0.9.round,params[:user_id])
     @product.update(purchased:true)
     redirect_to action: :show, id:@product.id
   end
 
   def edit_index
-   @products = User.find(params[:id]).products
+   @products = current_user.products.where(purchased:false)
+   @soldProducts = current_user.products.where(purchased:true)
   end
 
   private

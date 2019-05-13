@@ -1,0 +1,77 @@
+.credit__header-top{
+  background-color: $white;
+  margin-bottom: 2px;
+  height:50px;
+  color: $font-black;
+  font-size: 20px;
+  line-height: 50px;
+  text-align: center;
+  width: 100%;
+  @media(min-width:690px){
+    font-size: 24px;
+  }
+}
+.credit__header-bottom{
+  background-color: $white;
+  margin-bottom: 2px;
+  color: $font-black;
+  font-size: 24px;
+  padding-top: 50px;
+  padding: 50px calc(50% - 150px);
+  &__inputs{
+    @include flex--end;
+    width: 300px;
+  }
+  &__num-form{
+    width: 290px;
+    height: 42px;
+    border-radius: 5px;
+    border: solid 1px #DDDDDD;
+    margin-top: -5px;
+    font-size: 16px;
+    padding-left: 10px;
+  }
+  .credit-image{
+    margin-right:8px;
+    margin-bottom: 20px;
+  }
+  .expiration-select{
+    margin-top: -12px;
+    margin-bottom: 40px;
+    &__form{
+      height: 50px;
+      width: 120px;
+      margin-top:  10px;
+      background-color: white;
+      font-size: 16px;
+    }
+  }
+  .card-register-submit{
+   background-color: $caution;
+   border: none;
+   width: 300px;
+   height: 50px;
+   font-size: 14px;
+   color: $white;
+   margin-top: 60px;
+   opacity: .9;
+  }
+}
+.safe-card{
+  font-size: 14px;
+  color: $link;
+  float: right;
+  margin-top: 4px;
+  .fa-question{
+    background-color: $link;
+    color: $white;
+    border-radius: 50%;
+    font-size: 14px;
+    width:14px;
+    height: 14px;
+    text-align: center;
+    font-weight: 100;
+  }
+  &__link{
+  }
+}

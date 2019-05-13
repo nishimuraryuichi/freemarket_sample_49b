@@ -8,15 +8,25 @@
     .confirm-product-name=@product.name
     .confirm-product-price
       .confirm-product-price__price=@product.price.to_s+"円"
-      .confirm-product-price__taxin 送料込み
+      .confirm-product-price__taxin=@product.delivery_fee.name
     .confirm-buy-btn-btn
       =link_to "ポイントはありません", new_user_path, class:'confirm-buy-btn__link'
     .payment-confirm
       .payment__text 支払い金額
-      .payment__price=(@product.price*1.08).round.to_s+"円"
-    .confirm-caution この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-    .confirm-buy-btn-btn
-      =link_to "購入する", user_product_buy_path(current_user,@product),method: :post, class:'confirm-buy-btn__link'
+      .payment__price=@product.price.to_s+"円"
+    .confirm-caution この商品はクレジットカードのみでお買い求め頂けます。
+    -if @product.user_id == current_user.id
+      .confirm-buy-btn-btn
+        =link_to "あなたの出品した商品です。", edit_product_path(@product.id), class:'confirm-buy-btn__link'
+    -else
+      .confirm-buy-btn-btn
+        -if current_user.card_registered?
+          =link_to "購入する", user_product_buy_path(current_user,@product),method: :post, class:'confirm-buy-btn__link'
+        -else
+          =link_to new_card_path,class:'confirm-buy-btn__link' do
+            .pay-content__main__bottom__btn__name
+              = fa_icon('credit-card')
+              %span クレジットカードを登録する
     .confirm-app-install アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
     %ul.confirm-app-link
       %li
@@ -36,10 +46,14 @@
   .inputs
     .payment-method
       .payment-method__header 支払方法
-      .payment-method__method /
+      -if current_user.card_number_last4
+        .pay-content__main__top 登録クレジットカード
+        .pay-content__main__bottom-number="*************"+current_user.card_number_last4.to_s
+      -else
+        .payment-method__method /
       .payment-method__change-link
-        =link_to new_user_path, class:'adresses__change-link' do
-          .adresses__change-link__text 変更する
+        =link_to card_path(current_user.id),method: :delete, class:'adresses__change-link',data: {confirm: '本当に削除し、変更しますか？'} do
+          .adresses__change-link__text 削除・変更する
           %span.icon=fa_icon("chevron-right")
 
   =render 'shared/products-new-footer'

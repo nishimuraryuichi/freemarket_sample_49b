@@ -116,6 +116,7 @@
   position: fixed;
   right: 32px;
   bottom: 32px;
+  z-index: 3;
   @media(min-width:700px){
     width: 160px;
     height: 160px;
