@@ -88,10 +88,20 @@ class CategoryChildren < Category
           {id: 85, name: 'ヘアピン', category_id: 12,parent_category_id: 1},
           {id: 86, name: 'その他', category_id: 12,parent_category_id: 1},
           {id: 87, name: '長財布', category_id: 13,parent_category_id: 1},
-          {id: 88, name: '', category_id: 13,parent_category_id: 1},
-          {id: 89, name: '', category_id: 13,parent_category_id: 1},
-          {id: 90, name: '', category_id: 13,parent_category_id: 1},
-          {id: 91, name: '', category_id: 13,parent_category_id: 1},
+          {id: 88, name: '腕時計(アナログ)', category_id: 14,parent_category_id: 1},
+          {id: 89, name: 'Tシャツ', category_id: 16,parent_category_id: 2},
+          {id: 90, name: 'テーラージャケット', category_id: 17,parent_category_id: 2},
+          {id: 91, name: 'デニム', category_id: 18,parent_category_id: 2},
+          {id: 92, name: 'スニーカー', category_id: 19,parent_category_id: 2},
+          {id: 93, name: 'ショルダーバッグ', category_id: 20,parent_category_id: 2},
+          {id: 94, name: 'キャップ', category_id: 21,parent_category_id: 2},
+          {id: 95, name: 'ネックレス', category_id: 22,parent_category_id: 2},
+          {id: 96, name: '長財布', category_id: 23,parent_category_id: 2},
+          {id: 97, name: '腕時計(アナログ)', category_id: 24,parent_category_id: 2},
+          {id: 98, name: '一般水着', category_id: 25,parent_category_id: 2},
+          {id: 99, name: 'ソックス', category_id: 26,parent_category_id: 2},
+          {id: 100, name: 'トランクス', category_id: 27,parent_category_id: 2},
+          # {id: , name: '', category_id: 29,parent_category_id: 2},
       ]
 
   def self.find(id)
@@ -105,7 +115,5 @@ class CategoryChildren < Category
   def self.categories_name(parent_category_id)
     self.categories(parent_category_id).map{|category| category[:name]}
   end
-
-  
 
 end
