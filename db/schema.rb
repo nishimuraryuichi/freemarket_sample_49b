@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_080451) do
+ActiveRecord::Schema.define(version: 2019_05_13_070824) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 2019_05_07_080451) do
     t.integer "prefecture_id", null: false
     t.integer "preparation_id", null: false
     t.boolean "purchased", default: false, null: false
+    t.bigint "user_id"
+    t.integer "category_id", null: false
+    t.integer "category_child_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,4 +77,5 @@ ActiveRecord::Schema.define(version: 2019_05_07_080451) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "products", "users"
 end

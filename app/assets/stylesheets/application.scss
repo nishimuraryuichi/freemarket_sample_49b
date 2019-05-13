@@ -1,13 +1,15 @@
 @import './reset';
 @import 'font-awesome';
 @import './mixin/flex';
+@import './mixin/notice';
 @import './variables/color';
 @import './mixin/liststyle';
+@import './modules/notification';
 @import './modules/header';
 @import 'font-awesome';
 @import './modules/main';
 @import './modules/product_show';
-@import './modules/slideshow';
+@import './modules/swipermin';
 @import './modules/footer';
 @import './modules/product_new';
 @import './modules/sidebar'; //このファイルの下にマイページ系はimportしましょう
@@ -20,3 +22,4 @@
 @import './modules/profile-edit';
 @import './modules/log-out-page';
 @import './modules/sign-up';
+@import './modules/card_new';

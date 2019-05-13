@@ -1,32 +1,31 @@
 =render './shared/header'
-.slideshow-wrap
-  .slideshow
-    %input{type:"radio",name:"slideshow",id:"switch1", checked: "checked"}
-    %input{type:"radio", name:"slideshow", id:"switch2"}
-    %input{type:"radio", name:"slideshow", id:"switch3"}
-    %input{type:"radio", name:"slideshow", id:"switch4"}
-    .slidecontents
-      %section#slide1
-        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-natsukashi.jpg",alt: "merucari1"
-      %section#slide2
-        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-new-life.jpg",alt: "merucari2"
-      %section#slide3
-        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg",alt: "merucari3"
-      %section#slide4
-        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-bokurano-heisei.jpg",alt: "merucari4"
-    %p.arrow.prev
-      =fa_icon("chevron-left")
-      %label{for: "switch1"}
-      %label{for: "switch2"}
-      %label{for: "switch3"}
-      %label{for: "switch4"}
-    %p.arrow.next
-      =fa_icon("chevron-right")
-      %label{for: "switch1"}
-      %label{for: "switch2"}
-      %label{for: "switch3"}
-      %label{for: "switch4"}
+.sample.sample01
+  .swiper-container
+    .swiper-wrapper
+      .swiper-slide
+        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-natsukashi.jpg",alt: "merucari1",id: "slide-banner"
+      .swiper-slide
+        =link_to image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg",alt: "merucari2",id: "slide-banner"
+      .swiper-slide#banner
+        .slide__container
+          .slide__container__text
+            %h2
+              スマホでかんたん
+              %br フリマアプリ
+            %p
+              メルカリはスマホカメラからすぐに出品できる
+              %br 購入時も安心な独自システムのアプリです
+            .silder__container__text__store
+              =link_to image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?376951604", class:"silder__container__text__store__apple"
+              =link_to image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?376951604", class:"silder__container__text__store__google"
 
+          .slide__container__image
+            =image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?376951604",size: "440x390"
+    .swiper-pagination
+    .swiper-button-prev
+      =fa_icon("chevron-left 3x")
+    .swiper-button-next
+      =fa_icon("chevron-right 3x")
 .top-main
   .top-main__pickup
     ピックアップカテゴリー
@@ -44,7 +43,7 @@
                 = product.name
               .item-box__link__detail__middle
                 %p.item-box__link__detail__middle__price
-                  = product.price
+                  = "¥" + number_with_delimiter(product.price)
                 .item-box__link__detail__middle__heart
                   =fa_icon("heart")
                   %span 5
@@ -54,3 +53,5 @@
       = link_to root_path do
         すべての商品を見る
 =render './shared/full_footer'
+
+

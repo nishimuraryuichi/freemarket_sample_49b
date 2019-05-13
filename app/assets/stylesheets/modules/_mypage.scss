@@ -88,7 +88,7 @@
             margin-left:5px;
           }
         }
-      }      
+      }
       .fa.fa-chevron-right{
         position:absolute;
         top:40%;
@@ -101,14 +101,14 @@
     }
     &__index{
       @include go-index-style;
-    }  
-  }  
+    }
+  }
   &__todo{
     &__list{
       @include nothing;
     }
   }
-} 
+}
 .tab-content{
   display:none;
 }
@@ -175,7 +175,7 @@
             font-weight: 400;
             padding:2px;
           }
-        }      
+        }
         .fa.fa-chevron-right{
           position:absolute;
           top:40%;
@@ -188,13 +188,13 @@
       }
     &__index{
       @include go-index-style;
-    }    
+    }
   }
 }
 
 #during:checked ~.during,
 #past:checked ~.past{
-  @include checked-tab;  
+  @include checked-tab;
 }
 #during:checked ~.mypage__tabs__bottom__during,
 #past:checked ~.mypage__tabs__bottom__past{

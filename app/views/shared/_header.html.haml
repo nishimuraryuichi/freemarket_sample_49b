@@ -24,8 +24,8 @@
               =link_to '新規会員登録', new_user_path,class: 'new-user-btn-long'
       %form.inner-header__top__form
         %input.inner-header__top__form__text{type: "text",name: "keyword", placeholder: "何かお探しですか？"}
-        =link_to '/products' do
-          =fa_icon("search")
+          =link_to search_products_path do
+            =fa_icon("search")
     .inner-header__bottom
       %ul.inner-header__bottom__left
         %li.inner-header__bottom__left__left
@@ -33,6 +33,12 @@
             =link_to category_parents_path,class:'access-btn' do
               =fa_icon("align-justify")
               %span カテゴリーから探す
+          .inner-header__bottom__left__left__category-lists
+            %ul.inner-header__bottom__left__left__category-lists__list-1
+              -ParentCategory.data.drop(1).each do |parent_category|
+                %li.category-list-1=link_to "#{parent_category[:name]}","/category_parents/#{parent_category[:id]}",class:"inner-header__bottom__left__left__category-lists__list-1__link",data: { id: parent_category[:id] }
+            %ul.inner-header__bottom__left__left__category-lists__list-2
+            %ul.inner-header__bottom__left__left__category-lists__list-3
         %li.inner-header__bottom__left__right
           %h2.inner-header__botom__left__right__nav
             =link_to '/products',class:'access-btn' do

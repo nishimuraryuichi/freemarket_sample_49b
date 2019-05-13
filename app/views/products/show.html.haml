@@ -12,7 +12,6 @@
             .item-main-content__photo__sub__1.opacity
               -(0...@product.images.count).each do |image|
                 = image_tag (@product.images[image]),size: "75x75"
-
         .item-detail
           %table
             %tbody
@@ -21,19 +20,21 @@
                   出品者
                 %td
                   .td-link
-                    BOON90sリバイバル@コスパ優良店
+                    = link_to new_profile_path do
+                      = @profile.name
                   .item-detail-evaluation
                     .item-detail-evaluation__1
-                      =fa_icon("circle")
-                      %span 896
+                    %button#eva_good
+                    #disp_count1 0
+                    -# @profile.eva_good
                     .item-detail-evaluation__2
-                      =fa_icon("circle")
-                      %span
-                        27
+                    %button#eva_normal
+                    #disp_count2 0
+                    -# @profile.eva_normal
                     .item-detail-evaluation__3
-                      =fa_icon("circle")
-                      %span
-                        4
+                    %button#eva_but
+                    #disp_count3 0
+                    -# @profile.eva_but
               %tr
                 %th
                   カテゴリー
@@ -70,7 +71,7 @@
                   1日〜2日で発送
       .item-price-box
         .item-price-box__price
-          ¥1,000
+          = '¥' + number_with_delimiter(@product.price)
         .item-price-box__tax-delivaly
           .item-price-box__tax
             (税込)
@@ -91,19 +92,21 @@
                 出品者
               %td
                 .td-link
-                  BOON90sリバイバル@コスパ優良店
+                  = link_to new_profile_path do
+                    = @profile.name
                 .item-detail-evaluation
                   .item-detail-evaluation__1
-                    =fa_icon("circle")
-                    %span 896
+                  %button#eva_good
+                  #disp_count1 0
+                  -# @profile.eva_good
                   .item-detail-evaluation__2
-                    =fa_icon("circle")
-                    %span
-                      27
+                  %button#eva_normal
+                  #disp_count2 0
+                  -# @profile.eva_normal
                   .item-detail-evaluation__3
-                    =fa_icon("circle")
-                    %span
-                      4
+                  %button#eva_but
+                  #disp_count3 0
+                  -# @profile.eva_but
             %tr
               %th
                 カテゴリー
@@ -271,7 +274,9 @@
 
     .items-user
       .items-user__pickup
-        = link_to 'BOON90sリバイバル@コスパ優良店さんのその他の出品','/products/1',class: 'pickupname'
+        = link_to new_profile_path class: 'pickupname' do
+          = @profile.name
+          の出品
       .category
         .items-box-content
           .item-box

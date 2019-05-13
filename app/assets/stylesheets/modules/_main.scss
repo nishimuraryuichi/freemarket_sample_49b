@@ -15,7 +15,6 @@
   .item-box-container{
     margin: 0 auto;
     width:940px;
-    overflow-y:auto;
     .items-box{
       
       margin:26px 11px;
@@ -32,21 +31,23 @@
     }
     .items-box-content{
         display:flex;
+        flex-wrap: wrap;
       .item-box{
           background-color: $white;
           margin: 0 0 0 20px;
           padding-bottom: 5px;
-          height:330px;
         &__link{
           text-decoration: none;
           color:black;
           &__photo{
             img{
-              height:213px;
+              height:220px;
+              width:213px;
             }
           }
           &__detail{
-            padding: 10px;
+            padding: 16px;
+            height:78px;
             &__name{
               padding: 16px;
             }
@@ -54,7 +55,7 @@
               display:flex;
               justify-content: space-between;
               &__price{
-              font-size: 17px;
+              font-size: 15px;
               font-weight: 600;
               }
               &__heart{

@@ -1,0 +1,32 @@
+.full-container
+  = render partial: "shared/header"
+  %main
+    .mypage
+      = render partial: "shared/sidebar"
+      .mypage__container
+        .pay-container
+          .pay-content
+            .pay-content__head 支払い方法
+            .pay-content__main
+              -if current_user.card_number_last4
+                .pay-content__main__top クレジットカード一覧
+                .pay-content__main__bottom-number="*************"+current_user.card_number_last4.to_s
+                .pay-content__main__delete
+                  =link_to card_path(current_user.id),method: :delete,class:'pay-content__main__bottom__btn',data: {confirm: '本当に削除しますか？'} do
+                    .pay-content__main__bottom__btn__name
+                      %span 削除
+                    .pay-content__main__bottom__btn__icon
+              -else
+                .pay-content__main__top クレジットカード一覧
+                .pay-content__main__bottom
+                  =link_to new_card_path,class:'pay-content__main__bottom__btn' do
+                    .pay-content__main__bottom__btn__name
+                      = fa_icon('credit-card')
+                      %span クレジットカードを登録する
+                  .pay-content__main__bottom__btn__icon
+            .pay-content__bottom
+              = link_to root_path,class: 'pay-content__bottom__name' do
+                %span 支払い方法について
+                = fa_icon('chevron-right')
+= render partial:"shared/full_footer"
+= render partial:"shared/exhibit"

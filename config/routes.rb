@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'products#index'
-  resources :profiles, only: [:new,:show,:edit] do
+  resources :profiles, only: [:new,:create,:show,:edit] do
     member do
-      get 'pay'
+      get 'pay_method'
     end
     collection do
       get 'log_out_page'
@@ -14,21 +14,21 @@ Rails.application.routes.draw do
       get 'confirm_buy'
       get 'edit_index'
     end
+    collection do
+      get 'search'
+    end
   end
   # resources :users
   # resources :comments
   # resources :brands
-  resources :category_parents
-  # resources :categories
-  # resources :category_children
+  resources :category_parents, only:[:index,:show]
+  resources :categories, only:[:index,:show, :new]
+  resources :category_children, only: [:index, :show, :new]
   resources :users,  only:[:new] do
-    member do
-      get 'card_register_page'
-      post 'card_register'
-      resources :products do
-        post 'buy'
-      end
+    resources :products do
+      post 'buy'
     end
   end
-end
+  resources :cards, only:[:new,:create,:destroy]
 
+end
