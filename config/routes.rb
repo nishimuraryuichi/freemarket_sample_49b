@@ -18,10 +18,9 @@ Rails.application.routes.draw do
   # resources :users
   # resources :comments
   # resources :brands
-  resources :category_parents
-  # resources :categories
-  # resources :category_children
-
+  resources :category_parents, only:[:index,:show]
+  resources :categories, only:[:index,:show]
+  resources :category_children, only: [:index, :show]
   resources :users,  only:[:new] do
     resources :products do
       post 'buy'
