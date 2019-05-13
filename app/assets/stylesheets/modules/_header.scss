@@ -136,13 +136,6 @@ body{
                     &:hover > div{
                         display: flex;
                     }
-                    &:hover > div > ul > li:hover{
-                        display: block;
-                        background-color: red;
-                    }
-                    &:hover > div > ul > li:hover > a{
-                        color: white;
-                    }
                 }
                 &__right{
                     @include header-list(30px);

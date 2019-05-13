@@ -8,4 +8,11 @@ class CategoriesController < ApplicationController
 
   def show
   end
+
+  def new
+    @categories = Category.categories(params[:id].to_i)
+    respond_to do |format|
+      format.json
+    end
+  end
 end

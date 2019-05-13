@@ -15,7 +15,6 @@ class Category < ParentCategory
           {id: 12, name: 'ヘアアクセサリー',parent_category_id: 1},
           {id: 13, name: '小物',parent_category_id: 1},
           {id: 14, name: '時計',parent_category_id: 1},
-          {id: 15, name: 'その他',parent_category_id: 1},
           {id: 16, name: 'トップス',parent_category_id: 2},
           {id: 17, name: 'ジャケット/アウター',parent_category_id: 2},
           {id: 18, name: 'パンツ',parent_category_id: 2},
