@@ -15,11 +15,10 @@ class ProductsController < ApplicationController
   def create
     @product = current_user.products.new(product_params)
     if @product.save
-        redirect_to new_product_path
+        redirect_to new_product_path, notice: "商品が出品されました"
     else
-       @product = Product.new
-      #  flash.now[:alert] = "入力項目を埋めきれていません。もう一度入れ直してください"
-       render :new
+      flash.now[:alert] = "必須項目を埋めてください"
+      render :new
     end
   end
 

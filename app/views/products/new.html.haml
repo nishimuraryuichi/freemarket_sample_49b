@@ -1,9 +1,11 @@
 .background
   = render './shared/products-new-header'
-  =form_with model: @product,multipart: true do |f|
+  =form_with model: @product, local: true do |f|
     .inputs
       %h3.inputs__header 商品の情報を入力
     .inputs
+      -if @product.errors[:images].any?
+        .error-red= @product.errors[:images].join
       .inputs__image
         %h4.inputs__image__label 出品画像
         .inputs__image__caution 必須
@@ -16,10 +18,14 @@
             =fa_icon("camera")
           = f.file_field :images,multiple: true, id: "image_upload"
     .inputs
+      -if @product.errors[:name].any?
+        .error-red= @product.errors[:name].join
       .inputs__product
         %h4.inputs__product__label 商品名
         .inputs__product__caution 必須
       = f.text_field :name, placeholder:'商品名（必須40文字まで）', class: 'inputs__form',autocomplete: "off"
+      -if @product.errors[:detail].any?
+        .error-red= @product.errors[:detail].join
       .inputs__product
         %h4.inputs__product__label 商品の説明
         .inputs__product__caution 必須
@@ -27,10 +33,14 @@
     .inputs-detail
       .inputs-detail__large-label 商品の詳細
       .inputs-detail__form
+        -if @product.errors[:parent_category_id].any?
+          .error-red= @product.errors[:parent_category_id].join
         .flex-end
           %h4.inputs-detail__label カデゴリー
           .inputs-detail__caution 必須
         = f.collection_select :parent_category_id, ParentCategory.all, :id, :name,{},{class:'inputs__form-select'}
+        -if @product.errors[:status_id].any?
+          .error-red= @product.errors[:status_id].join
         .flex-end
           %h4.inputs-detail__label 商品の状態
           .inputs-detail__caution 必須
@@ -38,14 +48,20 @@
     .inputs-detail
       .inputs-detail__large-label 配送について
       .inputs-detail__form
+        -if @product.errors[:delivery_fee_id].any?
+          .error-red= @product.errors[:delivery_fee_id].join
         .flex-end
           %h4.inputs-detail__label 配送料の負担
           .inputs-detail__caution 必須
         = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name,{},{class:'inputs__form-select'}
+        -if @product.errors[:prefecture_id].any?
+          .error-red= @product.errors[:prefecture_id].join
         .flex-end
           %h4.inputs-detail__label 発送元の地域
           .inputs-detail__caution 必須
         = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{},{class:'inputs__form-select'}
+        -if @product.errors[:preparation_id].any?
+          .error-red= @product.errors[:preparation_id].join
         .flex-end
           %h4.inputs-detail__label 発送までの日数
           .inputs-detail__caution 必須
@@ -55,6 +71,8 @@
         販売価格
         %span.price-range (300〜9,999,999)
       .inputs-detail-price__form
+        -if @product.errors[:price].any?
+          .error-red= @product.errors[:price].join
         .flex-center-between
           .flex-end
             %h4.inputs-detail-price__label 価格
@@ -84,7 +102,7 @@
         また、出品をもちまして
         =link_to "加盟店規約","https://www.mercari.com/jp/seller_terms/", class: 'agreement'
         に同意したことになります。
-      =f.submit '出品する',class:'create-btn'
+      =f.submit '出品する',class:'create-btn' 
       .flex-center
         =button_to "products#index", class: 'agreement-back-btn' do
           もどる

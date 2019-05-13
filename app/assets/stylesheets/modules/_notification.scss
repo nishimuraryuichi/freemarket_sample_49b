@@ -1,0 +1,13 @@
+.notification{
+  .notice{
+    @include notice(darkcyan,springgreen);
+  }
+  .alert{
+    @include notice($caution,$caution);
+  }
+}
+
+.product-form-errors__list{
+  color:red;
+  text-align: center;
+}

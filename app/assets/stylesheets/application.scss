@@ -1,8 +1,10 @@
 @import './reset';
 @import 'font-awesome';
 @import './mixin/flex';
+@import './mixin/notice';
 @import './variables/color';
 @import './mixin/liststyle';
+@import './modules/notification';
 @import './modules/header';
 @import 'font-awesome';
 @import './modules/main';
@@ -20,4 +22,4 @@
 @import './modules/profile-edit';
 @import './modules/log-out-page';
 @import './modules/sign-up';
-@import './modules/card_new'
+@import './modules/card_new';

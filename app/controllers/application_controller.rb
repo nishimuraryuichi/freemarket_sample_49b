@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     before_action :basic_auth, if: :production?
     protect_from_forgery with: :exception
-    Payjp.api_key = Rails.application.credentials.payjp[:payjp_private_key]
+    # Payjp.api_key = Rails.application.credentials.payjp[:payjp_private_key]
 
   private
 
@@ -15,4 +15,5 @@ class ApplicationController < ActionController::Base
       username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
+
 end
