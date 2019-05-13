@@ -26,6 +26,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:name,:introduction,:moeny,:eva_good,:eva_normal,:eva_but)
+    params.require(:profile).permit(:name).merge(user_id: current_user.id)
   end
 end

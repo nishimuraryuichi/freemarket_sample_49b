@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @profile = Profile.find(1)
+    @profile = current_user.profile
   end
 
   def create
