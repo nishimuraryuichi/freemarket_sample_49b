@@ -1,0 +1,11 @@
+@mixin notice($color,$backcolor){
+  box-sizing: border-box;
+    text-align: center;
+    color: $color;
+    font-weight: 400;
+    border-top: solid 2px $color;
+    border-bottom: solid 2px $color;
+    background-color: lighten($backcolor,40%);
+    padding-top:5px;
+    padding-bottom: 5px;
+}
