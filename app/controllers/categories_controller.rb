@@ -6,7 +6,12 @@ class CategoriesController < ApplicationController
     end
   end
 
+
   def show
+    @category = Category.find(params[:id].to_i)
+    @parent_category = Category.parent_category(params[:id].to_i)
+    @products = Product.all.where(category_id: @category[:id])
+    @category_children = CategoryChildren.category_children(params[:id].to_i)
   end
 
   def new

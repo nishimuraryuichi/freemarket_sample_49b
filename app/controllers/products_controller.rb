@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.order(created_at: :DESC).limit(4)
+    @all_products = Product.all.order(created_at: :DESC)
+    @parent_category_count = ParentCategory.data.length - 1
   end
 
   def new

@@ -1,4 +1,5 @@
 class ParentCategory < ActiveHash::Base
+
   self.data = [
       {id: 0, name: '---'},
       {id: 1, name: 'レディース'},
@@ -20,9 +21,9 @@ class ParentCategory < ActiveHash::Base
     self.data[id]
   end
 
-  def self.categories(parent_category_id)
-    self.find(parent_category_id)[:category]
-  end
+   def self.categories(parent_category_id)
+     self.find(parent_category_id)[:category]
+   end
 
 
 end
