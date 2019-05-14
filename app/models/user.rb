@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :profile
-  validates :encrypted_password, presence: true, length: {minimum:6}
   has_many :products
-
+  validates :password, presence: true, length: {minimum:6}, confirmation: true
+  validates :nickname ,presence: true, length: {maximum: 30}
 
   def card_number_last4
     if card_num = MyPayjp.default_card_num?(self.id.to_s)
