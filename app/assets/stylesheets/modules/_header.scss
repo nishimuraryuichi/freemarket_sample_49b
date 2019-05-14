@@ -52,11 +52,22 @@ body{
                     color:gray;
                     font-size:16px;
                     background-color:lighten(gray,40%);
-                    // position:absolute;
+                    position:absolute;
+                }
+                .search-btn{
+                    z-index: 2;
+                    position:absolute;
+                    color:lighten(gray,40%);
+                    background-color:lighten(gray,40%);
+                    right:8px;
+                    top:5px;
+                    height:30px;
+                    border-color: lighten(gray,40%);
+                    width:20px;
                 }
                 .fa.fa-search{
                     position:absolute;
-                    z-index: 2;
+                    z-index: 3;
                     right: 10px;
                     top: 10px;
                     color: gray;

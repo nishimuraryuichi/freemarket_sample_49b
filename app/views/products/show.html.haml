@@ -1,4 +1,13 @@
 = render "shared/header"
+%nav.bread-crumbs
+  %ul
+    %li
+      %a
+        = link_to root_path do
+          %span.bread-crumbs-title メルカリ
+      %i=fa_icon('chevron-right')
+    %li
+      %span= @product.name
 .show-main
   .main-body
     .item-conteiner
@@ -20,8 +29,8 @@
                   出品者
                 %td
                   .td-link
-                    = link_to new_profile_path do
-                      = @profile.name
+                    = link_to edit_profile_path do
+                      = current_user.profile.name
                   .item-detail-evaluation
                     .item-detail-evaluation__1
                     %button#eva_good
@@ -38,7 +47,9 @@
               %tr
                 %th
                   カテゴリー
-                %td= @product.parent_category.name
+                %td
+                  = link_to category_child_path do
+                    = @product.parent_category.name
               %tr
                 %th
                   ブランド
@@ -92,8 +103,8 @@
                 出品者
               %td
                 .td-link
-                  = link_to new_profile_path do
-                    = @profile.name
+                  = link_to edit_profile_path do
+                    = current_user.profile.name
                 .item-detail-evaluation
                   .item-detail-evaluation__1
                   %button#eva_good
@@ -111,7 +122,8 @@
               %th
                 カテゴリー
               %td
-                = @product.parent_category.name
+                = link_to category_child_path do
+                  = @product.parent_category.name
             %tr
               %th
                 ブランド
