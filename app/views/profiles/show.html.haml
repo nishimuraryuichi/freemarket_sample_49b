@@ -7,14 +7,14 @@
         .mypage__container__icon
           = link_to "profiles/1",class:"mypage__container__icon__link" do
             = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png",size: '60x60'
-            %p name
+            %p= current_user.nickname
             .mypage__container__icon__link__balometer
               .mypage__container__icon__link__balometer__left
                 %span 評価
                 %span.number 8
               .mypage__container__icon__link__balometer__right
                 %span 出品数 
-                %span.number 16
+                %span.number= current_user.products.count
         .mypage__tabs
           %input#info{type: "radio", name: "tab",checked: true}
           %label.mypage__tabs__tab.info{for:"info"} お知らせ
