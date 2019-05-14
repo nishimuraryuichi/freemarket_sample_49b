@@ -57,7 +57,7 @@
               =fa_icon("check")
               %span.logo-text やることリスト
           %li.inner-header__bottom__right__right
-            =link_to '/profiles/1', class:'access-btn' do
+            =link_to profile_path(current_user), class:'access-btn' do
               =fa_icon("user-circle")
               %span.logo-text マイページ
         -else

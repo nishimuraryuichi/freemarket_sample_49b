@@ -29,8 +29,8 @@
                   出品者
                 %td
                   .td-link
-                    = link_to edit_profile_path do
-                      = current_user.profile.name
+                    = link_to new_profile_path do
+                      = @product.user.nickname
                   .item-detail-evaluation
                     .item-detail-evaluation__1
                     %button#eva_good
@@ -103,8 +103,8 @@
                 出品者
               %td
                 .td-link
-                  = link_to edit_profile_path do
-                    = current_user.profile.name
+                  = link_to new_profile_path do
+                    = @product.user.nickname
                 .item-detail-evaluation
                   .item-detail-evaluation__1
                   %button#eva_good
@@ -287,7 +287,7 @@
     .items-user
       .items-user__pickup
         = link_to new_profile_path class: 'pickupname' do
-          = @profile.name
+          = @product.user.nickname
           の出品
       .category
         .items-box-content

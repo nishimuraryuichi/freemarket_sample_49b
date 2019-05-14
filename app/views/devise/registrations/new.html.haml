@@ -7,9 +7,14 @@
       = render "devise/shared/error_messages", resource: resource
       .field.sign-up-field
         .sign-up-label
+          = f.label 'ニックネーム'
+          .inputs-detail__caution.sign-up-label__caution 必須
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname",placeholder:"例)メルカリ入会し太郎",class: 'inputs__form sign-up__inputs__form'
+      .field.sign-up-field
+        .sign-up-label
           = f.label 'メールアドレス'
           .inputs-detail__caution.sign-up-label__caution 必須
-        = f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"例)mercari@mermer",class: 'inputs__form sign-up__inputs__form'
+        = f.email_field :email, autocomplete: "email",placeholder:"例)mercari@mermer",class: 'inputs__form sign-up__inputs__form'
       .field.sign-up-field
         .sign-up-label
           = f.label 'パスワード'
