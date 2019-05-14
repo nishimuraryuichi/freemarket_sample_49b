@@ -15,7 +15,7 @@
       .item-main-content
         .item-main-content__photo
           .item-main-content__photo__main
-            = link_to '/products/1' do
+            = link_to "/products/#{@product.id}" do
               = image_tag @product.images[0],size: "300x300"
           .item-main-content__photo__sub
             .item-main-content__photo__sub__1.opacity
