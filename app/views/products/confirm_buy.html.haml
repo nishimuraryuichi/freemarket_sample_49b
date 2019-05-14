@@ -13,7 +13,7 @@
       =link_to "ポイントはありません", new_user_path, class:'confirm-buy-btn__link'
     .payment-confirm
       .payment__text 支払い金額
-      .payment__price=@product.price.to_s+"円"
+      .payment__price= "¥" + number_with_delimiter(@product.price)+"円"
     .confirm-caution この商品はクレジットカードのみでお買い求め頂けます。
     -if @product.user_id == current_user.id
       .confirm-buy-btn-btn
