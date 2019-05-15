@@ -15,6 +15,10 @@
     .category-products__flex
       -@products.each do |product|
         .category-products__wrap
+          =link_to product_path(product,class: "item-box__link") do
+            -if product.purchased
+              .item-box__link__soldout-tag
+                .item-box__link__soldout-tag__text SOLD
           =image_tag product.images[0],class:'category-products__wrap__image'
           .category-products__wrap__detail
             .category-products__wrap__detail__name=product.name
