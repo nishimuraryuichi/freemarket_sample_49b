@@ -15,16 +15,20 @@
           = f.label 'メールアドレス'
           .inputs-detail__caution.sign-up-label__caution 必須
         = f.email_field :email, autocomplete: "email",placeholder:"例)mercari@mermer",class: 'inputs__form sign-up__inputs__form'
-      .field.sign-up-field
-        .sign-up-label
-          = f.label 'パスワード'
-          .inputs-detail__caution.sign-up-label__caution 必須
-        = f.password_field :password, autocomplete: "new-password",placeholder:"#{@minimum_password_length}文字以上",class: 'inputs__form sign-up__inputs__form'
-      .field.sign-up-field
-        .sign-up-label
-          = f.label 'パスワード(確認)'
-          .inputs-detail__caution.sign-up-label__caution 必須
-        = f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"#{@minimum_password_length}文字以上",class: 'inputs__form sign-up__inputs__form'
+      - unless session["devise.sns_id"].present?
+        .field.sign-up-field
+          .sign-up-label
+            = f.label 'パスワード'
+            .inputs-detail__caution.sign-up-label__caution 必須
+          = f.password_field :password, autocomplete: "new-password",placeholder:"#{@minimum_password_length}文字以上",class: 'inputs__form sign-up__inputs__form'
+        .field.sign-up-field
+          .sign-up-label
+            = f.label 'パスワード(確認)'
+            .inputs-detail__caution.sign-up-label__caution 必須
+          = f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"#{@minimum_password_length}文字以上",class: 'inputs__form sign-up__inputs__form'
+      - else
+        = f.hidden_field :password
+        = f.hidden_field :password_confirmation
       .actions
         = f.submit "登録する",class:'login-btn-session'
     -# = render "devise/shared/links"
