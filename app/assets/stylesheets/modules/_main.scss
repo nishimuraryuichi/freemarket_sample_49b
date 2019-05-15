@@ -36,6 +36,7 @@
           background-color: $white;
           margin: 0 0 0 20px;
           padding-bottom: 5px;
+          width:213px;
         &__link{
           text-decoration: none;
           color:black;
@@ -71,7 +72,11 @@
             padding: 16px;
             height:78px;
             &__name{
-              padding: 16px;
+              padding: 16px 0;
+              width: 80%;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
             }
             &__middle{
               display:flex;
