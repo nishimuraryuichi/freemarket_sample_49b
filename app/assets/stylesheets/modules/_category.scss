@@ -1,0 +1,96 @@
+.breadcrumb{
+  margin-top: 1px;
+  background-color: $white;
+  @include flex;
+  font-size: 14px;
+  padding: 18px 0 18px 13vw;
+  box-shadow: 0 2px 2px  #cccccc;
+  &__category-link{
+  margin-right: 10px;
+  color: $font_black;
+    &:hover{
+      text-decoration: underline;
+      color: #aaaaaa
+    }
+  }
+  &__chevron{
+    font-weight: 100;
+    margin-right: 10px;
+    color: #aaaaaa;
+  }
+  &__category{
+    font-weight: bold;
+  }
+}
+.category-products{
+  padding:50px auto 50px auto;
+  &__category-links{
+    padding: 20px 10vw;
+    @include flex-spbet;
+    flex-wrap: wrap;
+    &__link{
+      margin-right: 15px;
+      margin-bottom: 10px;
+      &__text{
+        color: $link;
+      }
+    }
+  }
+
+  &__header{
+    font-size: 24px;
+    color: $font_black;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top:20px;
+    margin-left:10vw;
+  }
+  &__flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__wrap{
+    width: 40vw;
+    height: 60vw;
+    @media(min-width:680px){
+      width: 18vw;
+      height: 27vw;
+    }
+    margin-right:20px;
+    margin-bottom: 20px;
+    background-color:$white;
+    &__image{
+      width: 100%;
+      height: 60%;
+    }
+    &__detail{
+      padding: 10px 8px;
+      color: black;
+      &__name{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-bottom: 8px;
+        @media(min-width: 680px){
+          margin-bottom: 4px;
+        }
+      }
+      &__price{
+        @include flex-spbet;
+        &__price{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-weight: bold;
+        }
+      }
+      &__taxin{
+        font-size: 8px;
+      }
+    }
+  }
+}
+.fa-heart{
+  color: palevioletred;
+  }
