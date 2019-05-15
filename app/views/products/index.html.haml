@@ -30,7 +30,7 @@
   .top-main__pickup
     ピックアップカテゴリー
   -(1..@parent_category_count).to_a.shuffle.each do |i|
-    -unless @all_products.select{|product| product.parent_category_id == i}.length < 4
+    -if @all_products.select{|product| product.parent_category_id == i}.length >= 4
       .item-box-container
         .items-box
           = link_to "#{ParentCategory.find(i)[:name]}新着アイテム",category_parent_path(i), class: 'items-box__category'
@@ -39,6 +39,9 @@
           - category_products.each do |product|
             .item-box
               = link_to product_path(product),class: "item-box__link" do
+                -if product.purchased
+                  .item-box__link__soldout-tag
+                    .item-box__link__soldout-tag__text SOLD
                 .item-box__link__photo
                   =image_tag product.images[0],size:"230x300"
                 .item-box__link__detail

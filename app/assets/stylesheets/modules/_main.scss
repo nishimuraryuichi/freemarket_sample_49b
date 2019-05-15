@@ -39,6 +39,28 @@
         &__link{
           text-decoration: none;
           color:black;
+          position: relative;
+          &__soldout-tag{
+            position: absolute;
+            z-index: 100;
+            border-left: 50px solid red;
+            border-top: 50px solid red;
+            border-bottom: 50px solid transparent;
+            border-right: 50px solid transparent;
+            width: 0;
+            height: 0;
+          &__text{
+            transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            color: $white;
+            position: absolute;
+            font-weight: bold;
+            font-size: 24px;
+            top: -30px;
+            left: -48px;;
+            }
+          }
           &__photo{
             img{
               height:220px;
