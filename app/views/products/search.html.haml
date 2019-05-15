@@ -11,6 +11,9 @@
       - @products.each do |product|
         .item-box
           = link_to product_path(product),class: "item-box__link" do
+            -if product.purchased
+              .item-box__link__soldout-tag
+                .item-box__link__soldout-tag__text SOLD
             .item-box__link__photo
               =image_tag product.images[0],size:"230x300"
             .item-box__link__detail
