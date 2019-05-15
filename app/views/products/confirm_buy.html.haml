@@ -4,10 +4,10 @@
     %h3.confirm-buy-header 購入を確定しますか？
   .inputs
     .confirm-image-wrap
-      =image_tag "https://fotopus.com/inu/images/top/inu_subject_03.jpg",alt: "merucari1",class: 'confirm-image'
+      =image_tag @product.images[0],alt: "merucari1",class: 'confirm-image'
     .confirm-product-name=@product.name
     .confirm-product-price
-      .confirm-product-price__price=@product.price.to_s+"円"
+      .confirm-product-price__price= "¥" + number_with_delimiter(@product.price)+"円"
       .confirm-product-price__taxin=@product.delivery_fee.name
     .confirm-buy-btn-btn
       =link_to "ポイントはありません", new_user_path, class:'confirm-buy-btn__link'
