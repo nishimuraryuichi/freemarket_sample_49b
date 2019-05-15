@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update,:destroy,:confirm_buy]
-  before_action :move_to_sessions_new, only:[:confirm_buy]
 
   def index
     @all_products = Product.all.shuffle
@@ -70,10 +69,5 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
-
-  def move_to_sessions_new
-      redirect_to new_user_session_path unless user_signed_in?
-  end
-
 end
 
