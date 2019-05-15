@@ -22,15 +22,17 @@
             %li.inner-header__bottom__right__right
               =link_to '新規会員', new_user_path,class: 'new-user-btn'
               =link_to '新規会員登録', new_user_path,class: 'new-user-btn-long'
-      %form.inner-header__top__form
-        %input.inner-header__top__form__text{type: "text",name: "keyword", placeholder: "何かお探しですか？"}
-          =link_to search_products_path do
-            =fa_icon("search")
+      .inner-header__top__form
+        = form_with url: 'products/search',method: 'GET',local: true do |f|
+          .inner-header__top__form__txt
+            = f.text_field :name,placeholder: "何かお探しですか？",class: 'inner-header__top__form__text'
+            = f.submit class:'search-btn' 
+            .fa.fa-search
     .inner-header__bottom
       %ul.inner-header__bottom__left
         %li.inner-header__bottom__left__left
           %h2.inner-header__botom__left__left__nav
-            =link_to category_parents_path,class:'access-btn' do
+            .access-btn
               =fa_icon("align-justify")
               %span カテゴリーから探す
           .inner-header__bottom__left__left__category-lists
@@ -55,7 +57,7 @@
               =fa_icon("check")
               %span.logo-text やることリスト
           %li.inner-header__bottom__right__right
-            =link_to '/profiles/1', class:'access-btn' do
+            =link_to profile_path(current_user), class:'access-btn' do
               =fa_icon("user-circle")
               %span.logo-text マイページ
         -else

@@ -1,4 +1,4 @@
-window.onload=function(){
+document.addEventListener("turbolinks:load",function(){
   var count_disp1=document.getElementById("disp_count1");
   var count_disp2=document.getElementById("disp_count2");
   var count_disp3=document.getElementById("disp_count3");
@@ -23,4 +23,4 @@ window.onload=function(){
   }
 
 
-}
+});

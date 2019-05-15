@@ -1,4 +1,13 @@
 = render "shared/header"
+%nav.bread-crumbs
+  %ul
+    %li
+      %a
+        = link_to root_path do
+          %span.bread-crumbs-title メルカリ
+      %i=fa_icon('chevron-right')
+    %li
+      %span= @product.name
 .show-main
   .main-body
     .item-conteiner
@@ -6,7 +15,7 @@
       .item-main-content
         .item-main-content__photo
           .item-main-content__photo__main
-            = link_to '/products/1' do
+            = link_to "/products/#{@product.id}" do
               = image_tag @product.images[0],size: "300x300"
           .item-main-content__photo__sub
             .item-main-content__photo__sub__1.opacity
@@ -21,7 +30,7 @@
                 %td
                   .td-link
                     = link_to new_profile_path do
-                      = @profile.name
+                      = @product.user.nickname
                   .item-detail-evaluation
                     .item-detail-evaluation__1
                     %button#eva_good
@@ -38,7 +47,9 @@
               %tr
                 %th
                   カテゴリー
-                %td= @product.parent_category.name
+                %td
+                  = link_to category_child_path do
+                    = @product.parent_category.name
               %tr
                 %th
                   ブランド
@@ -93,7 +104,7 @@
               %td
                 .td-link
                   = link_to new_profile_path do
-                    = @profile.name
+                    = @product.user.nickname
                 .item-detail-evaluation
                   .item-detail-evaluation__1
                   %button#eva_good
@@ -111,7 +122,8 @@
               %th
                 カテゴリー
               %td
-                = @product.parent_category.name
+                = link_to category_child_path do
+                  = @product.parent_category.name
             %tr
               %th
                 ブランド
@@ -275,7 +287,7 @@
     .items-user
       .items-user__pickup
         = link_to new_profile_path class: 'pickupname' do
-          = @profile.name
+          = @product.user.nickname
           の出品
       .category
         .items-box-content

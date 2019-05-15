@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update,:destroy,:confirm_buy]
 
   def index
-    @products = Product.order(created_at: :DESC).limit(4)
+    @all_products = Product.all.shuffle
+    @parent_category_count = ParentCategory.data.length - 1
   end
 
   def new
@@ -10,7 +11,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @profile = current_user.profile
   end
 
   def create
@@ -58,7 +58,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = Product.where('name LIKE ?',"%#{params[:id]}%")
+    @products = Product.where('name LIKE ?',"%#{params[:name]}%")
   end
 
   private
