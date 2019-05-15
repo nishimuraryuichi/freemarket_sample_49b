@@ -5,7 +5,7 @@ document.addEventListener("turbolinks:load",function(){
 
 // 小カデゴリを挿入
 function appendSelectChild(){
-  let html =`<select class="inputs__form-select category-child-select-form" name="product[category_child_id]" id="product_category-child_id"></select>`
+  let html =`<select class="inputs__form-select category-child-select-form" name="product[category_child_id]" id="product_category-child_id"><option value="0">---</option></select>`
   $(".category-select-inputs-detail").append(html);
 }
 
@@ -13,7 +13,6 @@ function appendOptoionsChild(category_child){
   let option = `<option value=${category_child.id}>${category_child.name}</option>`
   $(".category-child-select-form").append(option)
 }
-
 
 $(document).on("change",".category-select-form",function(){
   category_id = $(".category-select-form").val();
@@ -25,7 +24,6 @@ $(document).on("change",".category-select-form",function(){
    })
    .done(function(category_children){
      $(".category-child-select-form").remove();
-     console.log(category_children);
     if( category_children.length !== 0){
       appendSelectChild();
       category_children.forEach(function(category_child){
@@ -44,7 +42,7 @@ $(document).on("change",".category-select-form",function(){
 
 // 中カデゴリセレクトを挿入
   function appendSelect(){
-    let html =`<select class="inputs__form-select category-select-form" name="product[category_id]" id="product_category_id"></select>`
+    let html =`<select class="inputs__form-select category-select-form" name="product[category_id]" id="product_category_id"><option value="0">---</option></select>`
     $(".category-select-inputs-detail").append(html);
   }
 
@@ -91,6 +89,7 @@ $(document).on("change",".category-select-form",function(){
     let list = `<li class="category-list-3"><a class="inner-header__bottom__left__left__category-lists__list-3__link" data-id="#{" href="/category_children/${category.id}"> ${category.name}</a></li>`;
     $('.inner-header__bottom__left__left__category-lists__list-3').append(list);
   }
+
   $(document).on('mouseover',".category-list-2",function(){
     let category_children_id = $(this).children().data('id');
     $(this).css({"background-color":"#DDDDDD"});

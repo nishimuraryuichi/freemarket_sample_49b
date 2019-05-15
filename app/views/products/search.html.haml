@@ -1,9 +1,12 @@
+=render './shared/header'
 .top-main
   .top-main__pickup
-    ピックアップカテゴリー
+    検索結果
+    = @products.count
+    件
   .item-box-container
     .items-box
-      = link_to 'レディース新着アイテム',root_path, class: 'items-box__category'
+      -# = link_to 'レディース新着アイテム',root_path, class: 'items-box__category'
     .items-box-content
       - @products.each do |product|
         .item-box
@@ -21,3 +24,5 @@
                   %span 5
               .item-box__link__detail__tax
                 (税込)
+    .all-items
+=render './shared/full_footer'

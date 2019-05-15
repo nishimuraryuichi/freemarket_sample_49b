@@ -1,0 +1,28 @@
+.full-container
+  = render partial: "shared/header"
+  .breadcrumb
+    =link_to "メルカリ", root_path, class: "breadcrumb__category-link"
+    .breadcrumb__chevron= fa_icon("chevron-right")
+    =link_to "#{@parent_category[:name]}", category_parent_path(@parent_category[:id]), class: "breadcrumb__category-link"
+    .breadcrumb__chevron= fa_icon("chevron-right")
+    .breadcrumb__category= @category[:name]
+  .category-products
+    .category-products__category-links
+      -@category_children.each do |category_child|
+        .category-products__category-links__link
+          =link_to "#{category_child[:name]}",category_child_path(category_child[:id]), class:'category-products__category-links__link__text'
+    .category-products__header=@category[:name] + "の商品一覧"
+    .category-products__flex
+      -@products.each do |product|
+        .category-products__wrap
+          =image_tag product.images[0],class:'category-products__wrap__image'
+          .category-products__wrap__detail
+            .category-products__wrap__detail__name=product.name
+            .category-products__wrap__detail__price
+              .category-products__wrap__detail__price__price="¥" + number_with_delimiter(product.price)
+              .category-products__wrap__detail__price__heart
+                =fa_icon("heart")
+                %span 5
+            .category-products__wrap__detail__taxin (税込)
+= render partial: "shared/full_footer"
+= render partial: "shared/exhibit"
