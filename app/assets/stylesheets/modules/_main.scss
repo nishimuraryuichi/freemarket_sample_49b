@@ -49,16 +49,16 @@
             border-right: 50px solid transparent;
             width: 0;
             height: 0;
-          &__text{
-            transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            -webkit-transform: rotate(-45deg);
-            color: $white;
-            position: absolute;
-            font-weight: bold;
-            font-size: 24px;
-            top: -30px;
-            left: -48px;;
+            &__text{
+             transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -webkit-transform: rotate(-45deg);
+              color: $white;
+              position: absolute;
+              font-weight: bold;
+              font-size: 24px;
+              top: -30px;
+              left: -48px; 
             }
           }
           &__photo{
