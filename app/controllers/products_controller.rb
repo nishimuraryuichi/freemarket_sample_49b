@@ -2,8 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update,:destroy,:confirm_buy]
 
   def index
-    @products = Product.order(created_at: :DESC).limit(4)
-    @all_products = Product.all.order(created_at: :DESC)
+    @all_products = Product.all.shuffle
     @parent_category_count = ParentCategory.data.length - 1
   end
 
