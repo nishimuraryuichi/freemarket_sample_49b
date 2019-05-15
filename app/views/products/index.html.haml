@@ -55,9 +55,6 @@
                       %span 5
                   .item-box__link__detail__tax
                     (税込)
-                  = link_to product_path(product),method: 'delete',data: {confirm: '本当に削除しますか？'} do
-                    .delete-btn 削除
-
         .all-items
           = link_to "すべての商品を見る",category_parent_path(i)
 =render './shared/full_footer'
