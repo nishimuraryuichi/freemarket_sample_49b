@@ -8,11 +8,12 @@
         =fa_icon("envelope")
       .register-btn__mail__text メールアドレスで登録
       .register-btn__empty
-    .register-btn__facebook
-      .register-btn__facebook__logo
-        =fa_icon("facebook-square")
-      .register-btn__facebook__text Facebookで登録
-      .register-btn__empty
+    =link_to user_facebook_omniauth_authorize_path do
+      .register-btn__facebook
+        .register-btn__facebook__logo
+          =fa_icon("facebook-square")
+        .register-btn__facebook__text Facebookで登録
+        .register-btn__empty
     .register-btn__google
       .register-btn__google__logo
         =fa_icon("google")
