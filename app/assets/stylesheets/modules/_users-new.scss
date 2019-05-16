@@ -1,5 +1,3 @@
-.new_user_header{
-}
 .register-btn{
   &__mail{
     margin: auto;
@@ -45,6 +43,7 @@
     }
   }
   &__google{
+    color:$font_black;
     margin: auto;
     background-color: white;
     border: 1px black solid;

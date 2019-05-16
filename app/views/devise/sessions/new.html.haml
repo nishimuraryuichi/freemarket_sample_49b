@@ -1,33 +1,18 @@
--# facebook承認のための記述です。もしかしたら使わないかもしれませんが、今後、使う可能性があるので、残しておきます。
--# :javascript
--#     window.fbAsyncInit = function() {
--#       FB.init({
--#         appId      : '{your-app-id}',
--#         cookie     : true,
--#         xfbml      : true,
--#         version    : '{api-version}'
--#       });
--#       FB.AppEvents.logPageView();
--#     };
--#     (function(d, s, id){
--#       var js, fjs = d.getElementsByTagName(s)[0];
--#       if (d.getElementById(id)) {return;}
--#       js = d.createElement(s); js.id = id;
--#       js.src = "https://connect.facebook.net/en_US/sdk.js";
--#       fjs.parentNode.insertBefore(js, fjs);
--#     }(document, 'script', 'facebook-jssdk'));
 .background
   =render 'shared/products-new-header'
   .inputs
     .new_user_header-signin アカウントをお持ちでない方はこちら
-    =link_to '新規会員登録', new_user_path,class: 'register-new-btn'
+    = link_to '新規会員登録', new_user_path,class: 'register-new-btn'
   .inputs.register-btn
-    =link_to user_facebook_omniauth_authorize_path do
-      .register-btn__facebook
-        .register-btn__facebook__logo
-          =fa_icon("facebook-square")
-        .register-btn__facebook__text Facebookでログイン
-        .register-btn__empty
+    -# = link_to user_facebook_omniauth_authorize_path do 
+    -# initalizer/devise.rbで設定した環境変数に値を入れたのち、↑コメントアウトを外して↓5行をdoの中に入れ
+    .register-btn__facebook
+      .register-btn__facebook__logo
+        =fa_icon("facebook-square")
+      .register-btn__facebook__text Facebookでログイン
+      .register-btn__empty
+    -# = link_to user_google_oauth2_omniauth_authorize_path do
+    -# initalizer/devise.rbで設定した環境変数に値を入れたのち、↑コメントアウトを外して↓5行をdoの中に入れ
     .register-btn__google
       .register-btn__google__logo
         =fa_icon("google")
@@ -47,3 +32,4 @@
         = f.submit "ログイン",class: "login-btn-session"
     = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: 'forget-password'
   =render 'shared/products-new-footer'
+
