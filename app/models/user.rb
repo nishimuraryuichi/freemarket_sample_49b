@@ -13,10 +13,10 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     uid = auth.uid
     provider = auth.provider
-    snscredential = SnsCredential.where(uid: uid, provider: provider).first 
+    snscredential = SnsCredential.find_by(uid: uid, provider: provider) 
     #すでにデータベースに該当のuid,providerが存在している facebook認証をしている
     if snscredential.present? #facebook認証済みで、該当uid＆providerが存在するとき
-      user = User.where(id: snscredential.user_id).first
+      user = User.find_by(id: snscredential.user_id)
         unless user.present? #紐づくユーザーがいない限りにおいて以下を追加して
           user = User.new(   #そんなことは起こらないけど
             nickname: auth.info.name,
@@ -25,14 +25,14 @@ class User < ApplicationRecord
           end 
       sns = snscredential 
     else #facebook認証がまだの場合。
-      user = User.where(email: auth.info.email).first 
+      user = User.find_by(email: auth.info.email) 
         if user.present? #メルカリに登録済みだけど,facebook認証がまだ。
           sns = SnsCredential.new(
             uid: uid,
             provider: provider,
             user_id: user.id
           )
-        else #メルカリに登録していない
+        else #メルカリに登録していない,facebook認証がまだの場合
           user = User.new(
             nickname: auth.info.name,
             email: auth.info.email
