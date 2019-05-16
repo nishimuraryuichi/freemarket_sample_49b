@@ -32,7 +32,7 @@ class User < ApplicationRecord
             provider: provider,
             user_id: user.id
           )
-        else #メルカリに登録していない
+        else #メルカリに登録していない,facebook認証がまだの場合
           user = User.new(
             nickname: auth.info.name,
             email: auth.info.email
