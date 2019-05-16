@@ -14,9 +14,10 @@
           =fa_icon("facebook-square")
         .register-btn__facebook__text Facebookで登録
         .register-btn__empty
-    .register-btn__google
-      .register-btn__google__logo
-        =fa_icon("google")
-      .register-btn__google__text Googleで登録
-      .register-btn__empty
+    = link_to user_google_oauth2_omniauth_authorize_path do
+      .register-btn__google
+        .register-btn__google__logo
+          =fa_icon("google")
+        .register-btn__google__text Googleで登録
+        .register-btn__empty
   =render 'shared/products-new-footer'
